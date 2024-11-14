@@ -1,0 +1,41 @@
+.experiences {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Add a gap between the sections for better spacing */
+
+  .experiences-title {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    z-index: -1;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    line-height: 1.2;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .experiences-article {
+    background-color: #f3f3f3;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    z-index: 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    min-height: 600px; /* Ensures enough space for content */
+
+    /* Responsive styling */
+    @media (max-width: 768px) {
+      padding: 3rem 1rem;
+      min-height: 500px;
+      gap: 2rem;
+    }
+
+    @media (max-width: 480px) {
+      padding: 2rem 1rem;
+      min-height: 400px;
+      gap: 1.5rem;
+    }
+  }
+}

@@ -1,0 +1,73 @@
+$main-image: "../../assets/Gallery/";
+
+section.main {
+  .gallery {
+    .main-image {
+      background: url(#{$main-image}/gallery-main-1.png);
+      height: 65vh;
+      background-size: cover;
+      background-position: center;
+      max-width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 8rem;
+      font-size: 4rem;
+      color: #fff;
+      font-family: "Times New Roman", Times, serif;
+      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+      @media screen and (max-width: 500px) {
+        padding: 1rem;
+        font-size: 2rem;
+        text-align: center;
+      }
+    }
+
+    .gallery-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem; // Add gap between cards for a luxurious look
+      padding: 2rem; // Add padding around the grid
+      margin-top: 2rem;
+      
+      @media screen and (max-width: 576px) {
+        grid-template-columns: 1fr;
+        gap: 1rem; // Reduce gap on smaller screens
+      }
+      @media screen and (min-width: 576.1px) and (max-width: 800px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+        }
+
+        .card-content {
+          padding: 1.5rem;
+          font-size: 1.1rem;
+          line-height: 1.5;
+          color: #333;
+        }
+      }
+    }
+  }
+}
