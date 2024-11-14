@@ -4,7 +4,7 @@
       <Title
         :bText="elements.boldText"
         :lText="elements.lightText"
-        :video="elements.video"
+  :video="elements.video"
       />
     </div>
     <IntroSection

@@ -34,7 +34,7 @@ import ExperiencesArticle from "@/components/ExperiencesArticle/ExperiencesArtic
     this.elements = {
       boldText: "Designing Your World",
       lightText: "One Moment at a Time",
-       video: require("@/assets/experiences.mp4"),
+      video: require("@/assets/discovery.mp4"),
       introParas: [
         " At DAT Architecture, we design spaces to make any moment worth living to the fullest ",
         "Every detail is added thoughtfully to enhance your lifestyle and living experience, ",
