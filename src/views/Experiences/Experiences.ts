@@ -34,22 +34,22 @@ import ExperiencesArticle from "@/components/ExperiencesArticle/ExperiencesArtic
     this.elements = {
       boldText: "Designing Your World",
       lightText: "One Moment at a Time",
-       video: require("@/assets/experiences.png"),
+       video: require("@/assets/experiences.mp4"),
       introParas: [
         " At DAT Architecture, we design spaces to make any moment worth living to the fullest ",
-        "with your loved ones. Our designs are dedicated to merging innovation with functionality  ",
-        "in every space, so as to leave a lasting memory",
+        "Every detail is added thoughtfully to enhance your lifestyle and living experience, ",
+        "Step into a home that is not only designed to impress, but inspire. At DAT, we translate your dream into reality,  setting a new standard for what luxury living truly means.",
       ],
-      title: "CONCEPT ",
+      title: "Exclusive to<br>your world",
       txtParagraphs: [
-        "Concept in DAT Architecture is an abstract creative essence at the root of the design. It is the integration of art and engineering into the client's vision that drives every move to take the project further. Any structure has its conscious creation based on aesthetics, functionality, and context to create something unique and effective. Our approach ensures every project we execute is unique and memorable, with innovations and quality that blend into the environment and need of our clients.",
+        "Our worlds are designed to offer you endless opportunities to share incredible once-in-a-lifetime experiences and adventures every single minute of the day. Each of our settings offers a relaxed sense of extensive Outdoor Pursuits program. Create moments of joy and wonder, unforgettable memories and cherished times, together with those who matter most.",
       ],
-      expTitle: "DESIGN ",
-      expPara: "AT Architecture, design is way beyond aesthetic excellence; it is a very deliberative process that blends creativity, precision, and purpose together. Our design approach is centered on the deep understanding of the client's vision and translating it into structures that move, captivate, and stay relevant. Every project undertaken is well thought of to achieve the perfect balance between aesthetics and functionality, as space also has to be practical and innovative. We pay attention to every detail, aiming to be the best in everything so that all the components can harmoniously complement each other in the whole. We take on projects that are unique in character and timeless, representing the aspirations of our clients.",
-      expTitle2: "Build ",
-      expPara2: "DAT Architecture At DAT Architecture, building is the thoughtful design, precision engineering, and expert craftsmanship all come together. Excellence in quality and efficiency, along with all considerations in any given project, determine a structure that is aesthetically pleasing, yet robust and long-lasting. Throughout the construction process, we work hand in glove with our clients to communicate openly and transparently, delivering on our promises. Translating this from villas to residences means the creation of functional, sustainable, strikingly attractive environments that meet the highest standards of excellence. ",
-      expTitle3: "REAL ESTATE INVESTMENT",
-      expPara3: "At DAT Architecture, we understand that real estate investment is not just a matter of buying any property but essentially value creation over time. Our design and architectural capabilities are crucial to maximizing the investment potential of any real estate project. We offer sustainable design and optimal spacing and modern aesthetics, hence ensuring maximum functionality and appeal for the properties. Our investment philosophy in real estate, whether residential or commercial, remains resolute: an ideal investment should not only turn in profits but also be future-proof to remain well ahead of the competition for years to come.",
+      expTitle: "Golf",
+      expPara: "We commission the world’s most renowned course architects to design spectacular golf experiences on challenging yet incredibly playable 18-hole courses. Our trademark comfort stations also set new standards in on-course amenities.",
+      expTitle2: "MS ",
+      expPara2: "Our signature Outdoor Pursuits program is designed for families to create memories together. Whether you’re trying a new sport or taking a day trip, our team will ensure you make the most of every minute with activities designed to help you take advantage of everything each region has to offer.",
+      expTitle3: "Wellness",
+      expPara3: "Unwind at an indulgent spa. Set challenging targets with a tailor-made fitness plan. Or let our talented chefs treat you to our flavorful international menus created using the finest, carefully selected foods sourced locally from organic farms.",
     };
   },
 })
