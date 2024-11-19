@@ -41,19 +41,15 @@ import BottomSection from "@/components/BottomSection/BottomSection.vue";
       lightText: "Sanctuary of Your Dreams",
       introParas: [
         
-        "Since its establishment in 2014, DAT has been at the forefront of innovation,",
-        "offering state-of-the-art architectural and engineering solutions that push the",
-        "boundaries of design. Firmly rooted in passion, expertise, and a relentless drive",
-        "for excellence, we pride ourselves on delivering visionary solutions that fulfill and .",
+        "Where imagination meets precision, and every idea transforms into an extraordinary reality. We craft spaces that inspire, captivate, and leave a lasting impression. From bold concepts to stunning creations, we blend art and innovation to shape iconic designs. With DAT, your vision becomes a masterpiece beyond expectations",
+    
 
-        "often surpass our clients' expectations. Years of experience empower us to offer",
-        "exceptional, high-quality services, establishing DAT as one of the leading ",
-        "architecture firms within the industry.",
+       
       ],
       title: "Our Vision",
       txtParagraphs: [
-        "At DAT, we turn spaces into unique, memorable retreats where families bond and make memories to last. Drawing inspiration from the beauty of nature, we strive to create outstanding, ",
-        "one-off environments that should enrich life and bring generations closer together in a perfect blend of luxury, comfort, and timeless design.",
+        " At DAT Architecture, our vision is to reimagine the art of design by blending creativity, innovation, and functionality. We strive to lead in crafting iconic spaces that inspire, captivate, and enrich lives. Guided by excellence, we bring concepts to life with precision and elegance. ",
+        "We're passionate about translating our clients' unique aspirations into designs that provide purposeful and distinctive solutions. Each project showcases our dedication to expertise and the attention to detail. We combine use of advanced technology in creating spaces that are not only aesthetically pleasing but also add practical value, changing how people experience them, while closely collaborating with the clients."
       ],
       carousel: [
         {
@@ -110,11 +106,11 @@ import BottomSection from "@/components/BottomSection/BottomSection.vue";
       carouselH1: "The Discovery Story",
       // header1: "Discovery Builders",
       paragraph:
-        "At DAT Architecture, we specialize in creating architectural masterpieces that harmonize effortlessly with their natural surroundings. Our designs are a perfect blend of bold, innovative architecture and sustainable practices, ensuring every structure not only captivates but also respects the environment. With DAT, every project reflects our unwavering commitment to precision, exceptional craftsmanship, and visionary design, delivering results that consistently exceed your expectations.",
+        "At DAT Architecture, we are determined to deliver designs that smoothly integrate architectural sophistication with cutting-edge solutions. Our commitment to excellence is reflected in our scrupulous attention to detail and unparalleled craftsmanship. We work closely with the clients by transforming their vision into a functional, refined space; hence, every project at DAT meets the finest quality, precision, and professionalism. With DAT, you can rest assured that your design will be executed to the highest degree of creativity and skill, coupled with a relentless commitment to excellence.",
        imgRight: require("@/assets/TxtImg2/AboutDlc/TxtImg1.jpg"),
        imgLeft: require("@/assets/TxtImg2/AboutDlc/TxtImg2.jpg"),
-      headerMirror: "Discovery Design",
-      paragraphMirror: "See the beauty in every corner of your new, bespoke home away from home. From fabrics and furniture pieces to floorplans, our professional designers will collaborate closely with you to create an interior living space which reflects your style and unique tastes as well as perfectly complementing your lifestyle.",
+      headerMirror: "A Decade of DAT Architecture",
+      paragraphMirror: "With over 10 years of experience, DAT Architecture has redefined design by blending creativity, innovation, and precision. From our early projects to becoming a trusted industry leader, we’ve consistently transformed ideas into exceptional spaces. Our journey reflects a commitment to excellence, bringing visionary concepts to life. Passionate about design and dedicated to perfection, we continue to push boundaries, crafting timeless, inspiring environments that captivate and elevate every experience. At DAT, every design tells a story.",
       imgRightMirror: require("@/assets/TxtImg2/AboutDlc/TxtImg1Mirror.jpg"),
        imgLeftMirror: require("@/assets/TxtImg2/AboutDlc/TxtImg2Mirror.png"),
     };

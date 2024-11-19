@@ -6,6 +6,7 @@
           <img
             :src="latestNewsData[pageNumber].image"
             alt="Latest News Image"
+            loading="lazy"
           />
         </div>
       </div>

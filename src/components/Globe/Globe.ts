@@ -8,14 +8,14 @@ import { Options, Vue } from "vue-class-component";
       lands: [
         {
           continent: "North America & Caribbean",
-          // globeImage: require("@/assets/Globe/globe.jpg"),
+          globeImage: require("@/assets/Globe/globe.jpg"),
           locations: [
             {
               temperature: "73&deg; F",
               winds: "1.99 mph",
               compass: "135&deg;",
-              locationTitle: "Austin, Texas",
-              locationSubtitle: "Driftwood",
+              locationTitle: "AMN Villa inspires luxury to meet nature in perfect harmony, having elegance at each corner and a sense of serenity with every breath. It is a sanctuary of style wherein beauty and comfort meet head-on to present one with the most extraordinary life amidst timeless grace.",
+              locationSubtitle: " AMN VILLA",
               coordinate: "30.139339&deg; N / -98.022342&deg; W",
               image:
                 "https://dxaurk9yhilm4.cloudfront.net/images/775/driftwood3-Map_397186feb8bd51bb37bc24fc2b9b500f.jpg",
@@ -96,8 +96,8 @@ import { Options, Vue } from "vue-class-component";
               temperature: "731&deg; F",
               winds: "11.99 mph",
               compass: "135&deg;",
-              locationTitle: "Austin, Texas",
-              locationSubtitle: "Driftwood",
+              locationTitle: "AMN Villa inspires luxury to meet nature in perfect harmony, having elegance at each corner and a sense of serenity with every breath. It is a sanctuary of style wherein beauty and comfort meet head-on to present one with the most extraordinary life amidst timeless grace.",
+              locationSubtitle: "AMN VILLA",
               coordinate: "30.139339&deg; N / -98.022342&deg; W",
               image:
                 "https://dxaurk9yhilm4.cloudfront.net/images/775/driftwood3-Map_397186feb8bd51bb37bc24fc2b9b500f.jpg",

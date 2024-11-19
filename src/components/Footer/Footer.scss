@@ -1,7 +1,7 @@
 .footer {
   background-color: #161f1e; /* Dark and elegant background */
   color: #eee; /* Light and luxurious text color */
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   padding: 80px 70px;
   text-align: center;
 
@@ -208,7 +208,7 @@
         input {
           padding: 8px;
           border: 1px solid #ccc;
-          border-radius: 4px;
+          // border-radius: 4px;
         }
 
         button {
@@ -217,7 +217,7 @@
           border: none;
           padding: 8px 16px;
           cursor: pointer;
-          border-radius: 4px;
+          // border-radius: 4px;
         }
       }
     }

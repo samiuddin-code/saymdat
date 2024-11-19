@@ -13,15 +13,16 @@
     </div>
       <ExploreCarousel :carouselH1="elements.carouselH1" :carousel="elements.carousel" worldPath="AboutDlc"/>
       <div class="larger-image-section">
-      <img
+      <!-- <img
         :src="require('../../assets/AboutDlc/Restaurant.jpg')"
         alt="Restaurant"
         class="larger-image"
-      />
+      /> -->
       <TxtImg2 :header1="elements.headerMirror" :paragraph="elements.paragraphMirror" :imgRight="elements.imgRightMirror" :imgLeft="elements.imgLeftMirror" :mirror="true"/>
       <img
-        :src="require('../../assets/AboutDlc/basement.png')"
+        :src="require('../../assets/AboutDlc/basement.png') "
         alt="Restaurant"
+        loading="lazy"
         class="larger-image"
       />
     </div>

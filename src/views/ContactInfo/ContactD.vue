@@ -26,7 +26,7 @@
     padding: 2rem;
     background: linear-gradient(to right, #000, #0a0a0a);
     color: #fff;
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif;
   }
   
   .header {

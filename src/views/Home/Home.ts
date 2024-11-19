@@ -43,40 +43,40 @@ import Panels from "@/components/Panels/Panels.vue";
       imgRight: require('@/assets/TxtImg2/TxtImg1.png'),
       imgLeft: require('@/assets/TxtImg2/TxtImg2.png'),
       carousel: [
-        {
-          pic: "p1.png",
-          title: "NORTH SHORE PRESERVE",
-          location: `Kaua'i, Hawaii`,
-        },
-        {
-          pic: "p2.png",
-          title: "JAMES ISLAND",
-          location: `Southern Gulf Islands, British Columbia, Canada`,
-        },
+        // {
+        //   pic: "p1.png",
+        //   title: "NORTH SHORE PRESERVE",
+        //   location: `Kaua'i, Hawaii`,
+        // },
+        // {
+        //   pic: "p2.png",
+        //   title: "JAMES ISLAND",
+        //   location: `Southern Gulf Islands, British Columbia, Canada`,
+        // },
         {
           pic: "p3.png",
-          title: "COSTATERRA",
-          location: `Comporta, Portugal`,
+          title: "DISTRICT ONE MANSION",
+          location: `DUBAI, UAE`,
         },
         {
           pic: "p4.png",
-          title: "BARBUDA OCEAN CLUB",
-          location: `Barbuda, West Indies`,
+          title: " ART VILLA ",
+          location: `UAE, DUBAI`,
         },
         {
           pic: "p5.png",
-          title: "DRIFTWOOD",
-          location: `Austin, Texas`,
+          title: "AMN VILLA",
+          location: `UAE, DUBAI `,
         },
         {
           pic: "p6.png",
-          title: "TROUBADOUR",
-          location: `Nashville, Tennessee`,
+          title: " MS2 VILLA",
+          location: `UAE, DUBAI`,
         },
         {
           pic: "p7.png",
-          title: "PLAYA GRANDE",
-          location: `Rio San Juan, Dominican Republic`,
+          title: "NOR VILLA ",
+          location: `UAE, DUBAI`,
         },
         {
           pic: "p8.png",
@@ -139,16 +139,16 @@ import Panels from "@/components/Panels/Panels.vue";
           title: "IRON HORSE",
           location: `Whitefish, Montana`,
         },
-        {
-          pic: "p24.jpg",
-          title: "CORDEVALLE",
-          location: `Silicon Valley, California`,
-        },
-        {
-          pic: "p25.jpg",
-          title: "ESTANICIA",
-          location: `Scottsdale, Arizona`,
-        },
+        // {
+        //   pic: "p24.jpg",
+        //   title: "CORDEVALLE",
+        //   location: `Silicon Valley, California`,
+        // },
+        // {
+        //   pic: "p25.jpg",
+        //   title: "ESTANICIA",
+        //   location: `Scottsdale, Arizona`,
+        // },
       ],
       carouselH1: "Explore",
       carouselH2: "Our Projects",

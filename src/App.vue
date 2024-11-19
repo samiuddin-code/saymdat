@@ -1,46 +1,69 @@
 <template>
+  <BlackScreenTransition :isVisible="isTransitionVisible" />
   <Navbar />
   <router-view />
   <Footer />
 </template>
+
 <script lang="ts">
-import { Options, Vue } from "vue-class-component";
-import Navbar from '@/components/Navbar/Navbar.vue'  // @ is an alias to /src
-import Footer from '@/components/Footer/Footer.vue'
+import { Options, Vue } from 'vue-class-component';
+import { useRouter } from 'vue-router';
+import Navbar from '@/components/Navbar/Navbar.vue';
+import Footer from '@/components/Footer/Footer.vue';
+import BlackScreenTransition from '@/components/BlackScreenTransition.vue';
 
 @Options({
-  name: "App",
+  name: 'App',
   components: {
     Navbar,
-    Footer
+    Footer,
+    BlackScreenTransition,
   },
 })
 export default class App extends Vue {
+  isTransitionVisible = false;
+  isScrolling = false;
   mounted() {
+    const router = useRouter();
     this.setSlowScroll();
+
+    // Watch for route changes to trigger the black screen transition
+    router.beforeEach((to, from, next) => {
+      this.showTransition();
+      setTimeout(() => {
+        next(); // Proceed to the next route after the transition
+      }, 1000); // Adjust the delay to match your transition duration
+    });
   }
 
-  // Slow scroll logic
+  showTransition() {
+    this.isTransitionVisible = true;
+    setTimeout(() => {
+      this.isTransitionVisible = false;
+    }, 1000); // 5 seconds duration for the transition effect
+  }
+
   setSlowScroll() {
     let scrollInterval: ReturnType<typeof setInterval> | null = null;
 
-    // Slow down the scrolling using setInterval
     window.addEventListener('wheel', (event) => {
-      event.preventDefault(); // Prevent default scrolling behavior
+      if (this.isScrolling) {
+        event.preventDefault();  // Only prevent scroll when actively scrolling
+      }
+
 
       if (!scrollInterval) {
         scrollInterval = setInterval(() => {
-          const direction = event.deltaY > 0 ? 1 : -1;
-          window.scrollBy(0, direction * 2); // Adjust the "10" value for speed
-        }, 50); // Scroll interval time in ms (10ms makes it slower)
+          const direction = event.deltaY > 0 ? 1 : -4;
+          window.scrollBy(0, direction * 2); // Adjust the "2" value for ultra-smooth speed
+        }, 200);
 
-        // Clear the interval when the user stops scrolling
         setTimeout(() => {
           if (scrollInterval) {
             clearInterval(scrollInterval);
             scrollInterval = null;
           }
-        }, 100);
+        }, 700); // Adjust this time for the smoothness of the scroll
       }
     });
   }
@@ -49,31 +72,69 @@ export default class App extends Vue {
 
 
 <style lang="scss">
-@import url("https://fonts.googleapis.com/css2?family=Average+Sans&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-// reset
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Apply globally */
   font-size: 16px;
-  font-family: "Average Sans", sans-serif;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
+
 body,
 html {
   min-height: 100vh;
+  font-size: 16px;
+  line-height: 1.5;
+  scroll-behavior: smooth;
 }
+
 body {
   position: relative;
   left: 0;
   top: 0;
 }
+
+@font-face {
+  font-family: 'Calligraphic';
+  // src: url('@/assets/fonts/Calligraphic-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Afera';
+  // src: url('@/assets/fonts/Afera-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Beauty';
+  // src: url('@/assets/fonts/Beauty-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Reg';
+  // src: url('@/assets/fonts/Reg-Regular.woff2') format('woff2');
+}
+
+/* Smooth Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure fonts load asynchronously */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
 </style>

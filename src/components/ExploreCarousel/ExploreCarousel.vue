@@ -14,7 +14,7 @@
         <div class="slider-track" v-for="items in carousel" :key="items.title">
             <div class="slide">
                 <div class="image-holder">
-                    <img :src="require(`@/assets/${worldPath}/${items.pic}`)">
+                    <img :src="require(`@/assets/${worldPath}/${items.pic}`)"loading="lazy">
                 </div>
                 <div class="img-description">
                     <span class = "img-title" v-text="items.title"></span>

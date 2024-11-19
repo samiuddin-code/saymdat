@@ -23,7 +23,7 @@
     display: block;
     text-align: left;
     font-size: 4rem; /* Larger font for prominence */
-    font-family: "Average", serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 100;
     line-height: 1.1;
     letter-spacing: 1px;
@@ -93,7 +93,7 @@
     margin: 0;
     line-height: 1.1;
     letter-spacing: 1px;
-    font-family: "Average", serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 100;
     @media screen and (max-width: 500px) {
       font-size: 2.5rem;
@@ -150,7 +150,7 @@
   overflow: hidden;
   position: relative;
   // box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  // border-radius: 10px;
   transition: transform 0.5s ease;
 
   @media screen and (max-width: 500px) {
@@ -176,7 +176,7 @@
     object-fit:cover; /* Ensures the whole image is visible */
     // background-color: #000;
     background-blend-mode: darken;
-    border-radius: 10px;
+    // border-radius: 10px;
     transition: transform 0.3s ease;
   }
 
@@ -207,7 +207,7 @@
     white-space: normal;
     color: #fff;
     font-size: 2rem;
-    font-family: "Average", serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 500;
     @media screen and (max-width: 700px) {
       font-size: 1.5rem;

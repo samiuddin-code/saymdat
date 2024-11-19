@@ -15,10 +15,10 @@
           </p>
         </div>
         <div class="right">
-          <img :src="imgRight" alt="Ocean View" />
+          <img :src="imgRight" alt="Ocean View" loading="lazy" />
         </div>
         <div class="bottom-left">
-          <img :src="imgLeft" alt="Leisure" />
+          <img :src="imgLeft" alt="Leisure" loading="lazy" />
         </div>
         
       </section>

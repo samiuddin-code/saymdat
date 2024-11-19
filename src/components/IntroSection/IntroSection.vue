@@ -20,7 +20,7 @@
         </div>
       </div>
       <div class="right-part img1">
-  <img src="../../assets/AboutDlc/p1.png" alt="Image">
+  <img src="../../assets/AboutDlc/p1.png" alt="Image"loading="lazy">
 </div>
     </div>
   </section>

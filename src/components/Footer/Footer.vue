@@ -2,7 +2,7 @@
 <footer class="footer">
   <div class="footer-container">
     <div class="footer-logo-section">
-      <img src="../../assets/logob.png" alt="dat" class="footer-logo" />
+      <img src="../../assets/logob.png" alt="dat" class="footer-logo" loading="lazy"/>
       <p class="footer-description">
         We are committed to delivering top-notch consulting and design services with the priority of integrating clients' requirements whilst adhering to building standards. Every project's standards and purposes are prioritized to maximize the possibility of solutions needed to achieve the highest points of results.
       </p>
@@ -64,7 +64,7 @@
           <a href="#"><i class="fab fa-x-twitter"></i></a>
         </div>
         <div class="award-logo">
-          <img src="../../assets/logob.png" alt="Award" />
+          <img src="../../assets/logob.png" alt="Award"loading="lazy" />
         </div>
       </div>
       <div class="footer-column">
@@ -83,7 +83,7 @@
   <div class="footer-bottom">
     <div class="language-switcher">
       <button class="language-button">
-        <img src="../../assets/logoa.png" alt="English" /> EN
+        <img src="../../assets/logoa.png" alt="English" loading="lazy"/> EN
       </button>
     </div>
     <p>&copy; 2024 DATArtitecture. All rights reserved.</p>

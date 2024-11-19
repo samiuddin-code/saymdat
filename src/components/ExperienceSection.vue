@@ -9,7 +9,7 @@
       <!-- Display content dynamically based on selected section -->
       <div id="section-content" v-if="currentSection">
         <div class="section-image">
-          <img :src="currentSection.image" :alt="currentSection.name" />
+          <img :src="currentSection.image" :alt="currentSection.name" loading="lazy" />
         </div>
         <p>{{ currentSection.description }}</p>
       </div>

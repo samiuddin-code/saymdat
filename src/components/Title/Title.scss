@@ -39,7 +39,7 @@ video.main-bg {
 
 /* Bold text style */
 .bold-text {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 800;
   font-size: clamp(3rem, 6vw, 6rem); /* Scales with the viewport */
   line-height: clamp(4rem, 8vw, 6rem);
@@ -55,7 +55,7 @@ video.main-bg {
 
 /* Light text style */
 .light-text {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   font-size: clamp(1.5rem, 4vw, 4rem); /* Dynamic size */
   line-height: clamp(2rem, 5vw, 4rem);
