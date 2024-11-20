@@ -1,6 +1,6 @@
 import { Options, Vue } from "vue-class-component";
 import Title from "@/components/Title/Title.vue";
-import IntroSection from "@/components/IntroSection/IntroSection.vue";
+import IntroSection from "@/components/AboutConcept/IntroSection.vue";
 import BottomSection from "@/components/BottomSection/BottomSection.vue";
 import ExperiencesArticle from "@/components/ExperiencesArticle/ExperiencesArticle.vue";
 
@@ -36,10 +36,10 @@ import ExperiencesArticle from "@/components/ExperiencesArticle/ExperiencesArtic
       lightText: "One Moment at a Time",
        video: require("@/assets/discovery.mp4"),
       introParas: [
-        " At DAT Architecture, we design spaces to make any moment worth living to the fullest ",
-        "with your loved ones. Our designs are dedicated to merging innovation with functionality  ",
-        "in every space, so as to leave a lasting memory",
+        " At DAT Architecture, we design spaces to make any moment worth living to the fullest with your loved ones. Our designs are dedicated to merging innovation with functionality in every space, so as to leave a lasting memory  ",
+      
       ],
+      
       title: "CONCEPT ",
       txtParagraphs: [
         "Concept in DAT Architecture is an abstract creative essence at the root of the design. It is the integration of art and engineering into the client's vision that drives every move to take the project further. Any structure has its conscious creation based on aesthetics, functionality, and context to create something unique and effective. Our approach ensures every project we execute is unique and memorable, with innovations and quality that blend into the environment and need of our clients.",

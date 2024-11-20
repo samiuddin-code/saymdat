@@ -18,7 +18,7 @@
           <img :src="imgRight" alt="Ocean View" loading="lazy" />
         </div>
         <div class="bottom-left">
-          <img :src="imgLeft" alt="Leisure" loading="lazy" />
+          <img :src="imgLeft" alt="Leisure" loading="lazy"  />
         </div>
         
       </section>

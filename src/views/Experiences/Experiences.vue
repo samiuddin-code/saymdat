@@ -11,7 +11,7 @@
       :paragraphs="elements.introParas"
       :title="elements.title"
       :txtParagraphs="elements.txtParagraphs"
-      :image="require('../../assets/IntroSection/Experiences.jpg')"
+     :image="require('../../assets/ExperiencesArticle/Golf.png')"
     />
     <div class="experiences-article">
       <ExperiencesArticle

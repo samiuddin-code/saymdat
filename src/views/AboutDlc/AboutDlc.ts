@@ -52,11 +52,11 @@ import BottomSection from "@/components/BottomSection/BottomSection.vue";
         "We're passionate about translating our clients' unique aspirations into designs that provide purposeful and distinctive solutions. Each project showcases our dedication to expertise and the attention to detail. We combine use of advanced technology in creating spaces that are not only aesthetically pleasing but also add practical value, changing how people experience them, while closely collaborating with the clients."
       ],
       carousel: [
-        {
-          pic: "p1.png",
-          title: "Focus on family",
-          location: `Our properties have always been inspired by and created for families. We build settings that are as welcoming to everyone as they are exclusive.`,
-        },
+        // {
+        //   pic: "p1.jpg",
+        //   title: "Focus on family",
+        //   location: `Our properties have always been inspired by and created for families. We build settings that are as welcoming to everyone as they are exclusive.`,
+        // },
         {
           pic: "p2.png",
           title: "Incomparable experiences",
@@ -72,16 +72,16 @@ import BottomSection from "@/components/BottomSection/BottomSection.vue";
           title: "Sustainable future",
           location: `Through a focus on sustainable efforts, we create programs that ensure we are stewards of the land and a source of local economic growth and stability.`,
         },
-        {
-          pic: "p5.png",
-          title: "Luxury bespoke homes",
-          location: `Through  in-house services, Discovery Builders and Discovery Design, we offer turn-key homes for families that embody modern aesthetics while staying true to classic principles.`,
-        },
-        {
-          pic: "p1.png",
-          title: "Focus on family",
-          location: `Our properties have always been inspired by and created for families. We build settings that are as welcoming to everyone as they are exclusive.`,
-        },
+        // {
+        //   pic: "p5.jpg",
+        //   title: "Luxury bespoke homes",
+        //   location: `Through  in-house services, Discovery Builders and Discovery Design, we offer turn-key homes for families that embody modern aesthetics while staying true to classic principles.`,
+        // },
+        // {
+        //   pic: "p1.jpg",
+        //   title: "Focus on family",
+        //   location: `Our properties have always been inspired by and created for families. We build settings that are as welcoming to everyone as they are exclusive.`,
+        // },
         {
           pic: "p2.png",
           title: "Incomparable experiences",
@@ -112,7 +112,7 @@ import BottomSection from "@/components/BottomSection/BottomSection.vue";
       headerMirror: "A Decade of DAT Architecture",
       paragraphMirror: "With over 10 years of experience, DAT Architecture has redefined design by blending creativity, innovation, and precision. From our early projects to becoming a trusted industry leader, we’ve consistently transformed ideas into exceptional spaces. Our journey reflects a commitment to excellence, bringing visionary concepts to life. Passionate about design and dedicated to perfection, we continue to push boundaries, crafting timeless, inspiring environments that captivate and elevate every experience. At DAT, every design tells a story.",
       imgRightMirror: require("@/assets/TxtImg2/AboutDlc/TxtImg1Mirror.jpg"),
-       imgLeftMirror: require("@/assets/TxtImg2/AboutDlc/TxtImg2Mirror.png"),
+       imgLeftMirror: require("@/assets/TxtImg2/AboutDlc/TxtImg2Mirror.jpg"),
     };
   },
 })

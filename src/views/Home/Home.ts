@@ -40,7 +40,7 @@ import Panels from "@/components/Panels/Panels.vue";
       header1: "Discover",
       header2: " Luxury Beyond Limits",
       paragraph: "Discover a new era of luxury with DAT, home that creates an aura of exceptionally crafted luxury, comfort, and eternal elegance combined. Every detail is added thoughtfully to enhance your lifestyle and living experience. Step into a home that is not only designed to impress, but inspire. At DAT, we translate your dream into reality,  setting a new standard for what luxury living truly means.",
-      imgRight: require('@/assets/TxtImg2/TxtImg1.png'),
+      imgRight: require('@/assets/TxtImg2/TxtImg1.jpg'),
       imgLeft: require('@/assets/TxtImg2/TxtImg2.png'),
       carousel: [
         // {
@@ -64,7 +64,7 @@ import Panels from "@/components/Panels/Panels.vue";
           location: `UAE, DUBAI`,
         },
         {
-          pic: "p5.png",
+          pic: "p5.jpg",
           title: "AMN VILLA",
           location: `UAE, DUBAI `,
         },
@@ -74,7 +74,7 @@ import Panels from "@/components/Panels/Panels.vue";
           location: `UAE, DUBAI`,
         },
         {
-          pic: "p7.png",
+          pic: "p7.jpg",
           title: "NOR VILLA ",
           location: `UAE, DUBAI`,
         },

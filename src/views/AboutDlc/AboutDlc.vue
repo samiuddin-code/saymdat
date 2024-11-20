@@ -20,7 +20,7 @@
       /> -->
       <TxtImg2 :header1="elements.headerMirror" :paragraph="elements.paragraphMirror" :imgRight="elements.imgRightMirror" :imgLeft="elements.imgLeftMirror" :mirror="true"/>
       <img
-        :src="require('../../assets/AboutDlc/basement.png') "
+        :src="require('../../assets/AboutDlc/basement.jpg') "
         alt="Restaurant"
         loading="lazy"
         class="larger-image"
