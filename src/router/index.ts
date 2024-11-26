@@ -1,6 +1,8 @@
 // src/router.js
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import Home from "../views/Home/Home.vue";
+import FarmingView from "@/views/FarmingView.vue";
+
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -14,6 +16,12 @@ const routes: Array<RouteRecordRaw> = [
     component: () =>
       import(/* webpackChunkName: "about-dlc" */ "../views/AboutDlc/AboutDlc.vue"),
   },
+  {
+    path: "/farming",
+    name: "Farming",
+    component: FarmingView,
+  },
+
   {
     path: "/gallery",
     name: "Gallery",
@@ -37,6 +45,12 @@ const routes: Array<RouteRecordRaw> = [
     name: "Press",
     component: () =>
       import(/* webpackChunkName: "press" */ "../views/Press/Press.vue"),
+  },
+  {
+    path: "/ContactPage",
+    name: "ContactPage",
+    component: () =>
+      import(/* webpackChunkName: "press" */ "../views/ContactPage/ContactPage.vue"),
   },
   {
     path: "/:catchAll(.*)", // Catch-all route for undefined paths

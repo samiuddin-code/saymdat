@@ -37,5 +37,6 @@ export default class Title extends Vue {
       behavior: 'smooth' // Smooth scroll animation
     });
   }
+  
 }
 

@@ -1,8 +1,6 @@
-/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons'); 
 /* Root variables */
 :root {
   --text-color: white;
@@ -14,7 +12,7 @@
 }
 #nav-links a {
   color: #fff;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Calligraphic', 'Afera', 'Beauty', 'Reg', sans-serif;
   font-weight: 700;
   font-size: 2rem;
   text-transform: uppercase;
@@ -22,6 +20,181 @@
   transition: color 0.3s, transform 0.3s, letter-spacing 0.3s, text-shadow 0.3s ease;
   position: relative;
 }
+// Import Font Awesome Icons for styling
+@import "~font-awesome/css/font-awesome.min.css";  // If installed via npm
+
+#nav {
+  position: relative;
+}
+
+#nav-links {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'Arial', sans-serif;
+}
+
+.nav-item-with-submenu {
+  position: relative;
+}
+// #nav-links a:focus, .submenu-item:focus {
+//   outline: 2px solid #FF9F43; /* Highlight focus with the luxury color */
+// }
+#nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; /* Position the line just below the text */
+  left: 0;
+  width: 0; /* Initially hidden */
+  height: 2px; /* Thickness of the underline */
+  background-color: var(--text-color); /* Match the text color */
+  transition: width 0.3s ease-in-out; /* Smooth expand effect */
+}
+
+#nav-links a:hover::after {
+  width: 100%; /* Expand underline to full width on hover */
+}
+
+#nav-links a:hover {
+  color: var(--hover-color); /* Change text color on hover */
+}
+
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 260px;  // Submenu width
+  background: linear-gradient(135deg, #31333a, #131518);  // Gradient background
+  border-radius: 12px;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-40px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);  // Soft shadow for depth
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.4s ease;
+  z-index: 10;
+}
+
+.submenu-item {
+  display: flex;
+  align-items: center;
+  padding: 20px 30px;
+  color: #fff;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.submenu-item i {
+  margin-right: 30px;
+  font-size: 20px;  // Larger icons
+  transition: transform 0.3s ease;
+}
+
+.submenu-item-text {
+  text-transform: capitalize;
+  color: #fff;
+}
+
+.submenu-item:hover {
+  background-color: #324a72;  // Darker hover color
+  transform: none;  // Removed the translation effect on hover
+}
+
+.submenu-item:hover i {
+  transform: rotate(10deg);  // Rotate icon on hover
+}
+
+.nav-item-with-submenu:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);  // Smooth submenu slide-in effect
+}
+
+.submenu-item a {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.submenu-item a:hover {
+  color: #d6d6d6;
+  text-decoration: underline;  // Underline effect for links on hover
+}
+
+.arrow-down {
+  margin-left: 10px;
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.arrow-down:hover {
+  transform: rotate(180deg);  // Rotate arrow on hover
+}
+
+.is-toggled #nav-links {
+  display: block;
+}
+
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  // background-color: #fff;  // White background for sticky nav
+  color: #333;  // Dark text color for readability
+  // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  // Soft shadow for the sticky navbar
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+}
+
+.sticky-nav.scrolled {
+  // background-color: #fff;  // White background on scroll
+  // box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);  // Deeper shadow when scrolled
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.is-toggled {
+  display: block;
+}
+
+.hover-underline-animation {
+  position: relative;
+  cursor: pointer;
+}
+
+.hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  bottom: -2px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+#header {
+  padding: 20px;
+  transition: padding 0.3s ease-in-out;  // Smooth padding transition when scrolled
+}
+
+#header.scrolled {
+  padding: 10px 20px;  // Less padding on scroll for a more compact look
+}
+
+
 
 #nav-links a:hover {
   color: var(--luxury-gradient);
@@ -89,7 +262,6 @@
 }
 
 
-
 /* Logo adjustments */
 #nav-logo {
   .nav-toggler {
@@ -127,51 +299,11 @@
   align-items: center;
   justify-content: space-around;
   column-gap: 4rem;
-  .nav-item-with-submenu {
-    position: relative;
 
-    .arrow-down {
-      margin-left: 0.5rem;
-      font-size: 0.8rem;
-    }
-
-    .full-width-submenu {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 112vw; // Full width of the viewport
-      background-color: #fff; // Background color for the submenu
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      z-index: 1000;
-      padding: 1.5rem 0;
-       transform: translateX(-50%); // Center the submenu
-
-      .submenu-container {
-        display: flex;
-        justify-content: space-around;
-        max-width: 1200px; // Max width for centering content
-        margin: 0 auto;
-        padding: 0 1rem;
-
-        .submenu-item {
-          color: #333;
-          padding: 0.5rem 1rem;
-          font-weight: bold;
-          text-transform: uppercase;
-          transition: color 0.3s ease;
-          cursor: pointer;
-
-          &:hover {
-            color: #007BFF; // Hover color
-          }
-        }
-      }
-    }
-  }
   a {
     color: var(--text-color); /* Default link color */
     text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Calligraphic', 'Afera', 'Beauty', 'Reg', sans-serif;
     font-weight: 600; /* Bold font */
     font-size: 1.25rem; /* Increased font size */
     transition: color 0.3s, transform 0.3s ease-in-out;
@@ -243,7 +375,7 @@
   z-index: 5;
 }
 .logo {
-  width: 10rem; /* Default width */
+  width: 10.1rem; /* Default width */
  
   transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease; /* Smooth transition for scaling */
 
@@ -379,4 +511,4 @@ a.router-link-exact-active p {
 
 #header.scrolled .main-bg::after {
   // background: rgba(0, 0, 0, 0.7); /* Darker overlay when scrolled */
-}
+}  

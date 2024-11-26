@@ -1,15 +1,15 @@
 .panels {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* Default: 3 columns for larger screens */
   height: 100vh;
   gap: 1rem;
 
   .panels-content {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    align-items: center;
-    justify-content: center;
+    gap: 1.5rem; /* Reduced gap for better alignment */
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
     overflow: hidden;
     background-size: cover;
     background-repeat: no-repeat;
@@ -24,8 +24,9 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Adjust opacity as needed */
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
     z-index: 1;
+    transition: background-color 0.3s ease;
   }
 
   /* Ensure the text content is above the overlay */
@@ -39,73 +40,98 @@
   }
 
   h4 {
-    font-size: 2.5rem;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
+    font-size: 2.5rem; /* Default size for larger screens */
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
     margin: 0;
-    color: #fff;
+    color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 2px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
 
     @media screen and (max-width: 750px) {
-      font-size: 2rem;
+      font-size: 1.5rem; /* Smaller text size for mobile */
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+      text-align: center; /* Center text on mobile */
     }
   }
 
   button {
     margin: 0 auto;
     padding: 0;
-    height: 4rem;
-    width: 4rem;
-    font-size: 2rem;
-    border: 0.01rem solid #fff;
+    height: 3rem; /* Smaller button height */
+    width: 3rem; /* Smaller button width */
+    font-size: 1.5rem; /* Smaller font size inside the button */
+    border: 0.2rem solid #fff;
     border-radius: 50%;
     overflow: hidden;
     cursor: pointer;
     outline: none;
     background: transparent;
     color: #fff;
-    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 4px 15px rgba(209, 207, 207, 0.1);
     transition: transform 0.2s, box-shadow 0.3s;
 
     &:hover {
-      transform: scale(1.1);
-      box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.3);
+      background-color: #000000;
+      color: #ffffff;
+      transform: scale(1.05);
+    }
+
+    @media screen and (max-width: 750px) {
+      height: 2.5rem; /* Smaller button height for mobile */
+      width: 2.5rem; /* Smaller button width for mobile */
+      font-size: 1.2rem; /* Smaller font size for mobile */
     }
   }
 
   /* Panel Images */
-  .panels-image1 {
-    background-image: url("@/assets/Panels/p1.jpg");
+  .panels-image1, .panels-image2, .panels-image3 {
     background-position: center 25%;
     position: relative;
+    opacity: 1;
+  }
+
+  .panels-image1 {
+    background-image: url("@/assets/Panels/p1.jpg");
   }
   .panels-image2 {
     background-image: url("@/assets/Panels/p2.jpg");
-    background-position: center 25%;
-    position: relative;
   }
   .panels-image3 {
     background-image: url("@/assets/Panels/p3.jpg");
-    background-position: center 25%;
-    position: relative;
   }
 
   /* Responsive Styles */
   @media screen and (max-width: 750px) {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 1fr; /* Single column layout for mobile */
+    grid-template-rows: repeat(3, auto); /* Flexible row heights */
     height: auto;
     padding: 1rem;
+
+    .panels-content {
+      gap: 1rem; /* Reduced gap for mobile */
+      height: auto;
+      text-align: center; /* Center-align text and button */
+    }
+
+    .panels-image1, .panels-image2, .panels-image3 {
+      height: 200px; /* Ensure responsive image height */
+      background-size: cover;
+    }
   }
 
   @media screen and (min-width: 500.1px) and (max-width: 1000px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
     height: 50vh;
+
+    .panels-content {
+      height: 100%; /* Ensure content fills available height */
+    }
   }
 
   @media screen and (min-width: 1000px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for large screens */
     height: 100vh;
   }
 }

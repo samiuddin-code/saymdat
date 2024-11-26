@@ -106,47 +106,47 @@
   }
 }
 
-.button-pair {
-  display: flex;
-  justify-content: flex-end;
-  gap: 1.5rem;
-  margin: 2rem 2rem 2rem auto;
+// .button-pair {
+//   display: flex;
+//   justify-content: flex-end;
+//   gap: 1.5rem;
+//   margin: 2rem 2rem 2rem auto;
 
-  button {
-    width: 3.5rem;
-    height: 3.5rem;
-    border-radius: 80%;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    background-color: #ffffff;
-    color: #000000;
-    box-shadow: 0 8px 14px rgba(211, 211, 211, 0.5);
-    font-size: 2rem;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+//   button {
+//     width: 3.5rem;
+//     height: 3.5rem;
+//     border-radius: 80%;
+//     border: none;
+//     outline: none;
+//     cursor: pointer;
+//     background-color: #ffffff;
+//     color: #000000;
+//     box-shadow: 0 8px 14px rgba(211, 211, 211, 0.5);
+//     font-size: 2rem;
+//     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 
-    &:hover {
-      background-color: #000000;
-      color: #ffffff;
-      transform: scale(1.05);
-    }
+//     &:hover {
+//       background-color: #000000;
+//       color: #ffffff;
+//       transform: scale(1.05);
+//     }
 
-    @media screen and (max-width: 500px) {
-      width: 3.5rem;
-      height: 3.5rem;
-      font-size: 1.5rem;
-    }
-  }
+//     @media screen and (max-width: 500px) {
+//       width: 3.5rem;
+//       height: 3.5rem;
+//       font-size: 1.5rem;
+//     }
+//   }
 
-  .left-button {
-    margin-right: 0.5rem;
-  }
-}
+//   .left-button {
+//     margin-right: 0.5rem;
+//   }
+// }
 
 .image-holder {
   width: 30vw;
   height: 80vh;
-  margin: 2px -8px;
+  // margin: 2px -8px;
   overflow: hidden;
   position: relative;
   // box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
@@ -184,22 +184,30 @@
     transform: scale(1.05); /* Slight zoom effect on hover */
   }
 }
-
 .img-description {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 100%; /* Ensures it spans the full width of the container */
   padding: 2.5rem 1rem;
   z-index: 5;
   display: flex;
   flex-direction: column;
   text-align: left;
+  box-sizing: border-box; /* Include padding within width calculation */
   
-  background: rgba(0, 0, 0, 0.5); /* Slight dark background for readability */
-  
+  /* Full width background with a gradient for readability */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.5)
+  );
+
+  /* Ensure no clipping due to parent overflow */
+  overflow: hidden;
+
   @media screen and (max-width: 900px) {
-    padding: 1.7rem 0;
+    padding: 1.7rem 1rem;
   }
 
   .img-title {
@@ -209,6 +217,7 @@
     font-size: 2rem;
     font-family: 'Open Sans', sans-serif;
     font-weight: 500;
+
     @media screen and (max-width: 700px) {
       font-size: 1.5rem;
     }
@@ -217,10 +226,10 @@
   .img-location {
     font-size: 1rem;
     line-height: 1.5;
-    white-space: normal;
     color: #ffffff;
   }
 }
+
 
 /* Slider Styles */
 @mixin white-gradient {

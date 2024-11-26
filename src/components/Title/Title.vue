@@ -3,16 +3,15 @@
     <source :src="video" type="video/mp4" />
   </video>
 
-  <!-- Scroll Down Button -->
+  <!-- Scroll Down Button in Bottom-Right Corner -->
   <button class="round-button" @click="scrollToNextSection">
-    <!-- Down Arrow -->
-    <span class="arrow-down">&#8595;</span>
+    <!-- Material Design Down Arrow Icon -->
+    <span class="material-icons arrow-down">arrow_downward</span>
   </button>
 
   <main class="title">
     <span class="bold-text">{{ bText }}</span>
     <span class="light-text">{{ lText }}</span>
-    <!-- <span class="scroll-text">Scroll to explore</span> -->
   </main>
 </template>
 
@@ -21,39 +20,121 @@
 <style lang="scss" scoped>
 @use "./Title";
 
-.main-bg {
-  width: 100%; /* Full width */
-  height: 300px; /* Set a specific height */
-  object-fit: 
-  cover; /* Cover the area without distortion */
+/* Video Background */
+video.main-bg {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
+
+/* Dark overlay on video background */
+.main-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  transition: background 0.3s ease;
+}
+
+/* Title Section */
+.title {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  pointer-events: none;
+}
+
+/* Bold Text */
+.bold-text {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: clamp(3rem, 6vw, 6rem);
+  line-height: clamp(4rem, 8vw, 6rem);
+  color: #fff;
+  text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.bold-text:hover {
+  transform: scale(1.05);
+  text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8);
+}
+
+/* Light Text */
+.light-text {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 300;
+  font-size: clamp(1.5rem, 4vw, 4rem);
+  line-height: clamp(2rem, 5vw, 4rem);
+  color: hsla(0, 0%, 100%, 0.75);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  margin-top: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.light-text:hover {
+  transform: scale(1.05);
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Scroll Down Button in Bottom-Right Corner */
 .round-button {
-  position: absolute; /* Fixes it to the viewport */
-  bottom: 90px; /* Distance from the bottom of the viewport */
-  left: 93%; /* Center horizontally */
-
-  width: 3.5rem; /* Set width */
-  height: 3.5rem; /* Set height */
-  border-radius: 100%; /* Makes it circular */
-  border: 0; /* No border */
-  outline: 0; /* No outline */
-  cursor: pointer; /* Pointer cursor */
+  position: absolute;
+  bottom: 20px; /* Distance from the bottom of the viewport */
+  right: 20px; /* Distance from the right edge of the viewport */
+  width: 3.5rem; /* Button size */
+  height: 3.5rem;
+  border-radius: 50%; /* Circular shape */
+  border: none;
   background-color: white; /* White background */
-  color: black; /* Black color */
-
-  font-size: 2rem; /* Font size of the arrow */
+  color: black; /* Black arrow icon */
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 2rem; /* Icon size */
+  cursor: pointer;
   transition: background-color 0.3s ease;
+  z-index: 10; /* Ensure it's above the video background */
 }
 
 .round-button:hover {
   background-color: rgba(255, 255, 255, 0.9); /* Hover effect */
 }
 
-/* Adjust the arrow size */
+/* Material Icons styling */
 .arrow-down {
-  font-size: 2rem; /* Adjust the size of the arrow */
+  font-size: 2rem; /* Adjust the icon size */
+}
+
+/* Responsive Button Adjustments */
+@media screen and (max-width: 1024px) {
+  .round-button {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .round-button {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.25rem;
+    bottom: 15px;
+    right: 15px;
+  }
 }
 </style>

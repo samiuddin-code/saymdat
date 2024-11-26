@@ -4,6 +4,7 @@ import TxtImg2 from "@/components/TxtImg2/TxtImg2.vue"
 import ExploreCarousel from "@/components/ExploreCarousel/ExploreCarousel.vue";
 import Globe from "@/components/Globe/Globe.vue";
 import Panels from "@/components/Panels/Panels.vue";
+import ContactD from "../ContactInfo/ContactD.vue";
 
 @Options({
   name:"Home",
@@ -12,7 +13,8 @@ import Panels from "@/components/Panels/Panels.vue";
     TxtImg2,
     ExploreCarousel,
     Globe,
-    Panels
+    Panels,
+    ContactD
   },
   data() {
     return {
@@ -44,7 +46,7 @@ import Panels from "@/components/Panels/Panels.vue";
       imgLeft: require('@/assets/TxtImg2/TxtImg2.png'),
       carousel: [
         // {
-        //   pic: "p1.png",
+        //   pic: ",
         //   title: "NORTH SHORE PRESERVE",
         //   location: `Kaua'i, Hawaii`,
         // },

@@ -29,19 +29,26 @@
           <router-link @click="isToggled = false" to="/our-worlds">
             <p class="hover-underline-animation">
               Our Expertise
-              <span class="arrow-down">&#x25BC;</span> <!-- Arrow icon -->
+              <span class="arrow-down">&#x25BC;</span>
             </p>
           </router-link>
-          <div v-if="isSubmenuOpen" class="full-width-submenu">
-            <div class="submenu-container">
+          <div v-if="isSubmenuOpen" class="submenu">
+            <div class="submenu-item">
+              <i class="fa fa-pencil-square-o"></i>
               <router-link @click="isToggled = false" to="/design">
-                <p class="submenu-item">Design</p>
+                <p class="submenu-item-text">Design</p>
               </router-link>
+            </div>
+            <div class="submenu-item">
+              <i class="fa fa-cogs"></i>
               <router-link @click="isToggled = false" to="/build">
-                <p class="submenu-item">Build</p>
+                <p class="submenu-item-text">Build</p>
               </router-link>
+            </div>
+            <div class="submenu-item">
+              <i class="fa fa-lightbulb-o"></i>
               <router-link @click="isToggled = false" to="/concept">
-                <p class="submenu-item">Concept</p>
+                <p class="submenu-item-text">Concept</p>
               </router-link>
             </div>
           </div>
@@ -55,11 +62,13 @@
         <router-link @click="isToggled = false" to="/press">
           <p class="hover-underline-animation">Press</p>
         </router-link>
+        <router-link @click="isToggled = false" to="/ContactPage">
+          <p class="hover-underline-animation">Contact Us</p>
+        </router-link>
       </div>
     </div>
   </div>
 </template>
-
 
 
 <script>

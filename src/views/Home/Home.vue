@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="home">
-      <Title :bText="elements.boldText" :lText="elements.lightText" :video="elements.video" />
+      <Title :bText="elements.boldText" :lText="elements.lightText" :video="elements.video"  class="fade-in" />
     </div>
     <TxtImg2 
       :header1="elements.header1" 
@@ -9,18 +9,22 @@
       :paragraph="elements.paragraph" 
       :imgRight="elements.imgRight" 
       :imgLeft="elements.imgLeft" 
-      :background="require('@/assets/TxtImg2/Background.jpg')" 
+    
+      class="fade-in"
     />
     <ExploreCarousel 
       :carouselH1="elements.carouselH1" 
       :carouselH2="elements.carouselH2" 
       :carousel="elements.carousel" 
       worldPath="OurWorlds" 
+       @clickItem="navigateToProject"
+
     />
-    
+
     <Globe />
     <Panels />
-    <ContactInfo/>
+    <ContactD/>
+  
     
   </div>
 </template>
