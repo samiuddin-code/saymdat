@@ -12,12 +12,12 @@ export default class Gallery extends Vue {
 
   created() {
     const titles = [
-      "MS Villa interior",
-      "Golf",
-      "Lifestyle",
-      "Landscapes",
-      "Clubhouses",
-      "Wellness",
+      "Interior Design",
+      "Luxury Dining",
+      "Luxury Living",
+      "Serenity Estates",
+      "Epicurean Escape",
+      "Golden Harmony",
     ];
     for (let i = 1; i <= 6; i++) {
       this.images.push({
