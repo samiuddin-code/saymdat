@@ -24,8 +24,16 @@ export default class Navbar extends Vue {
     this.isToggled = !this.isToggled;
   }
 
-  // Method to handle scroll event
+  // Method to handle scroll event with bounce effect
   handleScroll() {
+    const header = document.getElementById("header");
+
+    if (header) {
+      header.classList.remove("bounce"); // Remove the bounce class to reset the animation
+      void header.offsetWidth; // Trigger a reflow to re-enable animation
+      header.classList.add("bounce"); // Add the bounce class to trigger the animation
+    }
+
     this.isScrolled = window.scrollY > 50;
   }
 }

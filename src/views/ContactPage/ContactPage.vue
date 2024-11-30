@@ -1,136 +1,172 @@
 <template>
-  
-    <div class="contact-page">
-      <!-- Contact Header -->
-
-      <div class="background-section">
+  <div class="contact-page">
+    <!-- Background Header -->
+    <div class="background-section">
       <div class="background-overlay">
         <h1>Contact Us</h1>
-        <!-- <p>We’re here to help you. Let’s get in touch!</p> -->
       </div>
     </div>
 
+    <!-- Contact Methods Section -->
     <div class="contact">
-  <div class="card" @mouseover="hoverCard('call')" @mouseleave="hoverCard('')">
-    <div class="icon">
-      <img src="../../assets/phone.png" alt="Phone Icon" />
-    </div>
-    <h3>Call Us Now</h3>
-    <p>Call us anytime from 09:00 till 18:00, Sat - Thu</p>
-    <button class="action-button">CALL NOW</button>
-  </div>
-  <div class="card" @mouseover="hoverCard('mail')" @mouseleave="hoverCard('')">
-    <div class="icon">
-      <img src="../../assets/email.png" alt="Email Icon" />
-    </div>
-    <h3>Mail Us Now</h3>
-    <p>Email us anytime, we usually reply within 24 hours</p>
-    <button class="action-button">MAIL NOW</button>
-  </div>
-</div>
-
-    
-  <section class="contact-section">
-  <div class="contact-container">
-    <div class="contact-info">
-      <p class="sub-header">Need any help?</p>
-      <h1>Get in touch with us</h1>
-      <p class="description">
-        We are excited to hear from you and explore how we can assist you with our exceptional software solutions. Let's build together!
-      </p>
-      <div class="contact-cards">
-        <div class="contact-card">
-          <div class="icon phone-icon"></div>
-          <h3>Have any question?</h3>
-          <p>Free +971 42 477 700</p>
+      <div
+        class="card"
+        @mouseover="hoverCard('call')"
+        @mouseleave="hoverCard('')"
+      >
+        <div class="icon">
+          <img src="../../assets/phone.png" alt="Phone Icon" />
         </div>
-        <div class="contact-card">
-          <div class="icon email-icon"></div>
-          <h3>Write email</h3>
-          <p>tender@datconsultancy.com</p>
-        </div>
-        <div class="contact-card">
-          <div class="icon location-icon"></div>
-          <h3>Visit </h3>
-          <p>The Opus Tower by Zaha Hadid Office B803, Business Bay, Dubai </p>
-        </div>
+        <h3>Call Us Now</h3>
+        <p>Call us anytime from 09:00 till 18:00, Sat - Thu</p>
+        <button class="action-button">CALL NOW</button>
       </div>
-   
-    </div>
-    <div class="map-container">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3625.224876903569!2d55.26775827464351!3d25.1924444319089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f434f2ca9fd75%3A0x4d3bdc631ab1ea4c!2sThe%20Exchange%20Tower!5e0!3m2!1sen!2sae!4v1692970400000!5m2!1sen!2sae"
-        width="600"
-        height="450"
-        style="border: 0"
-        allowfullscreen=""
-        loading="lazy"
-      ></iframe>
-    </div>
-  </div>
-</section>
-<div class="contact-form">
-  <h2>Let's Discuss Your Project</h2>
-  <form>
-    <div class="form-grid">
-      <div class="left-section">
-        <div class="form-group">
-          <label for="full-name">Full Name</label>
-          <input type="text" id="full-name" placeholder="Full Name" required />
+      <div
+        class="card"
+        @mouseover="hoverCard('mail')"
+        @mouseleave="hoverCard('')"
+      >
+        <div class="icon">
+          <img src="../../assets/email.png" alt="Email Icon" />
         </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" placeholder="Email" required />
-        </div>
-        <div class="form-group">
-          <label for="contact-number">Contact Number</label>
-          <input type="tel" id="contact-number" placeholder="Contact Number" required />
-        </div>
-      </div>
-      <div class="right-section">
-        <div class="form-group">
-          <label for="message">Your Message</label>
-          <textarea id="message" rows="11" placeholder="Type your message here" required></textarea>
-        </div>
+        <h3>Mail Us Now</h3>
+        <p>Email us anytime, we usually reply within 24 hours</p>
+        <button class="action-button">MAIL NOW</button>
       </div>
     </div>
-    <button type="submit" class="submit-button">Send Enquiry →</button>
-  </form>
-</div>
 
+    <!-- Contact Details Section -->
+    <section class="contact-section">
+      <div class="contact-container">
+        <div class="contact-info">
+          <p class="sub-header">Need any help?</p>
+          <h1>Get in touch with us</h1>
+          <p class="description">
+            We are excited to hear from you and explore how we can assist you
+            with our exceptional software solutions. Let's build together!
+          </p>
+          <div class="contact-cards">
+            <div class="contact-card">
+              <div class="icon phone-icon"></div>
+              <h3>Have any question?</h3>
+              <p>Free +971 42 477 700</p>
+            </div>
+            <div class="contact-card">
+              <div class="icon email-icon"></div>
+              <h3>Write email</h3>
+              <p>tender@datconsultancy.com</p>
+            </div>
+            <div class="contact-card">
+              <div class="icon location-icon"></div>
+              <h3>Visit</h3>
+              <p>
+                The Opus Tower by Zaha Hadid Office B803, Business Bay, Dubai
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Map -->
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3625.224876903569!2d55.26775827464351!3d25.1924444319089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f434f2ca9fd75%3A0x4d3bdc631ab1ea4c!2sThe%20Exchange%20Tower!5e0!3m2!1sen!2sae!4v1692970400000!5m2!1sen!2sae"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
 
+    <!-- Contact Form -->
+    <div class="contact-form">
+      <h2>Let's Discuss Your Project</h2>
+      <form @submit.prevent="submitForm">
+        <div class="form-grid">
+          <div class="left-section">
+            <div class="form-group">
+              <label for="full-name">Full Name</label>
+              <input
+                v-model="form.fullName"
+                type="text"
+                id="full-name"
+                placeholder="Full Name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                v-model="form.email"
+                type="email"
+                id="email"
+                placeholder="Email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="contact-number">Contact Number</label>
+              <input
+                v-model="form.contactNumber"
+                type="tel"
+                id="contact-number"
+                placeholder="Contact Number"
+                required
+              />
+            </div>
+          </div>
+          <div class="right-section">
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea
+                v-model="form.message"
+                id="message"
+                rows="8"
+                placeholder="Type your message here"
+                required
+              ></textarea>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="submit-button">Send Enquiry →</button>
+      </form>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    data() {
-      return {
-        form: {
-          fullName: "",
-          email: "",
-          contactNumber: "",
-          message: "",
-        },
-        hoveredCard: "",
-      };
-    },
-    methods: {
-      submitForm() {
-        alert("Your enquiry has been submitted. We'll contact you soon!");
+  </div>
+  <!-- Bottom Section -->
+  <BottomSection picture="AboutDlc.jpg" />
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      form: {
+        fullName: "",
+        email: "",
+        contactNumber: "",
+        message: "",
       },
-      hoverCard(cardType) {
-        this.hoveredCard = cardType;
-      },
+      hoveredCard: "",
+    };
+  },
+  methods: {
+    submitForm() {
+      alert("Your enquiry has been submitted. We'll contact you soon!");
     },
-  };
-  </script>
+    hoverCard(cardType) {
+      this.hoveredCard = cardType;
+    },
+  },
+};
+</script>
+
   <style lang="scss" scoped>
   $primary-color: black;
   $secondary-color: black;
   $background-light: #ffffff;
   $text-color: $primary-color;
-  $text-muted: #201c1c;
+  $text-muted: #999;
   $transition: 0.3s ease;
 
 
@@ -139,27 +175,27 @@
 .contact {
   display: flex;
   justify-content: center;
-  gap: 20px; /* Space between the two cards */
-  padding: 20px;
+  gap: 10px; /* Space between the two cards */
+  padding: 10px;
 }
 input,
 textarea {
   width: 100%;
-  padding: 18px 0; /* Increased padding for larger input area */
+  padding: 15px 0; /* Increased padding for larger input area */
   border: none;
   border-bottom: 4px solid #ddd; /* Thicker underline */
   font-size: 1.5rem; /* Larger font size */
   margin-bottom: 25px;
-  background-color: #ffffff; /* Background color for input fields */
+  background-color: #f3f3f3; /* Background color for input fields */
   color: #333; /* Text color inside the input */
 }
 /* Textarea Styling */
 #message {
   width: 100%;
-  padding: 18px; /* Padding inside the textarea */
+  padding: 15px; /* Padding inside the textarea */
   font-size: 1.5rem; /* Larger font size */
   background-color: #ffffff; /* Light gray background color */
-  border: 1px solid #ddd; /* Border on all sides */
+  border: 2px solid #ddd; /* Border on all sides */
   border-radius: 8px; /* Rounded corners */
   color: #333; /* Text color */
   resize: none; /* Disable resizing of the textarea */
@@ -180,13 +216,13 @@ textarea {
   padding: 50px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  background-color: #f3f3f3;
-  // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 /* Main Form Container */
 .contact-form {
-  max-width: 1250px;
+  max-width: 1450px;
   margin: 0 auto;
   // padding: 40px;
   font-family: 'Arial', sans-serif;
@@ -203,7 +239,7 @@ textarea {
 /* Form Grid - Two sections: Left for inputs, Right for the message */
 .form-grid {
   display: grid;
-  grid-template-columns: 1fr 1.5fr; /* Left section smaller (1fr), Right section larger (1.5fr) */
+  grid-template-columns: 1.5fr 1.5fr; /* Left section smaller (1fr), Right section larger (1.5fr) */
   gap: 20px; /* Space between columns and rows */
 }
 
@@ -223,10 +259,10 @@ label {
 input,
 textarea {
   width: 100%;
-  padding: 30px 0;
+  padding: px 0;
   color: #b81010;
   border: none;
-  border-bottom: 1px solid #ccc; /* Only a bottom border */
+  border-bottom: 2px solid #ccc; /* Only a bottom border */
   font-size: 1rem;
   font-family: 'Arial', sans-serif;
 }
@@ -247,21 +283,23 @@ textarea {
 
 /* Submit Button */
 .submit-button {
-  margin-top: 20px;
-  padding: 15px 25px;
+  margin-top: 10px;
+  position: relative;
+  left: 600px;
+  bottom: 20px;
+  padding: 20px 60px;
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
   background: #e8e8e8;
   color: #000;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
   text-transform: uppercase;
-  display: block;         /* Makes the button a block element */
-  width: 250px;           /* Optional: Adjust the width of the button */
-  margin-left: auto;      /* Centers the button horizontally */
-  margin-right: auto;  
-/* Centers the button horizontally */
+  display: inline-block;
+  text-align: center; /* Ensures text is centered within the button */
+  margin-left: auto; /* Centers horizontally */
+  margin-right: auto; /* Centers horizontally */
 }
 
 
@@ -348,7 +386,6 @@ p {
     font-family: 'Poppins', sans-serif;
     background: $background-light;
     color: $text-color;
-    margin: 1rem;
     // Added top padding for better separation
     .contact-section {
   padding: 50px;
@@ -482,7 +519,7 @@ p {
     // Header Styling
     .contact-header {
       text-align: center;
-      margin-bottom: 80px; // Increased spacing for separation
+      margin-bottom: 90px; // Increased spacing for separation
       
       h1 {
         font-size: 3rem;
@@ -527,7 +564,7 @@ p {
         p {
           font-size: 1rem;
           color: $text-muted;
-          margin-bottom: 10px;
+          margin-bottom: 8px;
   
           &.phone {
             font-weight: bold;

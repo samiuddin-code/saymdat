@@ -144,7 +144,7 @@ export default class App extends Vue {
   padding: 0;
   box-sizing: border-box;
   font-size: 20px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Nunito', sans-serif; 
 }
 
 body,
@@ -171,7 +171,7 @@ h1, h2, h3 {
 }
 
 p, li, span, a {
-  font-family: 'Roboto', sans-serif; /* For general text */
+  font-family: 'Nunito', sans-serif; /* For general text */
 }
 
 button, .navbar, .footer {
@@ -179,15 +179,15 @@ button, .navbar, .footer {
 }
 
 h1, h2 {
-  font-weight: 800; /* Bold headings */
+  font-weight: 400; /* Bold headings */
 }
 
 p, li {
-  font-weight: 500; /* Regular body text */
+  font-weight: 200; /* Regular body text */
 }
 
 footer {
-  font-family: 'Roboto', sans-serif; /* For footer */
+  font-family: 'Nunito', sans-serif; /* For footer */
 }
 
 /* Material Icons */
@@ -203,32 +203,6 @@ footer {
   transition: all 0.5s ease-in-out;
 }
 
-// button, a {
-//   text-decoration: none;
-//   color: inherit;
-// }
-
-// button {
-//   border: none;
-//   background-color: #007bff;
-//   color: #fff;
-//   padding: 10px 20px;
-//   cursor: pointer;
-//   border-radius: 5px;
-//   font-family: 'Nunito', sans-serif;
-//   transition: background-color 0.3s ease, transform 0.3s ease;
-// }
-
-// button:hover {
-//   background-color: #0056b3;
-//   transform: scale(1.05);
-// }
-
-// button:active {
-//   transform: scale(1);
-// }
-
-/* Interactive cards */
 .card {
   background: #fff;
   border-radius: 8px;

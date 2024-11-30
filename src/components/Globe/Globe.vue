@@ -1,214 +1,211 @@
 <template>
-  <div class="farming-section" ref="farmingSection">
-    <!-- Content Section -->
-    <div class="content" v-if="slides.length && slides[currentSlide]">
-      <h1>{{ slides[currentSlide].h1Title }}</h1>
+  <div class="container">
+    <!-- Top Section -->
+    <div class="top-section">
       <div class="text">
-        <h2>{{ slides[currentSlide].title }}</h2>
-        <p>{{ slides[currentSlide].description }}</p>
-        <a href="#" class="link">View case studies</a>
+        <p class="tagline">Smart Home Automation System</p>
+        <h1>Unlock the Future with Smart Home Automation System</h1>
+        <p class="description">
+          Our villas seamlessly integrate intelligent home technology with sumptuous lifestyles. At the tap or voice command, control every aspect of your home, from automated lighting and climate control to energy-efficient systems designed to your preference. Every single aspect is carefully crafted for your comfort, efficiency, and nobility. Driven by state-of-the-art innovations at your beck and call, your villa transforms from a mere space into a sophisticated living experience. Welcome to the future of intelligent, elevated living.
+        </p>
+      </div>
+      <div class="car-image">
+        <img src="../../assets/1.png" alt="Car" />
       </div>
     </div>
 
-    <!-- Image Section -->
-    <div class="image" v-if="slides.length && slides[currentSlide]">
-      <img :src="slides[currentSlide].image" alt="Farming image" />
+    <!-- Bottom Section -->
+    <div class="bottom-section">
+      <div class="bike-image">
+        <img src="../../assets/2.png" alt="Bicycle" />
+      </div>
+      <div class="text">
+        <p class="tagline">Sustainable Luxuryes</p>
+        <h1>Where Comfort Meets Conscious Living</h1>
+        <p class="description">
+          Our villa is powered by the sun and designed for sustainability. We believe that true indulgence should leave a positive footprint, blending comfort with care for the planet. With solar panels fueling clean energy and energy-efficient power glasses, here every little detail is a step towards a greener future.Every detail of the villa reflects a commitment to a greener, healthier planet. From the construction materials sourced sustainably to water-saving fixtures that reduce waste, our dedication to the environment is woven into the fabric of this space.
+        </p>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      currentSlide: 0, // Track the current slide
-      slides: [
-        {
-          h1Title: " Unlock the Future with Smart Home Automation System", // New title for <h1>
-          title: " Smart Home Automation System",
-          description:
-            "Our villas seamlessly integrate intelligent home technology with sumptuous lifestyles. At the tap or voice command, control every aspect of your home, from automated lighting and climate control to energy-efficient systems designed to your preference. Every single aspect is carefully crafted for your comfort, efficiency, and nobility. Driven by state-of-the-art innovations at your beck and call, your villa transforms from a mere space into a sophisticated living experience. Welcome to the future of intelligent, elevated living.",
-          image: require("../../assets/AboutDlc/homeautomation.png"),
-        },
-        {
-          h1Title: "Where Comfort Meets Conscious Living", // New title for <h1>
-          title: "Sustainable Luxuryes",
-          description:
-            "Our villa is powered by the sun and designed for sustainability. We believe that true indulgence should leave a positive footprint, blending comfort with care for the planet. With solar panels fueling clean energy and energy-efficient power glasses, here every little detail is a step towards a greener future.",
-          image: require("../../assets/AboutDlc/ss.png"),
-        },
-        {
-          h1Title: "The Pinnacle of Elegance Crafted with the Finest Marble", // New title for <h1>
-          title: "Crafted with the Finest Marble",
-          description:
-            "In our villa, every corner whispers luxury and craftsmanship. We have sourced only the finest Italian marbles that are unmatched for their beauty and strength. Coming from the most prestigious quarries in the world, these marbles give each room a touch of timeless elegance. It's more than just a material-it's a piece of Italy's artistry beneath your feet, creating a space as remarkable as the memories you'll make here.",
-          image: require("../../assets/AboutDlc/sst.png"),
-        },
-      ],
-    };
-  },
-  methods: {
-
-      handleScroll() {
-  const section = document.querySelector(".farming-section");
-  if (!section) {
-    console.error("Element .farming-section not found");
-    return;
-  }
-
-  const { scrollTop, clientHeight } = document.documentElement;
-  const sectionTop = section.offsetTop;
-  const sectionHeight = section.offsetHeight;
-
-  const isVisible =
-    scrollTop + clientHeight > sectionTop && scrollTop < sectionTop + sectionHeight;
-
-  if (isVisible) {
-    const scrollProgress = Math.min(
-      Math.max((scrollTop - sectionTop) / (sectionHeight - clientHeight), 0),
-      1
-    );
-    this.currentSlide = Math.min(
-      Math.floor(scrollProgress * this.slides.length),
-      this.slides.length - 1
-    );
-  }
-}
-  },
-  mounted() {
-    window.addEventListener("scroll", this.handleScroll);
-  },
-  beforeDestroy() {
-    window.removeEventListener("scroll", this.handleScroll);
-  },
+  name: "App",
 };
 </script>
 <style scoped>
-/* Fullscreen farming section */
-.farming-section {
-  display: grid;
-  grid-template-columns: 50% 50%; /* Both columns take up 50% each */
-  gap: 20px; /* Optional gap between the columns */
-  background-color: white; /* Background of the entire section */
-  min-height: 100vh; /* Fullscreen */
-  padding: 100px;
-  padding-left: 2rem;
-  box-sizing: border-box;
-  position: relative; /* To position elements inside it */
+/* General Container */
+.container {
+  font-family: "Arial", sans-serif;
+  color: #333;
+  line-height: 1.8;
+  width: 77%;
+  height: 62rem;
+  margin: 0 auto;
 }
 
-.content {
-  grid-column: 1; /* Content takes up the first column */
-  background-color: #f3f3f3; /* Background for the text card */
-  padding: 20px; /* Optional padding for the text card */
-  border-radius: 8px; /* Optional: rounded corners for the text card */
+@media screen and (max-width: 768px) {
+  .container {
+    padding-left: 20px;
+    width: 100%;
+  }
+}
+
+/* Top Section */
+.top-section {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* Ensure content starts from top */
-  height: 100%; /* Make sure the content section takes full height */
-}
-
-h1 {
-  font-size: 3.5rem;
-  margin-bottom: 1rem; /* Reduced margin for better spacing */
-  line-height: 1.2;
-}
-
-.text {
-  display: flex;
-  flex-direction: column;
-  margin-top: auto; /* Push description to the bottom */
-}
-
-.text h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.text p {
-  font-size: 1.28rem;
-  color: #666;
-  margin-bottom: 1rem;
-}
-
-.text .link {
-  font-size: 1rem;
-  color: black;
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-.image {
-  grid-column: 2; /* Image takes up the second column */
-  width: 105%; /* Set the image container to take up 100% of the width */
-  display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: 100%; /* Make the image container take up full height */
+  padding: 12px;
+  background-color: #f9fafb;
+  border-radius: 12px;
 }
 
-img {
-  height: 100%; /* Make the image fill the container */
-  width: 100%; /* Ensure the image stretches to the full width of the container */
-  object-fit: cover; /* Ensure the image covers the entire container without distortion */
-  border-radius: 5px;
+.top-section .text {
+  flex: 1;
+  padding-right: 20px;
 }
 
-.next-section {
-  display: none; /* Hidden by default */
+.top-section .tagline {
+  font-size: 1.8rem;
+  color: gray;
+  margin-bottom: 10px;
 }
 
-/* Reveal next section after scroll */
-.farming-section.scrolled-to-end + .next-section {
+.top-section h1 {
+  
+  font-weight: bold;
+  margin-bottom: 20px;
   display: block;
-  padding: 50px;
-  text-align: center;
+      font-size: 3rem;
+      line-height: 4rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+
 }
 
-.next-section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+.top-section .description {
+  font-size: 0.9rem;
+  margin-bottom: 20px;
 }
 
-.next-section p {
-  font-size: 1rem;
-  color: #666;
+.top-section .car-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .farming-section {
-    grid-template-columns: 1fr; /* Single column for mobile */
-    grid-template-rows: auto; /* Automatically adjust row height */
-    gap: 20px; /* Add gap between rows */
-    padding: 50px; /* Adjust padding for smaller screens */
+.top-section .car-image img {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+@media screen and (max-width: 768px) {
+  .top-section {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
   }
 
-  .content,
-  .image {
-    grid-column: span 1; /* Each takes up the full width */
-    height: auto; /* Let content height adjust naturally */
-    width: 100%; /* Ensure full width on mobile */
+  .top-section .text {
+    padding-right: 0;
+    margin-bottom: 20px;
   }
 
-  .content {
-    padding: 15px; /* Adjust padding for mobile */
+  .top-section h1 {
+    font-size: 2rem;
   }
 
-  h1 {
-    font-size: 2rem; /* Smaller font size for mobile */
+  .top-section .description {
+    font-size: 0.9rem;
   }
 
-  .text h2 {
-    font-size: 1.5rem; /* Adjust heading size for mobile */
+  .top-section .car-image {
+    justify-content: center;
+    margin-top: 20px;
+  }
+}
+
+/* Bottom Section */
+.bottom-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  background-color: #f9fafb;
+  border-radius: 12px;
+  margin-top: 40px;
+}
+
+.bottom-section .bike-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.bottom-section .bike-image img {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+.bottom-section .text {
+  flex: 1;
+  padding-left: 20px;
+  font-weight: 300;
+      font-size: 0.9rem;
+  
+}
+
+.bottom-section .tagline {
+  font-size: 1.8rem;
+  color: gray;
+  margin-bottom: 10px;
+  
+}
+
+.bottom-section h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+
+}
+
+.bottom-section .description {
+ 
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 768px) {
+  .bottom-section {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    padding: 20px;
   }
 
-  .text p {
-    font-size: 1rem; /* Adjust text size for better readability */
+  .bottom-section .bike-image {
+    justify-content: center;
+    margin-top: 20px;
   }
 
-  img {
-    border-radius: 5px;
+  .bottom-section .text {
+    padding-left: 0;
+  }
+
+  .bottom-section h1 {
+    font-size: 2rem;
+  }
+
+  .bottom-section .description {
+    font-size: 0.9rem;
   }
 }
 </style>
+

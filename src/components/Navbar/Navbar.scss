@@ -12,35 +12,54 @@
 }
 #nav-links a {
   color: #fff;
-  font-family: 'Calligraphic', 'Afera', 'Beauty', 'Reg', sans-serif;
+  font-family: 'Nunito', sans-serif; 
   font-weight: 700;
   font-size: 2rem;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
-  transition: color 0.3s, transform 0.3s, letter-spacing 0.3s, text-shadow 0.3s ease;
+  // transition: color 0.3s, transform 0.3s, letter-spacing 0.3s, text-shadow 0.3s ease;
   position: relative;
 }
-// Import Font Awesome Icons for styling
-@import "~font-awesome/css/font-awesome.min.css";  // If installed via npm
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 
-#nav {
-  position: relative;
+#header {
+  &.scrolled {
+    background-color: rgba(0, 0, 0, 0.8); /* Add background color for scrolled state */
+    transition: background-color 0.3s ease;
+  }
+
+  &.bounce {
+    animation: bounce 0.6s ease-out; /* Set duration for the bounce effect */
+  }
 }
 
 #nav-links {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
   font-family: 'Arial', sans-serif;
 }
 
 .nav-item-with-submenu {
   position: relative;
 }
-// #nav-links a:focus, .submenu-item:focus {
-//   outline: 2px solid #FF9F43; /* Highlight focus with the luxury color */
-// }
 #nav-links a::after {
   content: '';
   position: absolute;
@@ -49,7 +68,7 @@
   width: 0; /* Initially hidden */
   height: 2px; /* Thickness of the underline */
   background-color: var(--text-color); /* Match the text color */
-  transition: width 0.3s ease-in-out; /* Smooth expand effect */
+  // transition: width 0.3s ease-in-out; /* Smooth expand effect */
 }
 
 #nav-links a:hover::after {
@@ -65,6 +84,10 @@
   position: absolute;
   top: 100%;
   left: 0;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  // padding: 10px 20px;
+  // border-radius: 8px;
   min-width: 260px;  // Submenu width
   background: linear-gradient(135deg, #31333a, #131518);  // Gradient background
   border-radius: 12px;
@@ -73,16 +96,18 @@
   visibility: hidden;
   transform: translateY(-40px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);  // Soft shadow for depth
-  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.4s ease;
+  // transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.4s ease;
   z-index: 10;
 }
 
 .submenu-item {
+   border-bottom: 1px solid #e0e0e0;
   display: flex;
   align-items: center;
   padding: 20px 30px;
   color: #fff;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  // transition: background-color 0.3s ease, transform 0.3s ease;
   font-size: 16px;
   font-weight: 500;
   letter-spacing: 1px;
@@ -91,7 +116,7 @@
 .submenu-item i {
   margin-right: 30px;
   font-size: 20px;  // Larger icons
-  transition: transform 0.3s ease;
+  // transition: transform 0.3s ease;
 }
 
 .submenu-item-text {
@@ -100,12 +125,8 @@
 }
 
 .submenu-item:hover {
-  background-color: #324a72;  // Darker hover color
+  background-color: #000;  // Darker hover color
   transform: none;  // Removed the translation effect on hover
-}
-
-.submenu-item:hover i {
-  transform: rotate(10deg);  // Rotate icon on hover
 }
 
 .nav-item-with-submenu:hover .submenu {
@@ -130,12 +151,9 @@
 .arrow-down {
   margin-left: 10px;
   font-size: 12px;
-  transition: transform 0.3s ease;
+  // transition: transform 0.3s ease;
 }
 
-.arrow-down:hover {
-  transform: rotate(180deg);  // Rotate arrow on hover
-}
 
 .is-toggled #nav-links {
   display: block;
@@ -149,59 +167,67 @@
   color: #333;  // Dark text color for readability
   // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  // Soft shadow for the sticky navbar
   z-index: 1000;
-  transition: all 0.3s ease-in-out;
+  // transition: all 0.3s ease-in-out;
 }
 
 .sticky-nav.scrolled {
   // background-color: #fff;  // White background on scroll
   // box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);  // Deeper shadow when scrolled
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  // transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.is-toggled {
-  display: block;
-}
-
-.hover-underline-animation {
-  position: relative;
-  cursor: pointer;
-}
-
-.hover-underline-animation::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background-color: #fff;
-  bottom: -2px;
-  left: 0;
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-
-.hover-underline-animation:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
 
 #header {
-  padding: 20px;
-  transition: padding 0.3s ease-in-out;  // Smooth padding transition when scrolled
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  transition: transform 0.3s ease-in-out;
+padding: 20px;
+
+
+&.scrolled {
+  background-color: rgba(0, 0, 0, 0.8); /* Add background color for scrolled state */
+  transition: background-color 0.3s ease;
+}
+
+&.bounce {
+  animation: bounce 0.6s ease-out; /* Set duration for the bounce effect */
+}
+
+}
+
+#nav {
+  /* Ensure nav has a z-index for proper layering if needed */
+  position: relative;
+  z-index: 10;
+}
+
+
+
+
+#header {
+  background-color: transparent;
+    &.scrolled {
+    background-color: rgba(0, 0, 0, 0.8); /* Add background color for scrolled state */
+    transition: background-color 0.3s ease;
+  }
+
+  &.bounce {
+    animation: bounce 0.6s ease-out; /* Set duration for the bounce effect */
+  }
+  // transition: background-color 0.3s ease;
 }
 
 #header.scrolled {
-  padding: 10px 20px;  // Less padding on scroll for a more compact look
+  background-color: white; /* Or your desired color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional for effect */
 }
 
-
-
-#nav-links a:hover {
-  color: var(--luxury-gradient);
-  transform: scale(1.1);
-  letter-spacing: 0.3rem;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-}
+// #nav-links a:hover {
+//   color: var(--luxury-gradient);
+//   transform: scale(1.1);
+//   letter-spacing: 0.3rem;
+//   text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+// }
 
 /* Change header on scroll */
 #header.scrolled #nav-links a {
@@ -214,7 +240,7 @@
   position: relative;
   z-index: 9999;
   padding: 1.5rem 3rem;
-  transition: all 0.5s ease-in-out;
+  // transition: all 0.5s ease-in-out;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -225,7 +251,7 @@
   top: 0;
   background-color: var(--bg-color);
   color: var(--text-color);
-  transition: background-color 0.3s, color 0.3s ease, padding 0.3s ease;
+  // transition: background-color 0.3s, color 0.3s ease, padding 0.3s ease;
   will-change: background-color, color, padding;
   box-shadow: none; /* No shadow by default */
 }
@@ -233,12 +259,47 @@
 /* When the header is scrolled */
 #header.scrolled {
   --text-color: black;
-  transition: background-color 1.5s ease, padding 1.5s ease;
+  // transition: background-color 1.5s ease, padding 1.5s ease;
   --bg-color: white;
   --hover-color: rgba(0, 0, 0, 0.7); /* Hover color when text is black */
   padding: 1.5rem 6rem;
   // box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Luxurious box shadow when scrolled */
 }
+#header {
+  transition: transform 0.3s ease-in-out;
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+  
+  .scrolled-bounce {
+    animation: bounce 0.6s ease-in-out;
+  }
+  
+  &.bounce {
+    animation: bounce 0.5s ease-in-out;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 
 
 /* Responsive header adjustments */
@@ -258,6 +319,7 @@
 
   @media screen and (max-width: 900px) {
     flex-direction: column;
+    align-items: flex-start;
   }
 }
 
@@ -278,7 +340,21 @@
       left: 0;
       padding: 2rem;
     }
+@media (max-width: 768px) {
+  #nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
+  #nav-logo {
+    justify-content: space-between;
+    width: 100%;
+
+    .nav-toggler {
+      display: block;
+    }
+  }}
+  
     align-self: flex-start;
     padding: 1rem;
     width: 100%;
@@ -298,36 +374,32 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  column-gap: 4rem;
+  column-gap: 2.5rem;
 
   a {
     color: var(--text-color); /* Default link color */
     text-decoration: none;
-    font-family: 'Calligraphic', 'Afera', 'Beauty', 'Reg', sans-serif;
+    font-family: 'Nunito', sans-serif; 
     font-weight: 600; /* Bold font */
     font-size: 1.25rem; /* Increased font size */
-    transition: color 0.3s, transform 0.3s ease-in-out;
+    // transition: color 0.3s, transform 0.3s ease-in-out;
     position: relative;
 
-    &:hover {
-      color: var(--hover-color); /* Hover color transition */
-      transform: scale(1.05); /* Slight zoom effect */
-    }
   }
   #nav-links a {
     font-size: 2rem; /* Large text for ultra luxury */
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
-    font-weight: 700;
+    font-weight: 600;
     position: relative;
-    transition: color 0.3s ease, transform 0.3s ease, letter-spacing 0.3s ease, text-shadow 0.3s ease;
+
   }
   
   #nav-links a:hover {
     color: var(--luxury-gradient); /* Gradient hover effect */
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Glowing hover effect */
-    transform: scale(1.1); /* Subtle zoom effect */
+
     letter-spacing: 0.2rem; /* Increased letter spacing */
   }
   @media screen and (max-width: 900px) {
@@ -377,7 +449,7 @@
 .logo {
   width: 10.1rem; /* Default width */
  
-  transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease; /* Smooth transition for scaling */
+  // transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease; /* Smooth transition for scaling */
 
   /* Hover effect: subtle rotation */
 
@@ -387,8 +459,8 @@
 #header.scrolled .logo {
   padding-top: 10px;
   transform: scale(2.5); /* Enlarge logo visually */
-  width: 6rem; /* Optional: increase width if needed */
-  height: 4rem; /* Increase height accordingly */
+  width: 4.5rem; /* Optional: increase width if needed */
+  height: 3.5rem; /* Increase height accordingly */
 }
 
 /* Keep header size fixed */
@@ -397,31 +469,23 @@
   z-index: 9999;
   padding: 1.5rem 3rem;
   background-color: transparent;
-  transition: all 0.5s ease-in-out;
+   transition: none 0.5s ease-in-out;
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
-  z-index: 2;
+  z-index: 999;
   width: 100%;
   left: 0;
   top: 0;
   background-color: var(--bg-color);
   color: var(--text-color);
-  transition: background-color 0.3s, color 0.3s ease, padding 0.3s ease;
+  //  transition: background-color 0.5s, color 0.5s ease, padding 0.5s ease;
   will-change: background-color, color, padding;
   box-shadow: none; /* No shadow by default */
 }
 
-/* When scrolled, change background and keep logo size fixed */
-#header.scrolled {
-  --text-color: black;
-  transition: background-color 1.5s ease, padding 1.5s ease;
-  --bg-color: white;
-  --hover-color: rgba(0, 0, 0, 0.7); /* Hover color when text is black */
-  padding: 1.5rem 6rem;
-  // box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Luxurious box shadow when scrolled */
-}
+
 
 /* Keep logo's position fixed inside the header */
 #nav-logo {
@@ -449,7 +513,7 @@
   position: relative;
   color: #fff;
   transition: color 1.5s, transform 0.3s ease-in-out;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1rem;
 }
 
@@ -466,10 +530,6 @@
   transition: transform 0.35s ease-out;
 }
 
-.hover-underline-animation:hover:after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
 
 .hover-underline-animation:hover {
   color: var(--luxury-gradient); /* Gradient color on hover */

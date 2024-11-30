@@ -60,12 +60,13 @@ video.main-bg {
 /* Bold Text */
 .bold-text {
   font-family: 'Nunito', sans-serif;
-  font-weight: 800;
-  font-size: clamp(3rem, 6vw, 6rem);
-  line-height: clamp(4rem, 8vw, 6rem);
-  color: #fff;
-  text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.7);
-  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  font-weight: 100;
+  font-size: clamp(1.5rem, 4vw, 4.5rem); /* Dynamic size */
+  line-height: clamp(2rem, 5vw, 4rem);
+  color: hsl(0, 0%, 100%);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Light shadow */
+  margin-top: 1rem;
+  transition: transform 0.3s ease;
 }
 
 .bold-text:hover {
@@ -93,7 +94,7 @@ video.main-bg {
 /* Scroll Down Button in Bottom-Right Corner */
 .round-button {
   position: absolute;
-  bottom: 20px; /* Distance from the bottom of the viewport */
+  bottom: 45px; /* Distance from the bottom of the viewport */
   right: 20px; /* Distance from the right edge of the viewport */
   width: 3.5rem; /* Button size */
   height: 3.5rem;

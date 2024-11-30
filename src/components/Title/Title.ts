@@ -36,7 +36,11 @@ export default class Title extends Vue {
       left: 0,
       behavior: 'smooth' // Smooth scroll animation
     });
+
+
+    this.scrollToNextSection ()
+    
   }
-  
+
 }
 

@@ -78,6 +78,10 @@
             border-right: 2px solid #f3f3f3;
             transition: width .1s ease .3s, height .1s ease .2s, visibility 0s .4s;
         }
+        .btn:hover {
+            background-color:#137749;  /* Updated hover color to green */
+          }
+          
         
         .btn.btn-border-1:hover {
             animation: pulse 1s ease-out .4s;

@@ -1,14 +1,30 @@
-// src/router.js
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import Home from "../views/Home/Home.vue";
 import FarmingView from "@/views/FarmingView.vue";
+import ImageDetail from "@/views/ImageDetail/ImageDetail.vue";
+import Gallery from "@/views/Gallery/Gallery.vue";
 
+// Add routes for design, build, and concept pages
+import Design from "@/views/Design/Design.vue";
+import Build from "@/views/Build/Build.vue";
+import Concept from "@/views/Concept/Cocept.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "Home",
     component: Home,
+  },
+  {
+    path: "/gallery",
+    name: "Gallery",
+    component: Gallery,
+  },
+  {
+    path: "/image/:index",
+    name: "ImageDetail",
+    component: ImageDetail,
+    props: true,
   },
   {
     path: "/about-dlc",
@@ -21,7 +37,6 @@ const routes: Array<RouteRecordRaw> = [
     name: "Farming",
     component: FarmingView,
   },
-
   {
     path: "/gallery",
     name: "Gallery",
@@ -50,8 +65,26 @@ const routes: Array<RouteRecordRaw> = [
     path: "/ContactPage",
     name: "ContactPage",
     component: () =>
-      import(/* webpackChunkName: "press" */ "../views/ContactPage/ContactPage.vue"),
+      import(/* webpackChunkName: "contact-page" */ "../views/ContactPage/ContactPage.vue"),
   },
+
+  // Add new routes for Design, Build, and Concept
+  {
+    path: "/design",
+    name: "Design",
+    component: Design,
+  },
+  {
+    path: "/build",
+    name: "Build",
+    component: Build,
+  },
+  {
+    path: "/concept",
+    name: "Concept",
+    component: Concept,
+  },
+
   {
     path: "/:catchAll(.*)", // Catch-all route for undefined paths
     redirect: "/", // Redirect to home for undefined routes
@@ -65,7 +98,6 @@ const router = createRouter({
 
 // Scroll to the top when navigating to a new route
 router.beforeEach((to, from, next) => {
-  // Ensure the scroll position is at the top
   window.scrollTo(0, 0);
   next();
 });

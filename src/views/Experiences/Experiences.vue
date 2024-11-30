@@ -31,7 +31,7 @@
         :paragraph="elements.expPara3"
       />
     </div>
-    <BottomSection picture="Experiences.jpg" />
+    <BottomSection picture="Experiences.png" />
   </div>
 </template>
 

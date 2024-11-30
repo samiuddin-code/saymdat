@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem; /* Add a gap between the sections for better spacing */
-
+  
   .experiences-title {
     position: relative;
     overflow: hidden;
@@ -16,14 +16,15 @@
 
   .experiences-article {
     background-color: #f3f3f3;
-    padding: 4rem 2rem;
+    padding: 4rem 7rem;
+    
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 2rem;
     z-index: 0;
     // border-radius: 10px;
     // box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    min-height: 600px; /* Ensures enough space for content */
+    min-height: 800px; /* Ensures enough space for content */
 
     /* Responsive styling */
     @media (max-width: 768px) {

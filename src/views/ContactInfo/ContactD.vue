@@ -1,11 +1,11 @@
 <template>
   <div class="landing-page">
     <!-- Header Section -->
-    <header class="header">
+    <!-- <header class="header">
       <h2 class="header-title">
-        DAT - ENGINEERING Artitect IN DUBAI  & INDIA
+        DAT - ENGINEERING Architect IN DUBAI
       </h2>
-    </header>
+    </header> -->
 
     <!-- Main Content Section -->
     <main class="content">
@@ -30,16 +30,16 @@
       <div class="buttons-container">
         <div class="buttons">
           <button class="btn">
-            SEND ENQUIRY <span>&#9658;</span>
+            BOOK A MEETING <font-awesome-icon :icon="['fas', 'arrow-right']" />
           </button>
           <button class="btn">
-            BOOK A MEETING <span>&#9658;</span>
+            SEND A ENQUIRY <font-awesome-icon :icon="['fas', 'arrow-right']" />
           </button>
           <button class="btn">
-            SEND WHATSAPP <span>&#9658;</span>
+            CONTACT US <font-awesome-icon :icon="['fas', 'arrow-right']" />
           </button>
           <button class="btn">
-            CALL US <span>&#9658;</span>
+            SEND A WHATSAPP <font-awesome-icon :icon="['fas', 'arrow-right']" />
           </button>
         </div>
       </div>
@@ -47,66 +47,53 @@
   </div>
 </template>
 
-
 <script>
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+
+// Add the icons you want to use to the library
+library.add(faArrowRight);
+
 export default {
   name: "LandingPage",
-  data() {
-    return {
-      // Array of background color options
-      backgrounds: [
-        'linear-gradient(to right, #ff7e5f, #feb47b)',
-        'linear-gradient(to right, #6a11cb, #2575fc)',
-        'linear-gradient(to right, #ff512f, #dd2476)',
-        'linear-gradient(to right, #00b4db, #0083b0)',
-        'linear-gradient(to right, #f7b733, #fc4a1a)',
-      ],
-      // Randomly selected background
-      randomBackground: '',
-    };
-  },
-  created() {
-    // Select a random background from the list
-    this.randomBackground = this.backgrounds[Math.floor(Math.random() * this.backgrounds.length)];
+  components: {
+    FontAwesomeIcon,
   },
 };
 </script>
+
 <style scoped>
 /* Styles for the Landing Page */
 .landing-page {
   display: flex;
+   
   flex-direction: column;
   align-items: flex-start;
   padding: 2rem;
+  width: 110%;
   box-shadow: #333;
-  opacity: 1.5;
-
-  background: linear-gradient(
-      rgba(0, 0, 0, 0.7),
-      rgba(0, 0, 0, 0.7)
-    ),
-    url(https://images.unsplash.com/photo-1614030424754-24d0eebd46b2);
-
-  background: url('../../assets/AboutDlc/bacgrond.png') no-repeat center center;
-  background-size: cover;
+  position: relative;
   color: #fff;
   font-family: 'Nunito', sans-serif;
   height: 75vh; /* Full screen height */
 }
 
-.header {
-  margin-bottom: 6rem;
+/* Background Container */
+.landing-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../../assets/FOOTER.png') no-repeat center center; /* Use the provided image */
+  background-size: cover;
+  filter: brightness(0.6) blur(1px); /* Apply blur and reduce brightness */
+  z-index: -1; /* Ensure the background stays behind the content */
 }
 
-.header-title {
-  color: #ffffff;
-  font-size: 1.5rem;
-  margin-left: 8rem;
-  position: relative;
-  top: 6rem;
-  text-transform: uppercase;
-}
-
+/* Content Container (Text and buttons will remain sharp) */
 .content {
   display: flex;
   justify-content: space-between;
@@ -122,22 +109,33 @@ export default {
 }
 
 .main-title {
-  font-size: 2.5rem;
-  font-weight: bold;
+  /* font-size: 2.5rem; */
+  /* font-weight: bold; */
   padding-top: 2rem;
   margin-bottom: 4rem;
+
+  font-size: 3rem;
+      line-height: 4rem;
+      font-weight: 300;
+      /* text-transform: uppercase; */
+      letter-spacing: 2px;
+   
 }
 
 .description {
-  font-size: 1.2rem;
+  /* font-size: 1.2rem; */
   line-height: 1.5;
   margin-bottom: 2rem;
+
+  font-size: 0.9rem;
+    line-height: 1.8rem;
+    /* padding-right: 12rem; */
 }
 
 .buttons-container {
   flex: 0.5; /* Takes up 50% of the screen */
   display: flex;
-  padding-bottom: 280px;
+  padding-bottom: 150px;
   justify-content: center;
   align-items: center;
 }
@@ -146,24 +144,32 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  width: 100%; /* Ensure it takes up the full available width */
 }
 
 .btn {
   background-color: transparent;
   color: #fff;
   border: 1px solid #fff;
-  padding: 2rem 2.5rem;
+  padding: 1.5rem 2.5rem; /* Adjust padding for better alignment */
   font-size: 1rem;
   text-align: left;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 60%;
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
 }
 
 .btn:hover {
-  background-color: #333;
+  background-color:#137749;  /* Updated hover color to green */
+}
+
+.icon {
+  color: #fff;
+  margin-left: 8px; /* Space between text and arrow */
+  font-size: 1.2rem; /* Adjust icon size */
 }
 
 /* Responsive Design */

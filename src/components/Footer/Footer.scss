@@ -29,14 +29,24 @@
     }
 
     .footer-description {
-      font-size: 16px;
-      line-height: 1.6;
+      // font-size: 16px;
+      // line-height: 1.6;
       color: #ccc;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
+      position: relative;
+      top: -70px;
+
+      line-height: 1.5;
+      // margin-bottom: 2rem;
+    
+      font-size: 0.9rem;
+        line-height: 1.8rem;
     }
 
     .footer-contact {
       font-size: 14px;
+      position: relative;
+      bottom: 80px;
       color: #aaa;
 
       a {
@@ -83,7 +93,7 @@
         margin: 0;
 
         li {
-          font-size: 14px;
+          font-size: 15px;
           color: #bbb;
           margin-bottom: 10px;
           transition: color 0.3s;
@@ -114,7 +124,8 @@
         margin-top: 5px;
 
         img {
-          width: 120px;
+          padding-left: -40px;
+          width: 110px;
         }
       }
     }
@@ -151,7 +162,7 @@
     }
 
     p {
-      font-size: 14px;
+      font-size: 10px;
       color: #bbb;
       margin-top: 10px;
     }

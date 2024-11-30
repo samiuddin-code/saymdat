@@ -6,9 +6,14 @@
         <span class="header-second-half"> {{ carouselH2 }} </span>
       </div>
       <div class="button-pair">
-        <button class="left-button">&#8592;</button>
-        <button class="right-button">&#8594;</button>
-      </div>
+  <button class="left-button">
+    <i class="fas fa-arrow-left"></i>
+  </button>
+  <button class="right-button">
+    <i class="fas fa-arrow-right"></i>
+  </button>
+</div>
+
     </div>
     <div class="slider">
         <div class="slider-track" v-for="items in carousel" :key="items.title">

@@ -1,12 +1,13 @@
 <template>
-  <div id="header" :class="{ scrolled: isScrolled }">
+  <div id="header" :class="{ scrolled: isScrolled, bouncing: isBouncing }">
     <div id="nav" :class="{ 'sticky-nav': isScrolled }">
       <div id="nav-logo" :class="{ 'is-toggled': isToggled }">
         <router-link @click="isToggled = false" to="/">
-          <img 
-            class="logo" 
-            :src="isScrolled ? require('../../assets/logoa.png') : require('../../assets/logob.png')" 
-            alt="DAT" loading="lazy"
+          <img
+            class="logo"
+            :src="isScrolled ? require('../../assets/logoa.png') : require('../../assets/logob.png')"
+            alt="DAT"
+            loading="lazy"
           />
         </router-link>
         <button class="nav-toggler" @click="toggleMenu">
@@ -19,11 +20,11 @@
       </div>
       <div id="nav-links" :class="{ 'is-toggled': isToggled }">
         <router-link @click="isToggled = false" to="/about-dlc">
-          <p class="hover-underline-animation">About DAT</p>
+          <p class="hover-underline-animation">About Us</p>
         </router-link>
-        <div 
+        <div
           class="nav-item-with-submenu"
-          @mouseover="toggleSubmenu(true)" 
+          @mouseover="toggleSubmenu(true)"
           @mouseleave="toggleSubmenu(false)"
         >
           <router-link @click="isToggled = false" to="/our-worlds">
@@ -34,27 +35,27 @@
           </router-link>
           <div v-if="isSubmenuOpen" class="submenu">
             <div class="submenu-item">
-              <i class="fa fa-pencil-square-o"></i>
+              <i class="fas fa-hard-hat"></i> <!-- Hard hat icon -->
+              <router-link @click="isToggled = false" to="/concept">
+                <p class="submenu-item-text">Concept</p>
+              </router-link>
+            </div>
+            <div class="submenu-item">
+              <i class="fas fa-drafting-compass"></i> <!-- Blueprint icon -->
               <router-link @click="isToggled = false" to="/design">
                 <p class="submenu-item-text">Design</p>
               </router-link>
             </div>
             <div class="submenu-item">
-              <i class="fa fa-cogs"></i>
+              <i class="fas fa-tools"></i> <!-- Tools icon -->
               <router-link @click="isToggled = false" to="/build">
                 <p class="submenu-item-text">Build</p>
-              </router-link>
-            </div>
-            <div class="submenu-item">
-              <i class="fa fa-lightbulb-o"></i>
-              <router-link @click="isToggled = false" to="/concept">
-                <p class="submenu-item-text">Concept</p>
               </router-link>
             </div>
           </div>
         </div>
         <router-link @click="isToggled = false" to="/experiences">
-          <p class="hover-underline-animation">Projects</p>
+          <p class="hover-underline-animation">Our Projects</p>
         </router-link>
         <router-link @click="isToggled = false" to="/gallery">
           <p class="hover-underline-animation">Gallery</p>
@@ -70,7 +71,6 @@
   </div>
 </template>
 
-
 <script>
 export default {
   data() {
@@ -78,6 +78,7 @@ export default {
       isToggled: false,
       isScrolled: false,
       isSubmenuOpen: false,
+      isBouncing: false, // State to manage bounce animation
     };
   },
   methods: {
@@ -85,11 +86,23 @@ export default {
       this.isToggled = !this.isToggled;
     },
     handleScroll() {
-      this.isScrolled = window.scrollY > 50;
+      if (window.scrollY > 50 && !this.isScrolled) {
+        this.isScrolled = true;
+        this.triggerBounce(); // Trigger bounce effect when scrolled
+      } else if (window.scrollY <= 50 && this.isScrolled) {
+        this.isScrolled = false;
+      }
     },
     toggleSubmenu(open) {
       this.isSubmenuOpen = open;
     },
+    triggerBounce() {
+      this.isBouncing = true; // Enable bouncing
+      // Reset the bouncing animation to start from the beginning
+      setTimeout(() => {
+        this.isBouncing = false; // Disable bouncing after animation completes
+      }, 600); // Match the duration of the bounce animation
+    }
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
@@ -98,10 +111,11 @@ export default {
     window.removeEventListener("scroll", this.handleScroll);
   },
 };
-
-
 </script>
 
 <style lang="scss" scoped>
 @use "./Navbar.scss";
+
+// Keyframe for the bounce effect
+
 </style>

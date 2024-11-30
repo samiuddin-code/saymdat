@@ -6,16 +6,12 @@ import GalleryCard from "@/components/GalleryCard/GalleryCard.vue";
   components: {
     GalleryCard,
   },
-  data() {
-    return {
-      images: [] as {
-        title: string;
-        gallery_images: string;
-      }[],
-    };
-  },
-  created: function () {
-    const titles: string[] = [
+})
+export default class Gallery extends Vue {
+  images = [] as { title: string; gallery_images: string }[];
+
+  created() {
+    const titles = [
       "MS Villa interior",
       "Golf",
       "Lifestyle",
@@ -29,6 +25,9 @@ import GalleryCard from "@/components/GalleryCard/GalleryCard.vue";
         gallery_images: require(`@/assets/Gallery/gallery-${i}.png`),
       });
     }
-  },
-})
-export default class Gallery extends Vue {}
+  }
+
+  navigateToDetail(index: number) {
+    this.$router.push({ name: "ImageDetail", params: { index } });
+  }
+}

@@ -33,7 +33,7 @@ export default class OurWorlds extends Vue {
 
   async fetchImages() {
   try {
-    const response = await axios.get<ApiResponse>('https://www.datconsultancy.com/_next/data/eXx6uPVkXf67Rmx7ThjPc/projects.json');
+    const response = await axios.get<ApiResponse>('https://www.datconsultancy.com/_next/data/eXx6uPVkXf67Rmx7ThjPc/services.json');
     const projectsArray = response.data?.pageProps?.response;
 
     // Check if response is an array, then find and map over rows if present

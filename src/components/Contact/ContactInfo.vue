@@ -1,7 +1,7 @@
 <template>
     <div class="landing-page">
       <header class="header">
-        <h2 class="header-title">DAT - ENGINEERING CONSULTANTS IN DUBAI, ABU DHABI, SHARJAH, & INDIA</h2>
+        <h2 class="header-title">DAT - ENGINEERING CONSULTANTS IN DUBAI</h2>
       </header>
       <main class="content">
         <h1 class="main-title">Innovative Design Visualization and Execution</h1>

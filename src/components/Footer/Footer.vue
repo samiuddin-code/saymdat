@@ -74,7 +74,7 @@
           <li>Careers</li>
         </ul>
         <h3>Offices</h3>
-        <p><strong>Dubai:</strong>The Opus Tower by Zaha Hadid, Office B803, Business Bay, Dubai</p>
+        <p><strong>Dubai:</strong> The Opus Tower by Zaha Hadid, Office B803, Business Bay, Dubai</p>
 
       </div>
     </div>
