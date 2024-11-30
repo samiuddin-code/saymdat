@@ -1,7 +1,7 @@
 <template>
   <div class="about-dlc">
     <div class="about-dlc-title">
-      <Title :bText="elements.boldText" :lText="elements.lightText" :imageBg="require('../../assets/aboutBg.png')"/>
+      <Title :bText="elements.boldText" :lText="elements.lightText" :imageBg="require('../../assets/build.jpg')"/>
     </div>
       <IntroSection :paragraphs="elements.introParas" :title="elements.title" :txtParagraphs="elements.txtParagraphs" :image="require('../../assets/IntroSection/AboutDlc.jpg')"/>
       <div class="bakers-image-section">

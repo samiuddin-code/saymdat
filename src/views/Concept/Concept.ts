@@ -37,7 +37,7 @@ import BottomSection from "@/components/BottomSection/BottomSection.vue";
   created() {
     this.elements = {
       boldText: "Concept",
-      lightText: "Sanctuary of Your Dreams",
+      // lightText: "Sanctuary of Your Dreams",
       introParas: [
         
         "At DAT Architecture, we bring ideas to life and create concepts that become iconic in design and will never be worn out by time and aging. We design spaces with innovation and precision that are sustainable, inspiring, and enduring. At DAT, we do not design buildings; we shape the future of architecture",

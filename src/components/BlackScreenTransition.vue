@@ -25,14 +25,14 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Black color with 70% opacity */
+  background-color: rgba(0, 0, 0, 1); /* Black color with 70% opacity */
   z-index: 9999;
-  transition: transform 1s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
   
   .black-screen-transition-enter-active,
   .black-screen-transition-leave-active {
-    transition: transform 2s ease-in-out; /* Adjust the transition duration as needed */
+    transition: transform 1s ease-in-out; /* Adjust the transition duration as needed */
   }
   
   .black-screen-transition-enter {

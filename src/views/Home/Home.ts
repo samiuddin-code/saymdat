@@ -37,7 +37,7 @@ import ContactD from "../ContactInfo/ContactD.vue";
     this.elements = {
      
       boldText: "  Experience",
-      lightText: "   the Opulent luxury living",
+      lightText: "   The Opulent Luxury Living",
       video: require("@/assets/discovery.mp4"),
       header1: "Discover",
       header2: " Luxury Beyond Limits",

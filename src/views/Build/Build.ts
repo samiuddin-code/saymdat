@@ -38,7 +38,7 @@ import BottomSection from "@/components/BottomSection/BottomSection.vue";
   created() {
     this.elements = {
       boldText: "Build",
-      lightText: "Sanctuary of Your Dreams",
+      // lightText: "Sanctuary of Your Dreams",
       introParas: [
         
         "AT DAT, we don't just build we create masterpieces. Every project is a fusion of innovation, craftsmanship, and meticulous attention to detail. From bold concepts down to flawless execution, we will turn your vision into reality and craft spaces that inspire, captivate, and conquer time with unmatched elegance and precision.",

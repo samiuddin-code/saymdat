@@ -1,20 +1,25 @@
 .intro-para {
-  padding: 2rem;
+  padding: 8rem;
+  background: linear-gradient(145deg, #ffffff, #ffffff);
+  border-radius: 12px;
+  // box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  
   @media screen and (max-width: 1024px) {
-    padding: 4rem 2rem;
+    padding: 3rem 2rem;
   }
+
   p {
-    
-    line-height: 3.5rem;
-    font-weight: 200;
-    // text-transform: uppercase;
-    letter-spacing: 2px;
-    padding: 12rem;
-    padding-top: 26px;
-    position: relative;
-    font-size: 2.3rem;
+    font-size: 2.5rem;
     text-align: center;
     font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    padding: 4rem;
+    padding-top: 2rem;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.02);
+    }
 
     @media screen and (max-width: 1024px) {
       text-align: left;
@@ -23,14 +28,17 @@
     }
   }
 }
+
 .intro-txt2-img {
-  background-color: #fff;
+  // background-color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 11rem;
+  padding: 0 14rem;
   gap: 6rem;
-  padding-bottom: 8rem;
+  padding-bottom: 6rem;
+  border-radius: 12px;
+  // box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
 
   @media screen and (max-width: 1024px) {
     flex-direction: column-reverse;
@@ -41,7 +49,7 @@
 
   .left-part,
   .right-part {
-    width: 50%;
+    width: 80%;
 
     @media screen and (max-width: 1024px) {
       width: 100%;
@@ -49,19 +57,19 @@
 
     &.txt2 {
       padding-right: 5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
 
       @media screen and (max-width: 1024px) {
         padding-right: 0;
       }
 
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
-
       .title {
         font-size: 2.5rem;
         font-weight: normal;
         font-family: 'Nunito', sans-serif;
+        // text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
       }
 
       .txt-paras {
@@ -70,8 +78,12 @@
         gap: 2.5rem;
 
         .txt-para {
-          color: #777;
+          color: #FFFFF;
           line-height: 2;
+          font-size: 0.9rem;
+          line-height: 1.8rem;
+          border-left: 4px solid #ddd;
+          padding-left: 1rem;
 
           @media screen and (max-width: 1024px) {
             line-height: 1.8;
@@ -84,10 +96,21 @@
     &.img1 {
       img {
         width: 100%;
-        max-width: 400px; /* Adjust max-width to control image scaling */
-        height: auto;     /* Ensures image scales proportionally */
-        max-height: 500px; /* Set a maximum height to prevent it from getting too large */
-        object-fit: contain; /* Ensures the image stays within the bounds */
+        max-width: 500px;
+        height: auto;
+        max-height: 400px;
+        object-fit: contain;
+        border-radius: 12px;
+        // box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        /* Move image down */
+        margin-top: 2rem;
+
+        &:hover {
+          transform: scale(1.05);
+          // box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.25);
+        }
       }
     }
   }
