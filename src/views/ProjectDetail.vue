@@ -1,40 +1,39 @@
 <template>
-      <div class="title-container">
-    <!-- Background Video -->
-    <video class="background-video" autoplay muted loop>
-      <source src="../assets/experiences.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <div class="centered-title">
-      <h1 class="title-text">{{ projectData?.title || "Default Title" }}</h1>
-    </div>
- 
-
-    <!-- Scroll Down Button in Bottom-Right Corner -->
-    <button class="round-button" @click="scrollToNextSection">
-      <span class="material-icons arrow-down">arrow_downward</span>
-    </button>
-  </div>
+    <div class="title-container">
+      <!-- Background Video -->
+      <video class="background-video" autoplay muted loop>
+        <source src="../assets/experiences.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="centered-title">
+        <h1 class="title-text">{{ projectData?.title || "Default Title" }}</h1>
+      </div>
   
+      <!-- Scroll Down Button in Bottom-Right Corner -->
+      <button class="round-button" @click="scrollToNextSection">
+        <span class="material-icons arrow-down">arrow_downward</span>
+      </button>
+    </div>
+    
     <div class="carousel-container" v-if="projectData">
       <!-- Header Section -->
-      <div class="intro-para ">
-        <!-- <h1 class="title-text ">{{ projectData.title }}</h1> -->
-        <p class="intro-para ">{{ projectData.highlight }}</p>
+      <div class="intro-para">
+        <p class="intro-para">{{ projectData.highlight }}</p>
       </div>
   
-      <!-- Image Section -->
       <div class="image-container">
-        <div :style="carouselStyle" class="carousel-images">
-          <img
-            v-for="(image, index) in images"
-            :key="index"
-            :src="getImageUrl(image)"
-            alt="Project Image"
-            class="carousel-image"
-          />
-        </div>
-      </div>
+  <div :style="carouselStyle" class="carousel-images">
+    <img
+    v-for="(image, index) in images"
+  :key="index"
+  :src="getImageUrl(image.image)"
+  :alt="image.imageAlt"
+  v-show="currentSlide === index" 
+  class="carousel-image"
+    />
+  </div>
+</div>
+
   
       <div class="pagination">
         <span
@@ -54,12 +53,10 @@
         </button>
       </div>
       
-     
       <!-- Description Section -->
       <div class="description">
         <p>{{ projectData.description }}</p>
       </div>
-   
     </div>
   
     <!-- Error State -->
@@ -71,27 +68,34 @@
     <div v-else>
       <p>Loading project details...</p>
     </div>
-    <BottomSection picture="AboutDlc.jpg"/>
+  
+    <BottomSection picture="AboutDlc.jpg" />
   </template>
   
   <script lang="ts">
   import { defineComponent, ref, onMounted } from 'vue';
   import { useRoute } from 'vue-router';
   import axios from 'axios';
-import BottomSection from '@/components/DownSection/BottomSection.vue';
+  import BottomSection from '@/components/DownSection/BottomSection.vue';
+  
+  interface ProjectImage {
+    id: number;
+    image: string;
+    imageAlt: string;
+  }
   
   interface ProjectData {
     title: string;
     highlight: string;
     description: string;
-    image: string; // This should be either the full URL or a relative path
+    ProjectImages: ProjectImage[]; // Use the ProjectImages array to store image data
   }
   
   export default defineComponent({
     name: 'ProjectDetail',
     components: {
-    BottomSection, // Register the component here
-  },
+      BottomSection, // Register the component here
+    },
     setup() {
       const route = useRoute();
       const projectSlug = route.params.projectSlug as string;
@@ -99,56 +103,52 @@ import BottomSection from '@/components/DownSection/BottomSection.vue';
       const projectData = ref<ProjectData | null>(null);
       const errorMessage = ref<string | null>(null);
       const currentSlide = ref(0);  // Track the current slide
-      const images = ref<string[]>([]);  // Track the list of images for the carousel
-  
-      onMounted(async () => {
-        if (!projectSlug) {
-          errorMessage.value = 'Project slug is missing or invalid.';
-          return;
-        }
-  
-        try {
-          const response = await axios.get(
-            `https://www.datconsultancy.com/_next/data/eXx6uPVkXf67Rmx7ThjPc/projects/residential/${projectSlug}.json?category=residential&projectSlug=${projectSlug}`
-          );
-  
-          if (response.data?.pageProps?.response) {
-            projectData.value = response.data.pageProps.response[0].data;
-            images.value = projectData.value?.image?.split(',') || []; // Assuming `image` contains comma-separated URLs
-          } else {
-            errorMessage.value = 'No project found with the given slug.';
-          }
-        } catch (error) {
-          console.error('Error fetching project data:', error);
-  
-        //   if (error.response?.status === 404) {
-        //     errorMessage.value = 'Project not found. Please check the slug or try again later.';
-        //   } else {
-        //     errorMessage.value = 'Failed to fetch project data. Please try again later.';
-        //   }
-        }
-      });
-  
+      const images = ref<ProjectImage[]>([]);  // Track the list of images for the carousel
+        onMounted(async () => {
+            console.log('Loading images:', images.value);  
+  if (!projectSlug) {
+    errorMessage.value = 'Project slug is missing or invalid.';
+    return;
+  }
+
+  try {
+    const response = await axios.get(
+      `https://www.datconsultancy.com/_next/data/eXx6uPVkXf67Rmx7ThjPc/projects/residential/${projectSlug}.json?category=residential&projectSlug=${projectSlug}`
+    );
+
+    if (response.data?.pageProps?.response) {
+      projectData.value = response.data.pageProps.response[0].data;
+      images.value = projectData.value?.ProjectImages || []; // Get images from the API response
+      console.log('Loaded images:', images.value);  // Debug log
+    } else {
+      errorMessage.value = 'No project found with the given slug.';
+    }
+  } catch (error) {
+    console.error('Error fetching project data:', error);
+    errorMessage.value = 'Failed to fetch project data. Please try again later.';
+  }
+});
+
       const getImageUrl = (image: string) => {
         if (image.startsWith('http')) {
           return image;
         }
         return `https://api.datconsultancy.com/uploads/${image}`;
       };
-  
       const carouselStyle = () => ({
         transform: `translateX(-${currentSlide.value * 100}%)`,
-        transition: 'transform 0.3s ease-in-out',
-      });
+  transition: 'transform 0.3s ease-in-out',
+});
   
       const nextSlide = () => {
-        currentSlide.value = (currentSlide.value + 1) % images.value.length;
-      };
-  
-      const prevSlide = () => {
-        currentSlide.value =
-          (currentSlide.value - 1 + images.value.length) % images.value.length;
-      };
+  currentSlide.value = (currentSlide.value + 1) % images.value.length;
+  console.log('Next slide:', currentSlide.value);  // Debugging slide change
+};
+const prevSlide = () => {
+  currentSlide.value =
+    (currentSlide.value - 1 + images.value.length) % images.value.length;
+  console.log('Prev slide:', currentSlide.value);  // Debugging slide change
+};
   
       const goToSlide = (index: number) => {
         currentSlide.value = index;
@@ -190,6 +190,7 @@ import BottomSection from '@/components/DownSection/BottomSection.vue';
   overflow: hidden; /* Hide overflow if images are larger than container */
 }
 .carousel-images {
+    overflow: hidden; 
   display: flex;
   transition: transform 0.5s ease-in-out; /* Smooth transition for carousel */
   width: auto;
