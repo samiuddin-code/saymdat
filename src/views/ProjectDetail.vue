@@ -114,18 +114,15 @@ import BottomSection from '@/components/DownSection/BottomSection.vue';
   
           if (response.data?.pageProps?.response) {
             projectData.value = response.data.pageProps.response[0].data;
-            images.value = projectData.value.image.split(','); // Assuming `image` contains comma-separated URLs
+            images.value = projectData.value?.image?.split(',') || [];
+            // Assuming `image` contains comma-separated URLs
           } else {
             errorMessage.value = 'No project found with the given slug.';
           }
         } catch (error) {
           console.error('Error fetching project data:', error);
   
-          if (error.response?.status === 404) {
-            errorMessage.value = 'Project not found. Please check the slug or try again later.';
-          } else {
-            errorMessage.value = 'Failed to fetch project data. Please try again later.';
-          }
+        
         }
       });
   
