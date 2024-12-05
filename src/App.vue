@@ -50,77 +50,70 @@ export default class App extends Vue {
   }
 
   initializeSmoothScroll() {
-    // Listen for wheel events to determine scroll direction
-    window.addEventListener('wheel', this.handleWheelEvent, { passive: false });
+  // Listen for wheel events and throttle them using requestAnimationFrame
+  let lastWheelTime = 0;
+  window.addEventListener('wheel', (event: WheelEvent) => {
+    const now = performance.now();
+    if (now - lastWheelTime < 16) return; // Throttle to ~60fps
+    lastWheelTime = now;
 
-    // Prevent default scrolling for arrow keys
-    window.addEventListener('keydown', (event: KeyboardEvent) => {
-      const keyDelta: Record<string, number> = {
-        ArrowUp: -100,
-        ArrowDown: 100,
-      };
+    this.handleWheelEvent(event);
+    event.preventDefault();
+  }, { passive: false });
 
-      const delta = keyDelta[event.key];
+  // Prevent default scrolling for arrow keys
+  window.addEventListener('keydown', (event: KeyboardEvent) => {
+    const keyDelta: Record<string, number> = {
+      ArrowUp: -100,
+      ArrowDown: 100,
+    };
 
-      if (delta !== undefined) {
-        this.targetScroll += delta;
-        this.limitScrollBounds();
-        this.startSmoothScroll();
-        event.preventDefault();
-      }
-    });
 
-    // Initialize current scroll position
-    this.targetScroll = window.scrollY;
-    this.currentScroll = window.scrollY;
-  }
+    const delta = keyDelta[event.key];
+    if (delta !== undefined) {
+      this.targetScroll += delta;
+      this.limitScrollBounds();
+      this.startSmoothScroll();
+      event.preventDefault();
+    }
+  });
 
-  handleWheelEvent = (event: WheelEvent) => {
-    if (this.isWheelActive) return; // Avoid excessive processing
-    this.isWheelActive = true; // Lock wheel event handling
-
-    this.targetScroll += event.deltaY; // Update target based on wheel input
-    this.limitScrollBounds(); // Ensure scrolling stays within bounds
-
-    // Start smooth scroll animation
-    this.startSmoothScroll();
-
-    // event.preventDefault(); // Prevent native scrolling
-
-    // Unlock wheel event after a small delay to allow smooth scrolling
-    setTimeout(() => {
-      this.isWheelActive = false;
-    },22); // Adjust timeout based on your desired scroll speed
-  };
+  this.targetScroll = window.scrollY;
+  this.currentScroll = window.scrollY;
+}
+handleWheelEvent(event: WheelEvent) {
+  this.targetScroll += event.deltaY; // Update target based on wheel input
+  this.limitScrollBounds(); // Ensure scrolling stays within bounds
+  this.startSmoothScroll();
+}
 
   limitScrollBounds() {
     const maxScroll = document.body.scrollHeight - window.innerHeight;
     this.targetScroll = Math.max(0, Math.min(this.targetScroll, maxScroll));
   }
-
   startSmoothScroll() {
-    if (this.isScrolling) return; // Avoid overlapping animations
-    this.isScrolling = true;
+  if (this.isScrolling) return; // Avoid overlapping animations
+  this.isScrolling = true;
 
-    const smoothScrollStep = () => {
-      const distance = this.targetScroll - this.currentScroll;
-      const step = distance * 0.1; // Adjust damping factor for smoother motion
+  const smoothScrollStep = () => {
+    const distance = this.targetScroll - this.currentScroll;
+    const step = distance * 0.07; // Reduce damping factor for smoother motion
 
-      if (Math.abs(distance) < 0.01) {
-        this.isScrolling = false;
-        this.currentScroll = this.targetScroll;
-        window.scrollTo(0, this.targetScroll);
-        return;
-      }
+    if (Math.abs(distance) < 0.5) { // Fine-tune stop condition
+      this.isScrolling = false;
+      this.currentScroll = this.targetScroll;
+      window.scrollTo(0, Math.round(this.targetScroll));
+      return;
+    }
 
-      this.currentScroll += step; // Update current position
-      window.scrollTo(0, Math.round(this.currentScroll)); // Prevent sub-pixel rendering causing jitter
+    this.currentScroll += step; // Update current position
+    window.scrollTo(0, Math.round(this.currentScroll)); // Prevent sub-pixel rendering
 
-      requestAnimationFrame(smoothScrollStep); // Continue the animation
-    };
+    requestAnimationFrame(smoothScrollStep); // Continue the animation loop
+  };
 
-    smoothScrollStep(); // Start the animation loop
-  }
+  requestAnimationFrame(smoothScrollStep); // Start the animation loop
+}
 }
 </script>
 
