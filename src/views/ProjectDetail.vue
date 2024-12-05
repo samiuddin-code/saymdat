@@ -261,6 +261,45 @@ padding: 2rem;
       display: inline;
     }
   }
+  @media screen and (max-width: 1024px) {
+    .intro-para {
+      font-size: 1.1rem;
+      line-height: 2rem;
+      padding: 1rem;
+      text-align: justify;
+    }
+
+    .title-text {
+      font-size: clamp(1.2rem, 3vw, 3.5rem);
+      line-height: clamp(1.5rem, 4vw, 3rem);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .intro-para {
+      font-size: 1rem;
+      line-height: 1.8rem;
+      padding: 1rem;
+    }
+
+    .title-text {
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .intro-para {
+      font-size: 0.9rem;
+      line-height: 1.5rem;
+      padding: 0.5rem;
+    }
+
+    .title-text {
+      font-size: 1.8rem;
+      line-height: 2.2rem;
+    }
+  }
 }
 
 /* Background Video */

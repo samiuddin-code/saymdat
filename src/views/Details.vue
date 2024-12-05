@@ -90,6 +90,19 @@ export default defineComponent({
   transform: scale(1.05);
   text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8);
 }
+@media screen and (max-width: 768px) {
+  .title-text {
+    font-size: clamp(1.2rem, 5vw, 3rem); /* Smaller font sizes for mobile */
+    line-height: clamp(1.5rem, 6vw, 3.5rem);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .title-text {
+    font-size: clamp(1rem, 6vw, 2.5rem); /* Further adjustment for very small screens */
+    line-height: clamp(1.2rem, 7vw, 3rem);
+  }
+}
 
 /* Scroll Down Button */
 .round-button {
