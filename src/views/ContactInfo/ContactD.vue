@@ -1,12 +1,5 @@
 <template>
   <div class="landing-page">
-    <!-- Header Section -->
-    <!-- <header class="header">
-      <h2 class="header-title">
-        DAT - ENGINEERING Architect IN DUBAI
-      </h2>
-    </header> -->
-
     <!-- Main Content Section -->
     <main class="content">
       <div class="text-container">
@@ -29,16 +22,17 @@
 
       <div class="buttons-container">
         <div class="buttons">
-          <button class="btn">
+          <!-- All buttons now navigate to ContactPage -->
+          <button class="btn" @click="navigateToContactPage">
             BOOK A MEETING <font-awesome-icon :icon="['fas', 'arrow-right']" />
           </button>
-          <button class="btn">
+          <button class="btn" @click="navigateToContactPage">
             SEND A ENQUIRY <font-awesome-icon :icon="['fas', 'arrow-right']" />
           </button>
-          <button class="btn">
+          <button class="btn" @click="navigateToContactPage">
             CONTACT US <font-awesome-icon :icon="['fas', 'arrow-right']" />
           </button>
-          <button class="btn">
+          <button class="btn" @click="navigateToContactPage">
             SEND A WHATSAPP <font-awesome-icon :icon="['fas', 'arrow-right']" />
           </button>
         </div>
@@ -51,6 +45,7 @@
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { useRouter } from 'vue-router'; // Import useRouter from Vue Router
 
 // Add the icons you want to use to the library
 library.add(faArrowRight);
@@ -59,6 +54,16 @@ export default {
   name: "LandingPage",
   components: {
     FontAwesomeIcon,
+  },
+  setup() {
+    const router = useRouter(); // Get the router instance
+
+    // Method to navigate to ContactPage for all buttons
+    const navigateToContactPage = () => {
+      router.push({ name: 'ContactPage' }); // Navigate to the ContactPage
+    };
+
+    return { navigateToContactPage };
   },
 };
 </script>

@@ -1,5 +1,6 @@
 import { Options, Vue } from "vue-class-component";
 import { reactive } from "vue";
+import { useRouter } from "vue-router";
 
 interface PanelContent {
   title: string;
@@ -10,18 +11,20 @@ interface PanelContent {
   name: "Panels",
 })
 export default class Panels extends Vue {
+  private router = useRouter();
+
   // Define the content for each panel
   private panelContents: Record<string, PanelContent> = {
-    experiences: {
+    concept: {
       title: "Concept",
       description:
         "Experience the ultimate activities with thrilling adventures and world-class facilities.",
     },
-    lifestyle: {
+    design: {
       title: "Design",
       description: "Explore a world of luxury and elegance with curated lifestyle options.",
     },
-    wellness: {
+    build: {
       title: "Build",
       description: "Discover wellness options designed to nurture your body, mind, and soul.",
     },
@@ -29,7 +32,7 @@ export default class Panels extends Vue {
 
   // Initialize with default content
   private currentContent = reactive<PanelContent>({
-    title: "Experiences",
+    title: "Concept",
     description:
       "Experience the ultimate activities with thrilling adventures and world-class facilities.",
   });
@@ -43,9 +46,9 @@ export default class Panels extends Vue {
     }
   }
 
-  // Method to handle the close button click
-  closePanel(): void {
-    // Logic to close or hide the panel (implement based on your needs)
-    console.log("Close button clicked!");
+  // Method to navigate to a specific page
+  navigateTo(panel: string): void {
+    const routeName = panel.charAt(0).toUpperCase() + panel.slice(1); // Capitalize for route names
+    this.router.push({ name: routeName });
   }
 }

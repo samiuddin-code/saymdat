@@ -114,15 +114,18 @@ import BottomSection from '@/components/DownSection/BottomSection.vue';
   
           if (response.data?.pageProps?.response) {
             projectData.value = response.data.pageProps.response[0].data;
-            images.value = projectData.value?.image?.split(',') || [];
-            // Assuming `image` contains comma-separated URLs
+            images.value = projectData.value?.image?.split(',') || []; // Assuming `image` contains comma-separated URLs
           } else {
             errorMessage.value = 'No project found with the given slug.';
           }
         } catch (error) {
           console.error('Error fetching project data:', error);
   
-        
+        //   if (error.response?.status === 404) {
+        //     errorMessage.value = 'Project not found. Please check the slug or try again later.';
+        //   } else {
+        //     errorMessage.value = 'Failed to fetch project data. Please try again later.';
+        //   }
         }
       });
   
@@ -177,6 +180,34 @@ import BottomSection from '@/components/DownSection/BottomSection.vue';
     box-sizing: border-box;
     background-color: #f4f4f4; /* Optional background color */
   }
+  .image-container {
+  position: relative;
+  display: flex;
+  justify-content: center; /* Center the carousel */
+  align-items: center;
+  width: 100%;
+  height: auto; /* Ensure the container takes full height */
+  overflow: hidden; /* Hide overflow if images are larger than container */
+}
+.carousel-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* Smooth transition for carousel */
+  width: auto;
+  height: 60%;
+}
+.carousel-image {
+  width: auto;
+  height: 100%;
+  object-fit: cover; /* Make sure the image fits properly */
+  object-position: center; /* Center the image inside its container */
+}
+.carousel-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* This will ensure the image fills the container */
+  object-position: center;
+}
+
   title-text {
   font-family: 'Nunito', sans-serif;
   font-weight: 100;
