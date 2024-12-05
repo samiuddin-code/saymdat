@@ -49,7 +49,9 @@ export default {
 @media screen and (max-width: 768px) {
   .container {
     padding-left: 20px;
+    padding-right: 20px;
     width: 100%;
+    height: auto; /* Adjust height for flexible content */
   }
 }
 
@@ -75,16 +77,14 @@ export default {
 }
 
 .top-section h1 {
-  
   font-weight: bold;
   margin-bottom: 20px;
   display: block;
-      font-size: 3rem;
-      line-height: 4rem;
-      font-weight: 300;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-
+  font-size: 3rem;
+  line-height: 4rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .top-section .description {
@@ -117,10 +117,11 @@ export default {
 
   .top-section h1 {
     font-size: 2rem;
+    line-height: 2.5rem; /* Better spacing on smaller screens */
   }
 
   .top-section .description {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
   .top-section .car-image {
@@ -155,30 +156,25 @@ export default {
   flex: 1;
   padding-left: 20px;
   font-weight: 300;
-      font-size: 0.9rem;
-  
+  font-size: 0.9rem;
 }
 
 .bottom-section .tagline {
   font-size: 1.8rem;
   color: gray;
   margin-bottom: 10px;
-  
 }
 
 .bottom-section h1 {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 20px;
-
-      font-weight: 300;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .bottom-section .description {
- 
   font-weight: 300;
   font-size: 0.9rem;
 }
@@ -201,11 +197,13 @@ export default {
 
   .bottom-section h1 {
     font-size: 2rem;
+    line-height: 2.5rem; /* Adjust line height */
   }
 
   .bottom-section .description {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 }
 </style>
+
 

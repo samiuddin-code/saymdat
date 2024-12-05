@@ -1,7 +1,7 @@
 import { Options, Vue } from "vue-class-component";
 import Title from "@/components/Title/Title.vue";
 import ExploreCarousel from "@/components/ExploreCarousel/ExploreCarousel.vue";
-import TxtImg2 from "@/components/TxtImg2/TxtImg2.vue";
+import TxtImg3 from "@/components/TxtImg3/TxtImg3.vue";
 import IntroSection from "@/components/IntroSection/IntroSection.vue";
 import BottomSection from "@/components/BottomSection/BottomSection.vue";
 
@@ -11,7 +11,7 @@ import BottomSection from "@/components/BottomSection/BottomSection.vue";
     Title,
     IntroSection,
     ExploreCarousel,
-    TxtImg2,
+    TxtImg3,
     BottomSection
   },
   data() {

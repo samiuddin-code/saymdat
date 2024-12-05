@@ -176,7 +176,7 @@ export default {
   display: flex;
   justify-content: center;
   gap: 10px; /* Space between the two cards */
-  padding: 10px;
+  padding: 40px;
 }
 input,
 textarea {
@@ -191,7 +191,7 @@ textarea {
 }
 /* Textarea Styling */
 #message {
-  width: 100%;
+  width: 99%;
   padding: 15px; /* Padding inside the textarea */
   font-size: 1.5rem; /* Larger font size */
   background-color: #ffffff; /* Light gray background color */
@@ -208,12 +208,12 @@ textarea {
 
 /* Card container */
 .card {
-  width: 40%; /* Each card takes 40% of the screen width */
+  width: 39.6%; /* Each card takes 40% of the screen width */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 50px;
+  padding: 80px;
   border: 1px solid #ccc;
   border-radius: 8px;
   background-color: #ffffff;
@@ -222,10 +222,10 @@ textarea {
 }
 /* Main Form Container */
 .contact-form {
-  max-width: 1450px;
+  max-width: 1500px;
   margin: 0 auto;
-  // padding: 40px;
-  font-family: 'Arial', sans-serif;
+  padding: 40px;
+  font-family: '', sans-serif;
 
 }
 
@@ -252,6 +252,7 @@ textarea {
 label {
   font-size: 0.9rem;
   font-weight: 500;
+  
   margin-bottom: 8px;
 }
 
@@ -264,6 +265,7 @@ textarea {
   border: none;
   border-bottom: 2px solid #ccc; /* Only a bottom border */
   font-size: 1rem;
+  padding: 1rem;
   font-family: 'Arial', sans-serif;
 }
 
@@ -278,12 +280,12 @@ textarea:focus {
 textarea {
   resize: none;
   margin-top: 3px;
-  padding: 10px;
+  padding: 8px;
 }
 
 /* Submit Button */
 .submit-button {
-  margin-top: 10px;
+  margin-top: 15px;
   position: relative;
   left: 600px;
   bottom: 20px;
@@ -304,7 +306,7 @@ textarea {
 
 
 .submit-button:hover {
-  background: #000;
+  background: rgb(68, 138, 68);
   color: #fff;
   transition: background 0.3s ease, color 0.3s ease;
 }
@@ -312,11 +314,95 @@ textarea {
 /* Responsive Design */
 @media (max-width: 768px) {
   .form-grid {
-    grid-template-columns: 1fr; /* Single column on smaller screens */
+    grid-template-columns: 1fr; /* Single column layout for small screens */
+    gap: 15px; /* Reduced spacing for smaller screens */
   }
 
+  .left-section,
   .right-section {
-    margin-top: 20px; /* Space between sections on small screens */
+    margin: 0 auto; /* Center sections for better alignment */
+    width: 90%; /* Adjust width for smaller screens */
+  }
+  .submit-button {
+    position: relative;
+    left: 0; /* Reset positioning */
+    bottom: 0;
+    width: 100%; /* Full width for mobile screens */
+    margin: 20px auto; /* Center horizontally */
+  }
+  .card {
+    width: 100%; /* Full width on small screens */
+    margin-bottom: 20px; /* Add spacing between cards */
+  }
+  .card {
+    width: 100%; /* Full width on small screens */
+    margin-bottom: 20px; /* Add spacing between cards */
+  }
+
+  /* Contact section responsiveness */
+  .contact {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center-align content */
+    padding: 20px; /* Increased padding for small screens */
+    gap: 20px; /* Adjust gap between elements */
+  }
+
+  /* Text area adjustments for better usability */
+  #message {
+    font-size: 1rem; /* Slightly smaller font size */
+    padding: 10px; /* Adjusted padding */
+  }
+
+  /* Contact header adjustments */
+  .contact-header h1 {
+    font-size: 2rem; /* Smaller font size for headers */
+    margin-bottom: 20px; /* Adjust spacing */
+  }
+
+  .contact-header p {
+    font-size: 1rem; /* Reduced font size */
+  }
+
+  /* Location section */
+  .location {
+    flex-direction: column; /* Stack items vertically */
+    gap: 20px; /* Reduced gap for smaller screens */
+  }
+
+  .location-image {
+    width: 100%; /* Full width for images */
+    border-radius: 10px; /* Maintain corner radius */
+  }
+
+  .location-info {
+    width: 100%; /* Full width for info text */
+    text-align: center; /* Center-align text */
+  }
+
+  .location-info h3 {
+    font-size: 1.5rem; /* Adjust header size */
+  }
+
+  .location-info p {
+    font-size: 0.9rem; /* Smaller font for paragraphs */
+  }
+
+  /* Contact cards */
+  .contact-card {
+    width: 100%; /* Full width for cards */
+    flex-direction: column; /* Stack icon and text */
+    align-items: center; /* Center-align content */
+    text-align: center; /* Center-align text */
+    gap: 10px; /* Adjust gap for stacked layout */
+  }
+
+  .icon {
+    margin-bottom: 10px; /* Add spacing between icon and text */
+  }
+
+  /* Map container */
+  .map-container iframe {
+    height: 200px; /* Adjust height for smaller screens */
   }
 }
 
@@ -383,7 +469,7 @@ p {
 }
 
   .contact-page {
-    font-family: 'Poppins', sans-serif;
+    font-family: '', sans-serif;
     background: $background-light;
     color: $text-color;
     // Added top padding for better separation
@@ -477,7 +563,7 @@ p {
 
     .map-container {
       flex: 1;
-      min-width: 350px;
+      min-width: 310px;
 
       iframe {
         width: 100%;

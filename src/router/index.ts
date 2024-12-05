@@ -8,6 +8,8 @@ import Gallery from "@/views/Gallery/Gallery.vue";
 import Design from "@/views/Design/Design.vue";
 import Build from "@/views/Build/Build.vue";
 import Concept from "@/views/Concept/Cocept.vue";
+import Details from "@/views/Details.vue";
+import ProjectDetail from "@/views/ProjectDetail.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -15,10 +17,16 @@ const routes: Array<RouteRecordRaw> = [
     name: "Home",
     component: Home,
   },
+  { path: '/details/:title', component: Details, props: true },
   {
     path: "/gallery",
     name: "Gallery",
     component: Gallery,
+  },
+  {
+    path: '/project/:projectSlug', // Use the slug as the parameter
+    name: 'ProjectDetail',
+    component: ProjectDetail,
   },
   {
     path: "/image/:index",

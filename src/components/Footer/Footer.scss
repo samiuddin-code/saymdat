@@ -171,68 +171,99 @@
   /* Responsive styles */
   @media (max-width: 768px) {
     .footer-container {
-      flex-direction: column;
-      align-items: center;
-      gap: 30px;
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center all items */
+      gap: 20px; /* Space between items */
+      text-align: left; /* Align text to the left */
+      margin: 0 auto; /* Center the container */
     }
-
+  
     .footer-links-section {
       flex-direction: column;
-      align-items: center;
-      gap: 30px;
-
+      align-items: flex-start; /* Align items to the left */
+      gap: 20px;
+      text-align: left;
+  
       .footer-column {
-        text-align: center;
-        min-width: 100%;
-        margin-bottom: 30px;
+        text-align: left;
+        min-width: 100%; /* Full width on smaller screens */
+        margin-bottom: 20px;
       }
     }
-
+  
+    .footer-logo-section {
+      text-align: left; /* Align content to the left */
+      width: 100%;
+      padding: 0 20px; /* Add padding for spacing */
+  
+      .footer-logo {
+        margin-left: 0; /* Align to the left */
+      }
+  
+      .footer-description,
+      .footer-contact {
+        text-align: left; /* Ensure text aligns left */
+        margin-left: 0;
+      }
+    }
+  
     .footer-bottom {
-      flex-direction: column;
+      flex-direction: column; /* Stack items vertically */
       align-items: center;
       text-align: center;
-
+      gap: 10px;
+  
       p {
-        margin-top: 15px;
+        margin-top: 10px;
+        text-align: center; /* Ensure consistent centering */
       }
     }
   }
-
+  
   @media (max-width: 480px) {
+    .footer-container {
+      padding: 0 10px; /* Reduce padding for smaller screens */
+    }
+  
+    .footer-links-section,
+    .footer-logo-section {
+      padding: 0 10px; /* Ensure padding matches the container */
+    }
+  
     .footer-description,
     .footer-contact p,
     .footer-bottom p {
-      font-size: 13px;
+      font-size: 13px; /* Adjust text size */
+      text-align: left; /* Align to the left */
     }
-
+  
     .newsletter-section {
       margin-top: 20px;
-
+      text-align: left; /* Align to the left */
+      padding: 0 10px;
+  
       p {
         font-weight: bold;
       }
-
+  
       .newsletter-input {
         display: flex;
         flex-direction: column;
         gap: 10px;
-
+  
         input {
           padding: 8px;
           border: 1px solid #ccc;
-          // border-radius: 4px;
         }
-
+  
         button {
           background-color: #333;
           color: #fff;
           border: none;
           padding: 8px 16px;
           cursor: pointer;
-          // border-radius: 4px;
         }
       }
     }
   }
-}
+}  

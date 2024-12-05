@@ -8,45 +8,40 @@
   color: #333333;
   padding: 3rem 2rem;
   box-sizing: border-box;
+
+  @media screen and (max-width: 500px) {
+    padding: 2rem 1.5rem;
+  }
+}
+.slider-track {
+  transition: transform 0.5s ease;
 }
 
+.active {
+  /* Optional: add some styles to indicate the active slide, like a border or shadow */
+  border: 2px solid #fff;
+}
 
 .explore-top {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 0.5rem; /* Increased gap for more space between elements */
+  gap: 0.5rem;
   width: 80%;
   margin: 0 auto 4rem auto;
-  transition: 
-  background-color 0.3s ease, 
-  color 0.3s ease, 
-  box-shadow 0.3s ease, 
-  transform 0.3s ease;
-i {
-  font-size: 1.5rem;
-}
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 
-  
   span {
     display: block;
     text-align: left;
-    font-size: 4rem; /* Larger font for prominence */
-    font-family: 'Nunito', sans-serif; 
+    font-size: 4rem;
+    font-family: 'Nunito', sans-serif;
     font-weight: 100;
     line-height: 1.1;
     letter-spacing: 1px;
     color: #222222;
-    transition: 
-    background-color 0.3s ease, 
-    color 0.3s ease, 
-    box-shadow 0.3s ease, 
-    transform 0.3s ease;
-  i {
-    font-size: 1.5rem;
-  }
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 
-    
     @media screen and (max-width: 500px) {
       font-size: 3rem;
     }
@@ -63,15 +58,8 @@ i {
   display: flex;
   justify-content: flex-end;
   gap: 1.5rem;
-  margin: 2rem 0rem 2rem auto;
-  transition: 
-      background-color 0.3s ease, 
-      color 0.3s ease, 
-      box-shadow 0.3s ease, 
-      transform 0.3s ease;
-    i {
-      font-size: 1.5rem;
-    }
+  margin: 2rem 0 2rem auto;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 
   button {
     display: flex;
@@ -88,17 +76,10 @@ i {
     box-shadow: 0 8px 14px rgba(211, 211, 211, 0.5);
     font-size: 1.8rem;
     font-weight: 500;
-    transition: 
-      background-color 0.3s ease, 
-      color 0.3s ease, 
-      box-shadow 0.3s ease, 
-      transform 0.3s ease;
-    i {
-      font-size: 1.5rem;
-    }
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 
     &:hover {
-      background-color: #137749; /* Pleasant blue */
+      background-color: #137749;
       color: #ffffff;
       box-shadow: 0 8px 16px rgba(0, 123, 255, 0.3);
       transform: scale(1.1);
@@ -108,110 +89,15 @@ i {
       width: 3.5rem;
       height: 3.5rem;
       font-size: 1.5rem;
-
-      i {
-        font-size: 1.3rem;
-      }
     }
   }
-
-  .left-button {
-    margin-right: 0.5rem;
-  }
 }
-
-
-.explore-top {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0.1rem;
-  width: 80%;
-  margin: 0 auto 4rem auto;
-  transition: 
-  background-color 0.3s ease, 
-  color 0.3s ease, 
-  box-shadow 0.3s ease, 
-  transform 0.3s ease;
-i {
-  font-size: 1.5rem;
-}
-
-  span {
-    display: block;
-    text-align: left;
-    font-size: 3rem;
-    padding-top: 0;
-    margin: 0;
-    line-height: 1.1;
-    letter-spacing: 1px;
-    font-family: 'Nunito', sans-serif; 
-    font-weight: 300;
-    transition: 
-    background-color 0.3s ease, 
-    color 0.3s ease, 
-    box-shadow 0.3s ease, 
-    transform 0.3s ease;
-  i {
-    font-size: 1.5rem;
-  }
-
-    @media screen and (max-width: 500px) {
-      font-size: 2.5rem;
-    }
-  }
-  @media screen and (max-width: 1024px) {
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 0 3rem 2rem 3rem;
-  }
-}
-
-// .button-pair {
-//   display: flex;
-//   justify-content: flex-end;
-//   gap: 1.5rem;
-//   margin: 2rem 2rem 2rem auto;
-
-//   button {
-//     width: 3.5rem;
-//     height: 3.5rem;
-//     border-radius: 80%;
-//     border: none;
-//     outline: none;
-//     cursor: pointer;
-//     background-color: #ffffff;
-//     color: #000000;
-//     box-shadow: 0 8px 14px rgba(211, 211, 211, 0.5);
-//     font-size: 2rem;
-//     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-
-//     &:hover {
-//       background-color: #000000;
-//       color: #ffffff;
-//       transform: scale(1.05);
-//     }
-
-//     @media screen and (max-width: 500px) {
-//       width: 3.5rem;
-//       height: 3.5rem;
-//       font-size: 1.5rem;
-//     }
-//   }
-
-//   .left-button {
-//     margin-right: 0.5rem;
-//   }
-// }
 
 .image-holder {
   width: 30vw;
   height: 80vh;
-  // margin: 2px -8px;
   overflow: hidden;
   position: relative;
-  // box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  // border-radius: 10px;
   transition: transform 0.5s ease;
 
   @media screen and (max-width: 500px) {
@@ -222,50 +108,31 @@ i {
     width: 40vw;
     height: 68vh;
   }
-  @media screen and (min-width: 750.1px) and (max-width: 900px) {
-    width: 35vw;
-    height: 50vh;
-  }
-  @media screen and (min-width: 900.1px) and (max-width: 1024px) {
-    width: 30vw;
-    height: 65vh;
-  }
 
   img {
     width: 100%;
     height: 80%;
-    object-fit:cover; /* Ensures the whole image is visible */
-    // background-color: #000;
-    background-blend-mode: darken;
-    // border-radius: 10px;
+    object-fit: cover;
     transition: transform 0.3s ease;
-  }
 
-  &:hover img {
-    transform: scale(1.05); /* Slight zoom effect on hover */
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 }
+
 .img-description {
   position: absolute;
   bottom: 30px;
   left: 0;
-  width: 100%; /* Ensures it spans the full width of the container */
-padding: 2.5rem 1rem;
+  width: 100%;
+  padding: 2.5rem 1rem;
   z-index: 5;
   display: flex;
   flex-direction: column;
   text-align: left;
-  box-sizing: border-box; /* Include padding within width calculation */
-  
-  /* Full width background with a gradient for readability */
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.7),
-    rgba(0, 0, 0, 0.5)
-  );
-
-  /* Ensure no clipping due to parent overflow */
-  overflow: hidden;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
 
   @media screen and (max-width: 900px) {
     padding: 1.7rem 1rem;
@@ -291,23 +158,6 @@ padding: 2.5rem 1rem;
   }
 }
 
-
-/* Slider Styles */
-@mixin white-gradient {
-  background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-}
-
-$animationSpeed: 25s;
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-250px * 7));
-  }
-}
-
 .slider {
   overflow: hidden;
   display: flex;
@@ -316,37 +166,52 @@ $animationSpeed: 25s;
 
   &::before,
   &::after {
-    @include white-gradient;
     content: "";
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
   }
-
-  &::after {
-    right: 0;
-    top: 0;
-    transform: rotateZ(180deg);
+  .left-button, .right-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
   }
-
-  &::before {
-    left: 0;
-    top: 0;
+  
+  .left-button {
+    left: 10px;
   }
-
+  .active {
+    /* Optional: Add any special styling to the active slide, e.g., a border */
+    border: 2px solid #fff;
+  }
+  
+  .right-button {
+    right: 10px;
+  }
   .slider-track {
-    animation: scroll $animationSpeed linear infinite;
+    animation: scroll 25s linear infinite;
     width: 60%;
     margin-right: 2rem;
     cursor: pointer;
-  }
+    transition: transform 0.5s ease; 
 
-  .slider-track:hover {
-    .image-holder img {
+    &:hover .image-holder img {
       transform: scale(1.1);
       transition: transform 1s ease;
     }
   }
+  
 
   .slide {
     display: flex;
     flex-direction: row;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 7));
   }
 }

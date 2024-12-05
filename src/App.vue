@@ -85,7 +85,7 @@ export default class App extends Vue {
     // Start smooth scroll animation
     this.startSmoothScroll();
 
-    event.preventDefault(); // Prevent native scrolling
+    // event.preventDefault(); // Prevent native scrolling
 
     // Unlock wheel event after a small delay to allow smooth scrolling
     setTimeout(() => {
@@ -152,8 +152,10 @@ html {
   min-height: 100vh;
   font-size: 16px;
   line-height: 1.5;
-  overflow: hidden; /* Prevent native scroll conflicts */
+  
+  overflow: auto; /* Allow scrolling */
 }
+
 
 body {
   position: relative;
@@ -270,6 +272,7 @@ footer {
 /* Smooth scroll helper class */
 .smooth-scroll {
   scroll-behavior: smooth;
+  //  overflow: auto; 
 }
 
 </style>

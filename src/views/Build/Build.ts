@@ -1,9 +1,9 @@
 import { Options, Vue } from "vue-class-component";
 import Title from "@/components/Title/Title.vue";
 
-import TxtImg2 from "@/components/TxtImg2/TxtImg2.vue";
 import IntroSection from "@/components/Build/IntroSection.vue";
 import BottomSection from "@/components/BottomSection/BottomSection.vue";
+import TxtImg3 from "@/components/TxtImg3/TxtImg3.vue";
 
 @Options({
   name: "AboutDlc",
@@ -11,7 +11,7 @@ import BottomSection from "@/components/BottomSection/BottomSection.vue";
     Title,
     IntroSection,
 
-    TxtImg2,
+    TxtImg3,
     BottomSection
   },
   data() {
@@ -64,7 +64,7 @@ import BottomSection from "@/components/BottomSection/BottomSection.vue";
         "Our designs go beyond aesthetics, intentionally combining beauty and functionality into environments that reflect your story. Every element is carefully curated to ensure your space is visually striking, yet practical and enduring. Whether it's a serene home retreat, a vibrant workspace, or a social hub, we design with intention, creating spaces that enrich everyday life.",
        imgRight: require("@/assets/TxtImg2/AboutDlc/TxtImg1.jpg"),
        imgLeft: require("@/assets/TxtImg2/AboutDlc/TxtImg2.jpg"),
-      headerMirror: "A Decade of DAT Architecture",
+      headerMirror: "Where Vision Meets Artistry at DAT",
       paragraphMirror: "At DAT, we don't build mere structures we create masterpieces that come alive. Innovation, craftsmanship, and passion meld into one to turn an idea into space that inspires and delights. Our designs will be beautiful and functional, crafted with purpose to reflect your vision. We craft timeless environments that elevate the everyday, marrying elegance and practicality. Building with DAT is about creating a legacy in craftsmanship, a space that not only lasts for generations to come but renews the world for you.",
       imgRightMirror: require("@/assets/TxtImg2/AboutDlc/TxtImg1Mirror.jpg"),
        imgLeftMirror: require("@/assets/TxtImg2/AboutDlc/TxtImg2Mirror.jpg"),

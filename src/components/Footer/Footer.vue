@@ -86,7 +86,7 @@
         <img src="../../assets/logoa.png" alt="English" loading="lazy"/> EN
       </button>
     </div>
-    <p>&copy; 2024 DATArtitecture. All rights reserved.</p>
+    <p>&copy; 2024 DAT Artitecture. All rights reserved.</p>
   </div>
 </footer>
 

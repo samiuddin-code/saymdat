@@ -1,5 +1,5 @@
 import { Options, Vue } from "vue-class-component";
-
+import MenuIcon from '@mui/icons-material/Menu';
 @Options({
   name: "Navbar",
   data() {
@@ -29,11 +29,21 @@ export default class Navbar extends Vue {
     const header = document.getElementById("header");
 
     if (header) {
-      header.classList.remove("bounce"); // Remove the bounce class to reset the animation
-      void header.offsetWidth; // Trigger a reflow to re-enable animation
-      header.classList.add("bounce"); // Add the bounce class to trigger the animation
+      if (window.scrollY > 50) {
+        if (!this.isScrolled) {
+          this.isScrolled = true;
+          this.triggerBounce(header); // Trigger bounce effect when scrolled
+        }
+      } else {
+        this.isScrolled = false;
+      }
     }
+  }
 
-    this.isScrolled = window.scrollY > 50;
+  // Method to trigger bounce animation
+  triggerBounce(element: HTMLElement) {
+    element.classList.remove("bounce"); // Reset animation
+    void element.offsetWidth; // Trigger reflow
+    element.classList.add("bounce"); // Add bounce animation
   }
 }

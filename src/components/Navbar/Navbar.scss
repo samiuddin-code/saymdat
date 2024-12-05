@@ -125,7 +125,7 @@
 }
 
 .submenu-item:hover {
-  background-color:#137749;// Darker hover color
+ background-color:#137749;  // Darker hover color
   transform: none;  // Removed the translation effect on hover
 }
 
@@ -183,14 +183,20 @@
   transition: transform 0.3s ease-in-out;
 padding: 20px;
 
-
-&.scrolled {
-  background-color: rgba(0, 0, 0, 0.8); /* Add background color for scrolled state */
-  transition: background-color 0.3s ease;
+  @keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
 }
 
-&.bounce {
-  animation: bounce 0.6s ease-out; /* Set duration for the bounce effect */
+.scrolled-bounce {
+  animation: bounce 0.6s ease-in-out;
 }
 
 }
@@ -201,19 +207,36 @@ padding: 20px;
   z-index: 10;
 }
 
+@keyframes bounce {
+  0% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.sticky-nav.bounce {
+  animation: bounce 3s ease-out;
+}
 
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
 
 
 #header {
   background-color: transparent;
-    &.scrolled {
-    background-color: rgba(0, 0, 0, 0.8); /* Add background color for scrolled state */
-    transition: background-color 0.3s ease;
-  }
-
-  &.bounce {
-    animation: bounce 0.6s ease-out; /* Set duration for the bounce effect */
-  }
   // transition: background-color 0.3s ease;
 }
 
@@ -328,7 +351,9 @@ padding: 20px;
 #nav-logo {
   .nav-toggler {
     display: none;
-    background: inherit;
+    position: relative;
+    left: 4rem;
+    background: fixed;
     border: none;
     outline: none;
   }
@@ -497,14 +522,17 @@ padding: 20px;
 /* Optional: Adjustments for smaller screens */
 @media screen and (max-width: 500px) {
   .logo {
-    width: 8rem; /* Smaller size for mobile */
-    height: 3rem; /* Adjust height */
+    width: 11rem; /* Smaller size for mobile */
+    height: 7rem;
+    position: relative;
+    right: 7rem;
+    top:8px /* Adjust height */
   }
 
   #header.scrolled .logo {
     transform: scale(1.3); /* Slightly smaller scale on mobile */
-    width: 10rem; /* Adjust width */
-    height: 4rem; /* Adjust height */
+    width: 11rem; /* Adjust width */
+    height: 6rem; /* Adjust height */
   }
 }
 /* Hover underline animation */

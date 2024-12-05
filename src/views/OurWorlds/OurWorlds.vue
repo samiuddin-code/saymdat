@@ -6,7 +6,7 @@
         :key="index"
         :pic="image.location_images"
         :title="image.title"
-        :subtitle="image.subtitle"
+        @click="navigateToProjectDetail(image)"
       />
     </div>
   </section>
@@ -33,10 +33,17 @@ export default class OurWorlds extends Vue {
 
   async fetchImages() {
   try {
-    const response = await axios.get<ApiResponse>('https://www.datconsultancy.com/_next/data/eXx6uPVkXf67Rmx7ThjPc/services.json');
+    const response = await axios.get<ApiResponse>(
+      'https://www.datconsultancy.com/_next/data/eXx6uPVkXf67Rmx7ThjPc/projects/residential.json?category=residential'
+    );
+
     const projectsArray = response.data?.pageProps?.response;
 
-    // Check if response is an array, then find and map over rows if present
+    if (!projectsArray) {
+      console.warn('No projects found in the response');
+      return;
+    }
+
     const projects: Project[] = Array.isArray(projectsArray)
       ? projectsArray.find((item: { data: { rows: Project[] } }) => item.data.rows)?.data.rows || []
       : [];
@@ -50,19 +57,26 @@ export default class OurWorlds extends Vue {
       title: project.title,
       subtitle: project.highlight || '',
       location_images: `https://api.datconsultancy.com/uploads/${project.image}`,
+      id: String(project.id),
+      projectSlug: project.slug, // Ensure projectSlug is mapped
     }));
 
     console.log('Fetched images:', this.images);
   } catch (error) {
     console.error('Error fetching images:', error);
-    // Optional: Display an error message in the UI.
   }
 }
 
 
+  // Navigate to the project detail page with the projectSlug
+  navigateToProjectDetail(image: ImageDetails) {
+    // Dynamically construct the URL for project detail
+    const projectSlug = image.projectSlug;
+    this.$router.push({ name: 'ProjectDetail', params: { projectSlug } });
+  }
 }
 </script>
 
 <style scoped lang="scss">
-@use "./OurWorlds"; // Ensure you have relevant styles defined in this file
-</style> 
+@use "./OurWorlds"; // Ensure relevant styles are defined here
+</style>

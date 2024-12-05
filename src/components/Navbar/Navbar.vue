@@ -11,12 +11,17 @@
           />
         </router-link>
         <button class="nav-toggler" @click="toggleMenu">
-          <svg width="16" height="16" fill="#fff" class="toggler-svg">
-            <rect width="16" height="4" x="0" y="0" />
-            <rect width="16" height="4" x="0" y="6" />
-            <rect width="12" height="4" x="0" y="12" />
-          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="35px" class="toggler-svg" height="85" viewBox="0 0 20.00 20.00" fill="none" stroke="#000000" stroke-width="0.12">
+
+<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+
+<g id="SVGRepo_iconCarrier"> <path fill="#ffffff" fill-rule="evenodd" d="M18 5a1 1 0 100-2H2a1 1 0 000 2h16zm0 4a1 1 0 100-2H2a1 1 0 100 2h16zm1 3a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 5a1 1 0 100-2H2a1 1 0 100 2h16z"/> </g>
+
+</svg>
         </button>
+   
       </div>
       <div id="nav-links" :class="{ 'is-toggled': isToggled }">
         <router-link @click="isToggled = false" to="/about-dlc">
@@ -27,7 +32,7 @@
           @mouseover="toggleSubmenu(true)"
           @mouseleave="toggleSubmenu(false)"
         >
-          <router-link @click="isToggled = false" to="/our-worlds">
+          <router-link @click="isToggled = false" to="/experiences">
             <p class="hover-underline-animation">
               Our Expertise
               <span class="arrow-down">&#x25BC;</span>
@@ -54,7 +59,7 @@
             </div>
           </div>
         </div>
-        <router-link @click="isToggled = false" to="/experiences">
+        <router-link @click="isToggled = false" to="/our-worlds">
           <p class="hover-underline-animation">Our Projects</p>
         </router-link>
         <router-link @click="isToggled = false" to="/gallery">
@@ -73,6 +78,7 @@
 
 <script>
 export default {
+
   data() {
     return {
       isToggled: false,

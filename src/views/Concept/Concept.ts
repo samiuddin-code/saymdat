@@ -1,7 +1,7 @@
 import { Options, Vue } from "vue-class-component";
 import Title from "@/components/Title/Title.vue";
 
-import TxtImg2 from "@/components/TxtImg2/TxtImg2.vue";
+import TxtImg3 from "@/components/TxtImg2/TxtImg2.vue";
 import IntroSection from "@/components/Concept/IntroSection.vue";
 import BottomSection from "@/components/BottomSection/BottomSection.vue";
 
@@ -10,7 +10,7 @@ import BottomSection from "@/components/BottomSection/BottomSection.vue";
   components: {
     Title,
     IntroSection,
-    TxtImg2,
+    TxtImg3,
     BottomSection
   },
   data() {
@@ -61,7 +61,7 @@ import BottomSection from "@/components/BottomSection/BottomSection.vue";
         "Ultimately, we strive to redefine how people experience the spaces they live, work, and play in. By emphasizing precision and innovation, we create architecture that doesn't just serve a purpose but enhances life, fosters connection, and leaves a lasting legacy. At DAT, we don't just design for the present; we design for tomorrow.",
        imgRight: require("@/assets/TxtImg2/AboutDlc/concept.png"),
        imgLeft: require("@/assets/TxtImg2/AboutDlc/600x400/concept.png"),
-      headerMirror: "A Decade of DAT Architecture",
+      headerMirror: " Where Ideas Become Timeless Icons",
       paragraphMirror: "At DAT Architecture, ideas are not just put into reality but into an iconic design that can stand the test of time. Each of our concepts is a perfect blend of creativity and precision, innovatively designed to stand the test of time. Our designs rise above mere trends and turn into perpetual landmarks, inspiring many for centuries. We think of spaces that are strikingly beautiful, sustainable, and functional to remain relevant and beautiful, no matter how the world changes.",
       imgRightMirror: require("@/assets/TxtImg2/AboutDlc/3500xx4375/concept.png"),
        imgLeftMirror: require("@/assets/TxtImg2/AboutDlc/downimage/concept.png"),

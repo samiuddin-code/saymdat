@@ -247,41 +247,53 @@ export default {
 @media screen and (max-width: 480px) {
   .landing-page {
     align-items: center;
-    padding: 1rem;
+    padding: 1rem; /* Reduced padding for compact layout */
   }
 
   .header-title {
     margin-left: 0;
-    text-align: center;
+    text-align: center; /* Center-align header text */
     font-size: 0.9rem;
-    top: 1rem;
+    top: 1rem; /* Adjusted top margin */
   }
 
   .content {
-    align-items: center;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center align for better visuals */
   }
 
   .text-container {
     padding-right: 0;
-    text-align: center;
+    text-align: center; /* Align text centrally for readability */
+    width: 100%; /* Use full width on small screens */
   }
 
   .main-title {
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* Reduced title size */
+    line-height: 1.8rem; /* Adjusted line-height for balance */
+    margin-bottom: 1rem; /* Reduced spacing */
   }
 
   .description {
-    font-size: 0.8rem;
-    line-height: 1.3;
+    font-size: 0.8rem; /* Smaller font for descriptions */
+    line-height: 1.3; /* Compact line spacing */
+    margin-bottom: 1rem; /* Adjusted margin */
   }
 
   .buttons-container {
-    padding-bottom: 50px;
+    padding-bottom: 50px; /* Adjusted button spacing */
   }
 
   .btn {
-    padding: 0.6rem 0.8rem;
-    font-size: 0.8rem;
+    padding: 0.6rem 0.8rem; /* Reduced button padding */
+    font-size: 0.8rem; /* Smaller font size for buttons */
+    width: 90%; /* Buttons take up most of the width */
+  }
+
+  .icon {
+    font-size: 1rem; /* Slightly smaller icon size */
+    margin-left: 6px; /* Reduced spacing */
   }
 }
+
 </style>

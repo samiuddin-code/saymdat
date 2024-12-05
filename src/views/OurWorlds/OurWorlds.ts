@@ -4,9 +4,11 @@ export interface Project {
   id: number;
   title: string;
   slug: string;
+
+  subtitle?: string;
   highlight: string;
   description: string;
-  image: string;
+  image?: string;
 }
 
 // Define the ImageDetails interface for the images used in the component
@@ -14,6 +16,8 @@ export interface ImageDetails {
   title: string;
   subtitle: string;
   location_images: string;
+  id: string;
+  projectSlug: string; 
 }
 
 // Define the ApiResponse interface to match the expected structure of the API response
