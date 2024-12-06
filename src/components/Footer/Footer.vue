@@ -7,9 +7,9 @@
         We are committed to delivering top-notch consulting and design services with the priority of integrating clients' requirements whilst adhering to building standards. Every project's standards and purposes are prioritized to maximize the possibility of solutions needed to achieve the highest points of results.
       </p>
       <div class="footer-contact">
-        <p>Email: <a href="mailto:tender@datconsultancy.com">tender@datconsultancy.com</a></p>
-        <p>Phone: <a href="tel:+971 42 427 700">+971 42 427 700</a></p>
-      </div>
+          <p class="footer-contact-text">Email: <a href="mailto:tender@datconsultancy.com">tender@datconsultancy.com</a></p>
+          <p class="footer-contact-text">Phone: <a href="tel:+971 42 427 700">+971 42 427 700</a></p>
+        </div>
       <!-- <div class="newsletter-section">
         <p>Subscribe to our Newsletter</p>
         <div class="newsletter-input">
@@ -74,7 +74,7 @@
           <li>Careers</li>
         </ul>
         <h3>Offices</h3>
-        <p><strong>Dubai:</strong> The Opus Tower by Zaha Hadid, Office B803, Business Bay, Dubai</p>
+        <p class="footer-contact-text"><strong>Dubai:</strong> The Opus Tower by Zaha Hadid, Office B803, Business Bay, Dubai</p>
 
       </div>
     </div>

@@ -2,7 +2,7 @@
   background-color: #161f1e; /* Dark and elegant background */
   color: #eee; /* Light and luxurious text color */
   font-family: 'Nunito', sans-serif;
-  padding: 80px 70px;
+  padding: 80px 30px;
   text-align: center;
 
   .footer-container {
@@ -14,14 +14,30 @@
     gap: 40px;
     margin: auto;
   }
-
+  .footer-contact-text {
+    font-size: 0.85rem; /* Adjust this size as needed */
+  }
+  
+  .footer-column p, .footer-column li {
+    font-size: 0.85rem; /* Apply smaller font size to location, email, and phone number */
+  }
+  .footer-contact-text {
+    font-size: 14px; /* Adjust the size here */
+  }
+  
+  .footer-contact-text a {
+    font-size: 14px; /* Adjust the size of the links as well */
+  }
   .footer-logo-section {
     flex: 1;
+    position: relative;
+    // left: -3rem;
     min-width: 300px;
     margin-bottom: 30px;
     text-align: left;
 
     .footer-logo {
+      left: -2.5rem;
       width: 160px;
       margin-bottom: 10px;
       position: relative;
@@ -29,18 +45,13 @@
     }
 
     .footer-description {
-      // font-size: 16px;
-      // line-height: 1.6;
       color: #ccc;
       margin-bottom: 16px;
       position: relative;
       top: -70px;
-
       line-height: 1.5;
-      // margin-bottom: 2rem;
-    
       font-size: 0.9rem;
-        line-height: 1.8rem;
+      line-height: 1.8rem;
     }
 
     .footer-contact {
@@ -168,71 +179,115 @@
     }
   }
 
-  /* Responsive styles */
   @media (max-width: 768px) {
+    .footer {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+  
     .footer-container {
-      flex-direction: column;
-      align-items: center;
-      gap: 30px;
+      display: block; /* Make the container block-level for full-width */
+      width: 100%;  /* Ensure it takes full width */
+      padding: 0;
+      margin: 0;
     }
-
-    .footer-links-section {
-      flex-direction: column;
-      align-items: center;
-      gap: 30px;
-
-      .footer-column {
-        text-align: center;
-        min-width: 100%;
-        margin-bottom: 30px;
-      }
-    }
-
-    .footer-bottom {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-
-      p {
-        margin-top: 15px;
-      }
-    }
-  }
-
-  @media (max-width: 480px) {
+  
+    .footer-logo-section,
     .footer-description,
     .footer-contact p,
-    .footer-bottom p {
-      font-size: 13px;
-    }
-
+    .footer-column,
+    .footer-bottom,
     .newsletter-section {
-      margin-top: 20px;
-
-      p {
-        font-weight: bold;
-      }
-
-      .newsletter-input {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-
-        input {
-          padding: 8px;
-          border: 1px solid #ccc;
-          // border-radius: 4px;
-        }
-
-        button {
-          background-color: #333;
-          color: #fff;
-          border: none;
-          padding: 8px 16px;
-          cursor: pointer;
-          // border-radius: 4px;
-        }
-      }
+      width: 100%; /* Ensure all sections inside footer take full width */
+      text-align: left; /* Align content to the left */
+      margin: 0; /* Remove margin */
+      padding: 0; /* Remove padding */
+    }
+  
+    .footer-links-section {
+      display: block; /* Make it block-level to force sections to stack */
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+  
+    .footer-column {
+      text-align: left;
+      width: 100%;
+      padding: 0;
+      margin-bottom: 10px;
+    }
+  
+    .footer-bottom {
+      text-align: left;
+      display: block;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+  
+    .newsletter-input {
+      display: flex;
+      flex-direction: column;
+      width: 100%; /* Ensure full width */
+    }
+  
+    .newsletter-input input,
+    .newsletter-input button {
+      width: 100%; /* Ensure both input and button are 100% width */
     }
   }
-}
+  
+  @media (max-width: 480px) {
+    .footer {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+  
+    .footer-container,
+    .footer-logo-section,
+    .footer-description,
+    .footer-contact p
+    .footer-column,
+    .footer-bottom,
+    .newsletter-section {
+      width: 100%; /* Ensure full width for all sections */
+      text-align: left; /* Left align all content */
+      margin: 0;
+      padding: 0;
+    }
+  
+    .footer-links-section {
+      display: block; /* Force section stacking */
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+  
+    .footer-column {
+      text-align: left;
+      width: 100%;
+      padding: 0;
+      margin-bottom: 10px;
+    }
+  
+    .footer-bottom {
+      display: block;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+  
+    .newsletter-input {
+      width: 100%; /* Ensure full width */
+    }
+  
+    .newsletter-input input,
+    .newsletter-input button {
+      width: 100%; /* Ensure they are full width */
+    }
+  }
+  
+}  

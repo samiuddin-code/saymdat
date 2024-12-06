@@ -76,7 +76,7 @@ export default {
   flex-direction: column;
   align-items: flex-start;
   padding: 2rem;
-  width: 110%;
+  width: 100%;
   box-shadow: #333;
   position: relative;
   color: #fff;
@@ -286,13 +286,13 @@ export default {
   }
 
   .buttons-container {
-    padding-bottom: 50px; /* Adjusted button spacing */
+
   }
 
   .btn {
     padding: 0.6rem 0.8rem; /* Reduced button padding */
     font-size: 0.8rem; /* Smaller font size for buttons */
-    width: 90%; /* Buttons take up most of the width */
+    width: 110%; /* Buttons take up most of the width */
   }
 
   .icon {

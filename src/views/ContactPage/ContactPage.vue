@@ -170,7 +170,11 @@ export default {
   $transition: 0.3s ease;
 
 
-  
+//   .contact-card h3 {
+//   font-size: 10px; /* Reduced font size for the heading */
+// }
+
+
   /* Main container */
 .contact {
   display: flex;
