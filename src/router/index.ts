@@ -5,9 +5,7 @@ import ImageDetail from "@/views/ImageDetail/ImageDetail.vue";
 import Gallery from "@/views/Gallery/Gallery.vue";
 
 // Add routes for design, build, and concept pages
-import Design from "@/views/Design/Design.vue";
-import Build from "@/views/Build/Build.vue";
-import Concept from "@/views/Concept/Cocept.vue";
+
 import Details from "@/views/Details.vue";
 import ProjectDetail from "@/views/ProjectDetail.vue";
 
@@ -80,19 +78,18 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/design",
     name: "Design",
-    component: Design,
+    component: () => import(/* webpackChunkName: "design" */ "@/views/Design/Design.vue"),
   },
   {
     path: "/build",
     name: "Build",
-    component: Build,
+    component: () => import(/* webpackChunkName: "build" */ "@/views/Build/Build.vue"),
   },
   {
     path: "/concept",
     name: "Concept",
-    component: Concept,
+    component: () => import(/* webpackChunkName: "concept" */ "@/views/Concept/Cocept.vue"),
   },
-
   {
     path: "/:catchAll(.*)", // Catch-all route for undefined paths
     redirect: "/", // Redirect to home for undefined routes

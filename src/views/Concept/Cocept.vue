@@ -26,7 +26,7 @@
         class="larger-image"
       />
     </div>
-    <TxtImg3 :header1="elements.headerMirror" :paragraph="elements.paragraphMirror" :imgRight="elements.imgRightMirror" :imgLeft="elements.imgLeftMirror" :mirror="true"/>
+    <TxtImg2 :header1="elements.headerMirror" :paragraph="elements.paragraphMirror" :imgRight="elements.imgRightMirror" :imgLeft="elements.imgLeftMirror" :mirror="true"/>
       <BottomSection picture="AboutDlc.jpg"/>
   </div>
 </template>

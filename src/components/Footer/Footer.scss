@@ -19,14 +19,21 @@
   }
   
   .footer-column p, .footer-column li {
-    font-size: 0.85rem; /* Apply smaller font size to location, email, and phone number */
+    font-size: 0.85rem; 
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;/* Apply smaller font size to location, email, and phone number */
   }
   .footer-contact-text {
+    font-family: 'Nunito', sans-serif;
     font-size: 14px; /* Adjust the size here */
   }
   
   .footer-contact-text a {
-    font-size: 14px; /* Adjust the size of the links as well */
+    font-size: 0.85rem;
+    
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    font-style: normal; /* Adjust the size of the links as well */
   }
   .footer-logo-section {
     flex: 1;

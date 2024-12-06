@@ -1,4 +1,3 @@
-
 import { Options, Vue } from "vue-class-component";
 
 @Options({
@@ -23,24 +22,13 @@ import { Options, Vue } from "vue-class-component";
   }
 })
 export default class Title extends Vue {
-  // These props are automatically injected into the component
-  bText!: string;
-  lText!: string;
-  video!: string;
-  imageBg!: string;
-
   // Method to handle scroll when the button is clicked
   scrollToNextSection() {
+    // Scroll down by one viewport height (smooth scroll)
     window.scrollBy({
       top: window.innerHeight, // Scroll one full viewport height
       left: 0,
       behavior: 'smooth' // Smooth scroll animation
     });
-
-
-    this.scrollToNextSection ()
-    
   }
-
 }
-

@@ -63,7 +63,7 @@ import TxtImg3 from "@/components/TxtImg3/TxtImg3.vue";
       paragraph:
         "Our designs go beyond aesthetics, intentionally combining beauty and functionality into environments that reflect your story. Every element is carefully curated to ensure your space is visually striking, yet practical and enduring. Whether it's a serene home retreat, a vibrant workspace, or a social hub, we design with intention, creating spaces that enrich everyday life.",
        imgRight: require("@/assets/TxtImg2/AboutDlc/TxtImg1.jpg"),
-       imgLeft: require("@/assets/TxtImg2/AboutDlc/TxtImg2.jpg"),
+       imgLeft: require("@/assets/bb.png"),
       headerMirror: "Where Vision Meets Artistry at DAT",
       paragraphMirror: "At DAT, we don't build mere structures we create masterpieces that come alive. Innovation, craftsmanship, and passion meld into one to turn an idea into space that inspires and delights. Our designs will be beautiful and functional, crafted with purpose to reflect your vision. We craft timeless environments that elevate the everyday, marrying elegance and practicality. Building with DAT is about creating a legacy in craftsmanship, a space that not only lasts for generations to come but renews the world for you.",
       imgRightMirror: require("@/assets/TxtImg2/AboutDlc/TxtImg1Mirror.jpg"),

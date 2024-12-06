@@ -40,7 +40,6 @@
 </template>
 
 
-
 <script type="module" src="./ExploreCarousel.ts"></script>
 
 <style scoped lang="scss">

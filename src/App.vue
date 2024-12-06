@@ -4,6 +4,7 @@
   <router-view />
   <Footer />
 </template>
+
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
 import { useRouter } from 'vue-router';
@@ -24,6 +25,9 @@ export default class App extends Vue {
   currentScroll = 0; // Tracks the current scroll position
   targetScroll = 0; // Tracks the target scroll position
   isScrolling = false; // Tracks whether the scroll animation is active
+
+  private lastWheelTime = 0;
+  private scrollRequestId: number | null = null;
 
   mounted() {
     const router = useRouter();
@@ -48,40 +52,40 @@ export default class App extends Vue {
   }
 
   initializeSmoothScroll() {
-    let lastWheelTime = 0;
-    window.addEventListener('wheel', (event: WheelEvent) => {
-      const now = performance.now();
-      if (now - lastWheelTime < 16) return; // Throttle to ~60fps
-      lastWheelTime = now;
-
-      this.handleWheelEvent(event);
-      event.preventDefault();
-    }, { passive: false });
-
-    window.addEventListener('keydown', (event: KeyboardEvent) => {
-      const keyDelta: Record<string, number> = {
-        ArrowUp: -150, // Increased scroll speed for keyboard
-        ArrowDown: 150,
-      };
-
-      const delta = keyDelta[event.key];
-      if (delta !== undefined) {
-        this.targetScroll += delta;
-        this.limitScrollBounds();
-        this.startSmoothScroll();
-        event.preventDefault();
-      }
-    });
-
+    window.addEventListener('wheel', this.handleWheelEvent, { passive: false });
+    window.addEventListener('keydown', this.handleKeyDownEvent);
+    
+    // Initialize the scroll position
     this.targetScroll = window.scrollY;
     this.currentScroll = window.scrollY;
   }
 
-  handleWheelEvent(event: WheelEvent) {
-    this.targetScroll += event.deltaY * 1.5; // Increase multiplier for faster scroll
+  handleWheelEvent = (event: WheelEvent) => {
+    const now = performance.now();
+    if (now - this.lastWheelTime < 16) return; // Throttle to ~60fps
+    this.lastWheelTime = now;
+
+    // Apply custom scroll multiplier for smoother scrolling
+    this.targetScroll += event.deltaY * 1.5;
     this.limitScrollBounds();
     this.startSmoothScroll();
-  }
+    event.preventDefault();
+  };
+
+  handleKeyDownEvent = (event: KeyboardEvent) => {
+    const keyDelta: Record<string, number> = {
+      ArrowUp: -150, // Increased scroll speed for keyboard
+      ArrowDown: 150,
+    };
+
+    const delta = keyDelta[event.key];
+    if (delta !== undefined) {
+      this.targetScroll += delta;
+      this.limitScrollBounds();
+      this.startSmoothScroll();
+      event.preventDefault();
+    }
+  };
 
   limitScrollBounds() {
     const maxScroll = document.body.scrollHeight - window.innerHeight;
@@ -89,31 +93,45 @@ export default class App extends Vue {
   }
 
   startSmoothScroll() {
-    if (this.isScrolling) return;
-    this.isScrolling = true;
+  if (this.isScrolling) return;
+  this.isScrolling = true;
 
-    const smoothScrollStep = () => {
-      const distance = this.targetScroll - this.currentScroll;
-      const step = distance * 0.15; // Reduced damping factor for faster motion
+  // Start a new smooth scroll animation
+  const smoothScrollStep = () => {
+    const distance = this.targetScroll - this.currentScroll;
+    const step = distance * 0.15; // Adjust damping for smoothness
 
-      if (Math.abs(distance) < 1) { // Adjusted stopping condition
-        this.isScrolling = false;
-        this.currentScroll = this.targetScroll;
-        window.scrollTo(0, Math.round(this.targetScroll));
-        return;
-      }
+    if (Math.abs(distance) < 1) { // Adjusted stopping condition
+      this.isScrolling = false;
+      this.currentScroll = this.targetScroll;
+      window.scrollTo(0, Math.round(this.targetScroll));
+      return;
+    }
 
-      this.currentScroll += step;
-      window.scrollTo(0, Math.round(this.currentScroll));
+    this.currentScroll += step;
+    window.scrollTo(0, Math.round(this.currentScroll));
 
-      requestAnimationFrame(smoothScrollStep);
-    };
+    // Cancel any previous scroll animation
+    if (this.scrollRequestId) {
+      cancelAnimationFrame(this.scrollRequestId);
+    }
 
-    requestAnimationFrame(smoothScrollStep);
+    this.scrollRequestId = requestAnimationFrame(smoothScrollStep);
+  };
+
+  this.scrollRequestId = requestAnimationFrame(smoothScrollStep);
+}
+
+
+  beforeDestroy() {
+    window.removeEventListener('wheel', this.handleWheelEvent);
+    window.removeEventListener('keydown', this.handleKeyDownEvent);
+    if (this.scrollRequestId) {
+      cancelAnimationFrame(this.scrollRequestId);
+    }
   }
 }
 </script>
-
 
 <style lang="scss">
 /* Import Google Fonts */

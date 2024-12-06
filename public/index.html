@@ -1,39 +1,50 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    rel="stylesheet"
-  />
-    <!-- <link rel="icon" href="<%= BASE_URL %>favicon.ico"> -->
-    <title><%= htmlWebpackPlugin.options.title %></title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet">
+    
+    <!-- Optimize Font Awesome and Material Icons -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons" as="style">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link
-    href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    rel="stylesheet"
-  />
-  
+    <!-- Favicon - Optional, uncomment if needed -->
+    <!-- <link rel="icon" href="<%= BASE_URL %>favicon.ico"> -->
+    
+    <title><%= htmlWebpackPlugin.options.title %></title>
+
+    <!-- Preload only critical assets -->
+    <link rel="preload" href="/src/views/Home/Home.vue" as="script">
+    <link rel="preload" href="/src/views/Home/Home.scss" as="style">
+
+    <!-- Use 'font-display: swap' for better performance when loading Google Fonts -->
+    <style>
+      @font-face {
+        font-family: 'Material Icons';
+        font-style: normal;
+        font-weight: 400;
+        src: url('https://fonts.gstatic.com/s/materialicons/v118/fa-solid-regular.woff2') format('woff2');
+        font-display: swap;
+      }
+    </style>
+
+    <!-- External CSS (use preloading for the most important ones) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   </head>
   
   <body>
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeBff6_eno9PbFTJ8JyULPvlbHFTg1Jlo&libraries=places&callback=initMap" async defer></script> -->
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeBff6_eno9PbFTJ8JyULPvlbHFTg1Jlo&v=beta&libraries=marker" async defer></script> -->
-
-
-    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <!-- Defer loading non-essential scripts like Google Maps -->
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initMap" async defer></script> -->
+    <!-- Defer BabylonJS as it's not critical for page load -->
+    <script src="https://cdn.babylonjs.com/babylon.js" defer></script>
 
     <noscript>
       <strong>We're sorry, but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
+
     <div id="app"></div>
-    <!-- built files will be auto-injected -->
+
+    <!-- Vue.js and other build scripts will be auto-injected -->
   </body>
 </html>

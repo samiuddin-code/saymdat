@@ -107,11 +107,11 @@ import BottomSection from "@/components/BottomSection/BottomSection.vue";
       // header1: "Discovery Builders",
       paragraph:
         "Our process is powered by a combination of passion and precision. Passion drives us to dream big and think creatively, while precision ensures those dreams are brought to life with flawless execution. We balance elegance with functionality, crafting spaces that are not only beautiful but also seamless to live or work in.",
-       imgRight: require("@/assets/TxtImg2/AboutDlc/TxtImg1.jpg"),
-       imgLeft: require("@/assets/TxtImg2/AboutDlc/TxtImg2.jpg"),
+       imgRight: require("@/assets/TxtImg2/AboutDlc/aa.png"),
+       imgLeft: require("@/assets/TxtImg2/AboutDlc/as.jpg"),
       headerMirror: "Your Story Our Design",
       paragraphMirror: "With DAT, you are not just investing in a design service but entering a journey where your story becomes the heart of creation. We listen intently to your aspirations, values, and lifestyle, weaving them into every inch of your space. Each design decision, whether big or small, reflects your individuality and personal taste. Our process is rooted in passion and precision, blending elegance with functionality to create spaces that speak to you. At DAT, your vision isn't just realized but celebrated to make the space an extension of who you are.",
-      imgRightMirror: require("@/assets/TxtImg2/AboutDlc/TxtImg1Mirror.jpg"),
+      imgRightMirror: require("@/assets/TxtImg2/AboutDlc/sidepic.jpg"),
        imgLeftMirror: require("@/assets/TxtImg2/AboutDlc/TxtImg2Mirror.jpg"),
     };
   },

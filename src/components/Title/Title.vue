@@ -8,7 +8,6 @@
     <!-- Material Design Down Arrow Icon -->
     <span class="material-icons arrow-down">arrow_downward</span>
   </button>
-
   <main class="title">
     <span class="bold-text">{{ bText }}</span>
     <span class="light-text">{{ lText }}</span>
