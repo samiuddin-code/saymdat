@@ -1,7 +1,7 @@
 import { Options, Vue } from "vue-class-component";
 import Title from "@/components/Title/Title.vue";
 import ExploreCarousel from "@/components/ExploreCarousel/ExploreCarousel.vue";
-import TxtImg3 from "@/components/TxtImg3/TxtImg3.vue";
+import TxtImg2 from "@/components/TxtImg2/TxtImg2.vue";
 import IntroSection from "@/components/IntroSection/IntroSection.vue";
 import BottomSection from "@/components/BottomSection/BottomSection.vue";
 
@@ -11,7 +11,7 @@ import BottomSection from "@/components/BottomSection/BottomSection.vue";
     Title,
     IntroSection,
     ExploreCarousel,
-    TxtImg3,
+    TxtImg2,
     BottomSection
   },
   data() {
@@ -111,7 +111,7 @@ import BottomSection from "@/components/BottomSection/BottomSection.vue";
        imgLeft: require("@/assets/abcdef.png"),
       headerMirror: "A Decade of DAT Architecture",
       paragraphMirror: "With over 10 years of experience, DAT Architecture has redefined design by blending creativity, innovation, and precision. From our early projects to becoming a trusted industry leader, we’ve consistently transformed ideas into exceptional spaces. Our journey reflects a commitment to excellence, bringing visionary concepts to life. Passionate about design and dedicated to perfection, we continue to push boundaries, crafting timeless, inspiring environments that captivate and elevate every experience. At DAT, every design tells a story.",
-      imgRightMirror: require("@/assets/TxtImg2/AboutDlc/TxtImg1Mirror.jpg"),
+      imgRightMirror: require("@/assets/TxtImg2/AboutDlc/TxtImg1Mirrorr.jpg"),
        imgLeftMirror: require("@/assets/TxtImg2/AboutDlc/TxtImg2Mirror.jpg"),
     };
   },

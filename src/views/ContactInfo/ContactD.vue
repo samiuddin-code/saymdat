@@ -75,7 +75,10 @@ export default {
    
   flex-direction: column;
   align-items: flex-start;
-  padding: 2rem;
+  padding-left: 9rem;
+  padding-bottom: 2rem;
+  padding-top: 3.5rem;
+  /* padding: 2rem; */
   width: 100%;
   box-shadow: #333;
   position: relative;
@@ -118,22 +121,34 @@ export default {
   /* font-weight: bold; */
   padding-top: 2rem;
   margin-bottom: 4rem;
-
-  font-size: 3rem;
-      line-height: 4rem;
+  display: block;
+      font-size: 2rem;
+      line-height: 3rem;
       font-weight: 300;
-      /* text-transform: uppercase; */
+      text-transform: uppercase;
       letter-spacing: 2px;
+      top: 20px;
+      position: relative;
+      /* margin-bottom: 30px; */
+ 
+  /* font-size: 3rem; */
+      /* line-height: 4rem; */
+      /* font-weight: 300; */
+      /* text-transform: uppercase; */
+      /* letter-spacing: 2px; */
    
 }
 
 .description {
   /* font-size: 1.2rem; */
-  line-height: 1.5;
+  /* line-height: 1.5; */
   margin-bottom: 2rem;
+  font-size: 0.8rem;
+    line-height: 1.6rem;
+    padding-right: -2rem;
 
-  font-size: 0.9rem;
-    line-height: 1.8rem;
+  /* font-size: 0.9rem; */
+    /* line-height: 1.8rem; */
     /* padding-right: 12rem; */
 }
 
@@ -178,10 +193,68 @@ export default {
 }
 
 /* Responsive Design */
+
+/* For screens between 1024px and 1700px */
+@media screen and (max-width: 1700px) {
+  .landing-page {
+  display: flex;
+   
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 9rem;
+  padding-bottom: 2rem;
+  padding-top: 3.5rem;
+  /* padding: 2rem; */
+  width: 100%;
+  box-shadow: #333;
+  position: relative;
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  height: 75vh; /* Full screen height */
+}
+
+  .header-title {
+    margin-left: 2rem;
+    font-size: 1.5rem;
+    top: 3rem;
+  }
+
+  /* .content {
+    padding-top: -2rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  } */
+
+  .text-container {
+    padding-right: 3rem;
+  }
+
+  .main-title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
+  }
+
+  .buttons-container {
+    padding-bottom: 20px;
+  }
+
+  .btn {
+    padding-top: 2rem;
+    padding: 1.2rem 1.8rem;
+    font-size: 1rem;
+  }
+}
+
+/* For screens between 768px and 1024px */
 @media screen and (max-width: 1024px) {
   .landing-page {
     padding: 1.5rem;
-    height: auto; /* Adjust for smaller screens */
+    height: auto;
   }
 
   .header-title {
@@ -220,6 +293,7 @@ export default {
   }
 }
 
+/* For screens between 500px and 768px */
 @media screen and (max-width: 768px) {
   .header-title {
     margin-left: 2rem;
@@ -249,56 +323,57 @@ export default {
   }
 }
 
-@media screen and (max-width: 480px) {
+/* For screens between 480px and 500px */
+@media screen and (max-width: 500px) {
   .landing-page {
     align-items: center;
-    padding: 1rem; /* Reduced padding for compact layout */
+    padding: 1rem;
   }
 
   .header-title {
     margin-left: 0;
-    text-align: center; /* Center-align header text */
+    text-align: center;
     font-size: 0.9rem;
-    top: 1rem; /* Adjusted top margin */
+    top: 1rem;
   }
 
   .content {
-    flex-direction: column; /* Stack content vertically */
-    align-items: center; /* Center align for better visuals */
+    flex-direction: column;
+    align-items: center;
   }
 
   .text-container {
     padding-right: 0;
-    text-align: center; /* Align text centrally for readability */
-    width: 100%; /* Use full width on small screens */
+    text-align: center;
+    width: 100%;
   }
 
   .main-title {
-    font-size: 1.5rem; /* Reduced title size */
-    line-height: 1.8rem; /* Adjusted line-height for balance */
-    margin-bottom: 1rem; /* Reduced spacing */
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    margin-bottom: 1rem;
   }
 
   .description {
-    font-size: 0.8rem; /* Smaller font for descriptions */
-    line-height: 1.3; /* Compact line spacing */
-    margin-bottom: 1rem; /* Adjusted margin */
+    font-size: 0.8rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
   }
 
   .buttons-container {
-
   }
 
   .btn {
-    padding: 0.6rem 0.8rem; /* Reduced button padding */
-    font-size: 0.8rem; /* Smaller font size for buttons */
-    width: 110%; /* Buttons take up most of the width */
+    padding: 0.6rem 0.8rem;
+    font-size: 0.8rem;
+    width: 110%;
   }
 
   .icon {
-    font-size: 1rem; /* Slightly smaller icon size */
-    margin-left: 6px; /* Reduced spacing */
+    font-size: 1rem;
+    margin-left: 6px;
   }
 }
+
 
 </style>

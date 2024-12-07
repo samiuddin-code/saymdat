@@ -40,6 +40,7 @@
   margin-bottom: 4rem;
   text-align: left;
   span {
+    
     color: #746a6a;
     font-size: 3.5rem;
     font-weight: 500;
@@ -66,6 +67,7 @@
   text-align: left;
   margin-bottom: 4rem;
   p {
+    
     color: #777;
     line-height: 2.2rem;
     font-size: 1.2rem;
@@ -77,61 +79,61 @@
   }
 }
 
-/* Navigation */
-.globe-nav {
-  display: flex;
-  margin-bottom: 4rem;
-  gap: 3rem;
-  flex-wrap: wrap;
-  @media screen and (max-width: 1024px) {
-    gap: 2rem;
-  }
-  .globe-nav-item {
-    cursor: pointer;
-    background: #ffffff; /* Clean, fresh background for the button */
-    border: 2px solid transparent;
-    outline: none;
-    padding: 0.8rem 2.5rem; /* Slightly increased padding for better spacing */
-    border-radius: 50px; /* Fully rounded corners for a modern and soft button */
-    font-size: 1rem;
-    font-weight: 500; /* Slightly heavier font weight for prominence */
-    text-transform: uppercase; /* All caps for added emphasis */
-    letter-spacing: 1px; /* Slight letter spacing for modern aesthetics */
-    color: #333; /* Neutral text color */
-    transition: all 0.3s ease-in-out; /* Smoother transitions */
-    // box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    background: linear-gradient(145deg, #f1f1f1, #e4e4e4); /* Subtle gradient for modern feel */
-    border-radius: 50px;
-    display: inline-block;
+// /* Navigation */
+// .globe-nav {
+//   display: flex;
+//   margin-bottom: 4rem;
+//   gap: 3rem;
+//   flex-wrap: wrap;
+//   @media screen and (max-width: 1024px) {
+//     gap: 2rem;
+//   }
+//   .globe-nav-item {
+//     cursor: pointer;
+//     background: #ffffff; /* Clean, fresh background for the button */
+//     border: 2px solid transparent;
+//     outline: none;
+//     padding: 0.8rem 2.5rem; /* Slightly increased padding for better spacing */
+//     border-radius: 50px; /* Fully rounded corners for a modern and soft button */
+//     font-size: 1rem;
+//     font-weight: 500; /* Slightly heavier font weight for prominence */
+//     text-transform: uppercase; /* All caps for added emphasis */
+//     letter-spacing: 1px; /* Slight letter spacing for modern aesthetics */
+//     color: #333; /* Neutral text color */
+//     transition: all 0.3s ease-in-out; /* Smoother transitions */
+//     // box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+//     background: linear-gradient(145deg, #f1f1f1, #e4e4e4); /* Subtle gradient for modern feel */
+//     border-radius: 50px;
+//     display: inline-block;
     
-    /* Responsive Design */
-    @media screen and (max-width: 1024px) {
-      font-size: 0.9rem; /* Slightly smaller font on smaller screens */
-    }
+//     /* Responsive Design */
+//     @media screen and (max-width: 1024px) {
+//       font-size: 0.9rem; /* Slightly smaller font on smaller screens */
+//     }
     
-    /* Hover effect */
-    &:hover {
-      background: linear-gradient(145deg, #ffffff, #dcdcdc); /* Subtle change in gradient on hover */
-       box-shadow: 0 0 0 3px rgba(4, 4, 4, 0.5); /* Border color change on hover */
-      color: #569d27c9; /* Text color change on hover */
-      transform: scale(1.05); /* Slight scaling effect for hover */
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Deeper shadow for more emphasis */
-      transition: all 0.3s ease-in-out; /* Smooth transition for hover */
-    }
+//     /* Hover effect */
+//     &:hover {
+//       background: linear-gradient(145deg, #ffffff, #dcdcdc); /* Subtle change in gradient on hover */
+//        box-shadow: 0 0 0 3px rgba(4, 4, 4, 0.5); /* Border color change on hover */
+//       color: #569d27c9; /* Text color change on hover */
+//       transform: scale(1.05); /* Slight scaling effect for hover */
+//       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Deeper shadow for more emphasis */
+//       transition: all 0.3s ease-in-out; /* Smooth transition for hover */
+//     }
   
-    /* Focus Effect */
-    &:focus {
-      outline: none; /* Removes default focus outline */
-      // box-shadow: 0 0 0 3px rgba(4, 4, 4, 0.5); /* Custom blue glow on focus */
-    }
+//     /* Focus Effect */
+//     &:focus {
+//       outline: none; /* Removes default focus outline */
+//       // box-shadow: 0 0 0 3px rgba(4, 4, 4, 0.5); /* Custom blue glow on focus */
+//     }
   
-    /* Active Effect */
-    &:active {
-      transform: translateY(2px); /* Slight pressing effect */
-      // box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Softer shadow on click */
-    }
-  }
-}  
+//     /* Active Effect */
+//     &:active {
+//       transform: translateY(2px); /* Slight pressing effect */
+//       // box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Softer shadow on click */
+//     }
+//   }
+// }  
 
 
 /* Globe container */

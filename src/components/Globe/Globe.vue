@@ -38,7 +38,7 @@ export default {
 <style scoped>
 /* General Container */
 .container {
-  font-family: "Arial", sans-serif;
+  font-family: "na", sans-serif;
   color: #333;
   line-height: 1.8;
   width: 77%;
@@ -62,12 +62,14 @@ export default {
   align-items: center;
   padding: 12px;
   background-color: #f9fafb;
-  border-radius: 12px;
+  /* border-radius: 12px; */
 }
 
 .top-section .text {
+  
   flex: 1;
   padding-right: 20px;
+  
 }
 
 .top-section .tagline {
@@ -77,19 +79,25 @@ export default {
 }
 
 .top-section h1 {
-  font-weight: bold;
-  margin-bottom: 20px;
   display: block;
-  font-size: 3rem;
-  line-height: 4rem;
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+      font-size: 2rem;
+      line-height: 3rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      top: 20px;
+      position: relative;
+      margin-bottom: 30px;
+ 
 }
 
 .top-section .description {
-  font-size: 0.9rem;
+  /* font-size: 0.9rem; */
   margin-bottom: 20px;
+  font-size: 0.8rem;
+    line-height: 1.6rem;
+    padding-right: -2rem;
+
 }
 
 .top-section .car-image {
@@ -100,7 +108,7 @@ export default {
 
 .top-section .car-image img {
   max-width: 100%;
-  border-radius: 12px;
+  /* border-radius: 12px; */
 }
 
 @media screen and (max-width: 768px) {
@@ -112,6 +120,7 @@ export default {
 
   .top-section .text {
     padding-right: 0;
+    
     margin-bottom: 20px;
   }
 
@@ -121,7 +130,10 @@ export default {
   }
 
   .top-section .description {
-    font-size: 0.85rem;
+    /* font-size: 0.85rem; */
+    font-size: 0.8rem;
+    line-height: 1.6rem;
+    padding-right: -2rem;
   }
 
   .top-section .car-image {
@@ -135,10 +147,10 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px;
+  padding: 14px;
   background-color: #f9fafb;
-  border-radius: 12px;
-  margin-top: 40px;
+  /* border-radius: 0px; */
+  margin-top: 80px;
 }
 
 .bottom-section .bike-image {
@@ -149,7 +161,7 @@ export default {
 
 .bottom-section .bike-image img {
   max-width: 100%;
-  border-radius: 12px;
+  /* border-radius: 12px; */
 }
 
 .bottom-section .text {
@@ -166,17 +178,22 @@ export default {
 }
 
 .bottom-section h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  display: block;
+      font-size: 2rem;
+      line-height: 3rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      top: 20px;
+      position: relative;
+      margin-bottom: 30px;
 }
 
 .bottom-section .description {
-  font-weight: 300;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+    line-height: 1.6rem;
+    padding-right: -2rem;
+    padding-bottom: 1rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -201,7 +218,9 @@ export default {
   }
 
   .bottom-section .description {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    line-height: 1.6rem;
+    padding-right: -2rem;
   }
 }
 </style>
