@@ -48,13 +48,13 @@ interface Elements {
     this.elements = {
       boldText: "Experience",
       lightText: "The Opulent Luxury Living",
-      video: require("@/assets/discovery.mp4"),
+      video: "https://d2rxnzr2197voo.cloudfront.net/assets/discovery.mp4", 
       header1: "Discover",
       header2: "Luxury Beyond Limits",
       paragraph:
         "Discover a new era of luxury with DAT, a home that creates an aura of exceptionally crafted luxury, comfort, and eternal elegance combined. Every detail is thoughtfully added to enhance your lifestyle and living experience. Step into a home that is designed not only to impress but to inspire. At DAT, we translate your dream into reality, setting a new standard for what luxury living truly means.",
-      imgRight: require("@/assets/TxtImg2/TxtImg1.jpg"),
-      imgLeft: require("@/assets/TxtImg2/TxtImg2.png"),
+      imgRight: ("https://d2rxnzr2197voo.cloudfront.net/assets/TxtImg2/TxtImg1.jpg"),
+      imgLeft:("https://d2rxnzr2197voo.cloudfront.net/assets/TxtImg2/TxtImg2.png"),
       carousel: [
         {
           pic: "m10.png",

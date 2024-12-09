@@ -62,12 +62,12 @@ import TxtImg2 from "@/components/TxtImg2/TxtImg2.vue";
       // header1: "Discovery Builders",
       paragraph:
         "Our designs go beyond aesthetics, intentionally combining beauty and functionality into environments that reflect your story. Every element is carefully curated to ensure your space is visually striking, yet practical and enduring. Whether it's a serene home retreat, a vibrant workspace, or a social hub, we design with intention, creating spaces that enrich everyday life.We believe that design is personal, and every detail matters. From the texture of materials to the play of light and shadow, we craft spaces that inspire emotion and connection. By harmonizing form and purpose, we transform ordinary places into extraordinary experiences, tailored to your unique needs and aspirations Our approach begins with listening, understanding your vision, and translating it into reality with precision and care. Each project is a collaboration, where your ideas and our expertise come together to shape an environment that feels authentically yours.",
-       imgRight: require("@/assets/TxtImg2/AboutDlc/TxtImg1.jpg"),
+       imgRight: ("https://d2rxnzr2197voo.cloudfront.net/assets/TxtImg2/AboutDlc/TxtImg1.jpg"),
        imgLeft: require("@/assets/bb.png"),
       headerMirror: "Where Vision Meets Artistry at DAT",
       paragraphMirror: "At DAT, we don't build mere structures we create masterpieces that come alive. Innovation, craftsmanship, and passion meld into one to turn an idea into space that inspires and delights. Our designs will be beautiful and functional, crafted with purpose to reflect your vision. We craft timeless environments that elevate the everyday, marrying elegance and practicality. Building with DAT is about creating a legacy in craftsmanship.",
-      imgRightMirror: require("@/assets/TxtImg2/AboutDlc/TxtImg1Mirrorr.jpg"),
-       imgLeftMirror: require("@/assets/TxtImg2/AboutDlc/TxtImg2Mirror.jpg"),
+      imgRightMirror: ("https://d2rxnzr2197voo.cloudfront.net/assets/TxtImg2/AboutDlc/TxtImg1Mirrorr.jpg"),
+       imgLeftMirror: ("https://d2rxnzr2197voo.cloudfront.net/assets/TxtImg2/AboutDlc/TxtImg2Mirror.jpg"),
     };
   },
 })

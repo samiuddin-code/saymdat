@@ -20,7 +20,7 @@
       /> -->
       
       <img
-        :src="require('../../assets/AboutDlc/basement.jpg') "
+        :src="require('../../assets/AboutDlc/safe.jpg') "
         alt="Restaurant"
         loading="lazy"
         class="larger-image"

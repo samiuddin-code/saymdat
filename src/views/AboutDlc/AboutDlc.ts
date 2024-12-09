@@ -107,12 +107,12 @@ import BottomSection from "@/components/BottomSection/BottomSection.vue";
       // header1: "Discovery Builders",
       paragraph:
         "At DAT Architecture, we are determined to deliver designs that smoothly integrate architectural sophistication with cutting-edge solutions. Our commitment to excellence is reflected in our scrupulous attention to detail and unparalleled craftsmanship. We work closely with the clients by transforming their vision into a functional, refined space; hence, every project at DAT meets the finest quality, precision, and professionalism. With DAT, you can rest assured that your design will be executed to the highest degree of creativity and skill, coupled with a relentless commitment to excellence.",
-       imgRight: require("@/assets/TxtImg2/AboutDlc/TxtImg1.jpg"),
+       imgRight: ("https://d2rxnzr2197voo.cloudfront.net/assets/TxtImg2/AboutDlc/TxtImg1.jpg"),
        imgLeft: require("@/assets/abcdef.png"),
       headerMirror: "A Decade of DAT Architecture",
       paragraphMirror: "With over 10 years of experience, DAT Architecture has redefined design by blending creativity, innovation, and precision. From our early projects to becoming a trusted industry leader, we’ve consistently transformed ideas into exceptional spaces. Our journey reflects a commitment to excellence, bringing visionary concepts to life. Passionate about design and dedicated to perfection, we continue to push boundaries, crafting timeless, inspiring environments that captivate and elevate every experience. At DAT, every design tells a story.",
-      imgRightMirror: require("@/assets/TxtImg2/AboutDlc/TxtImg1Mirrorr.jpg"),
-       imgLeftMirror: require("@/assets/TxtImg2/AboutDlc/TxtImg2Mirror.jpg"),
+      imgRightMirror:("https://d2rxnzr2197voo.cloudfront.net/assets/TxtImg2/AboutDlc/TxtImg1Mirrorr.jpg"),
+       imgLeftMirror: ("https://d2rxnzr2197voo.cloudfront.net/assets/TxtImg2/AboutDlc/TxtImg2Mirror.jpg"),
     };
   },
 })
