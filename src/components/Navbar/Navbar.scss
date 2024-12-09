@@ -244,6 +244,38 @@ padding: 20px;
   background-color: white; /* Or your desired color */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional for effect */
 }
+@media screen and (max-width: 1780px) {
+  #header {
+    position: relative;
+    z-index: 9999;
+    padding: 1.5rem 6rem;
+    // transition: all 0.5s ease-in-out;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    left: 2rem;
+    top: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    // transition: background-color 0.3s, color 0.3s ease, padding 0.3s ease;
+    will-change: background-color, color, padding;
+    box-shadow: none; /* No shadow by default */
+  }
+  }
+  /* When the header is scrolled */
+  @media screen and (max-width: 1780px) {
+  #header.scrolled {
+    --text-color: black;
+    // transition: background-color 1.5s ease, padding 1.5s ease;
+    --bg-color: white;
+    --hover-color: rgba(0, 0, 0, 0.7); /* Hover color when text is black */
+    padding: 1.5rem 2.8rem;
+    // box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Luxurious box shadow when scrolled */
+  }
+  }
 
 // #nav-links a:hover {
 //   color: var(--luxury-gradient);
@@ -258,26 +290,6 @@ padding: 20px;
 
 }
 
-/* Fullscreen header */
-#header {
-  position: relative;
-  z-index: 9999;
-  padding: 1.5rem 3rem;
-  // transition: all 0.5s ease-in-out;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  z-index: 2;
-  width: 100%;
-  left: 0;
-  top: 0;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  // transition: background-color 0.3s, color 0.3s ease, padding 0.3s ease;
-  will-change: background-color, color, padding;
-  box-shadow: none; /* No shadow by default */
-}
 
 /* When the header is scrolled */
 #header.scrolled {
@@ -285,9 +297,10 @@ padding: 20px;
   // transition: background-color 1.5s ease, padding 1.5s ease;
   --bg-color: white;
   --hover-color: rgba(0, 0, 0, 0.7); /* Hover color when text is black */
-  padding: 1.5rem 6rem;
+  padding: 1.5rem 4.8rem;
   // box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Luxurious box shadow when scrolled */
 }
+
 #header {
   transition: transform 0.3s ease-in-out;
   @keyframes bounce {
@@ -303,11 +316,11 @@ padding: 20px;
   }
   
   .scrolled-bounce {
-    animation: bounce 0.6s ease-in-out;
+    animation: bounce 0.2s ease-in-out;
   }
   
   &.bounce {
-    animation: bounce 0.5s ease-in-out;
+    animation: bounce 0.3s ease-in-out;
   }
 }
 
@@ -331,6 +344,7 @@ padding: 20px;
     padding: -1rem;
   }
 }
+
 
 /* Navigation bar styling */
 #nav {
@@ -496,9 +510,12 @@ padding: 20px;
 
 }
 
+
+
 /* Logo scaling effect when scrolled */
 #header.scrolled .logo {
   padding-top: 10px;
+  padding-left: 4px;
   transform: scale(2.5); /* Enlarge logo visually */
   width: 4.5rem; /* Optional: increase width if needed */
   height: 3.5rem; /* Increase height accordingly */

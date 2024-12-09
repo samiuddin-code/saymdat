@@ -60,17 +60,17 @@ import BottomSection from "@/components/BottomSection/BottomSection.vue";
         {
           pic: "p2.png",
           title: "Incomparable experiences",
-          location: `World-renowned golf courses, state-of-the-art fitness facilities, unique outdoor concierge programs – our communities deliver unmatched amenities and service.`,
+          // location: `World-renowned golf courses, state-of-the-art fitness facilities, unique outdoor concierge programs – our communities deliver unmatched amenities and service.`,
         },
         {
           pic: "p3.png",
           title: "Inspired by land",
-          location: `Each property respectfully integrates the local architecture, culture, and cuisine to create an authentic and immersive experience.`,
+          // location: `Each property respectfully integrates the local architecture, culture, and cuisine to create an authentic and immersive experience.`,
         },
         {
           pic: "p4.png",
           title: "Sustainable future",
-          location: `Through a focus on sustainable efforts, we create programs that ensure we are stewards of the land and a source of local economic growth and stability.`,
+          // location: `Through a focus on sustainable efforts, we create programs that ensure we are stewards of the land and a source of local economic growth and stability.`,
         },
         // {
         //   pic: "p5.jpg",

@@ -14,9 +14,6 @@
     
     <title><%= htmlWebpackPlugin.options.title %></title>
 
-    <!-- Preload only critical assets -->
-    <link rel="preload" href="/src/views/Home/Home.vue" as="script">
-    <link rel="preload" href="/src/views/Home/Home.scss" as="style">
 
     <!-- Use 'font-display: swap' for better performance when loading Google Fonts -->
     <style>
@@ -37,7 +34,7 @@
     <!-- Defer loading non-essential scripts like Google Maps -->
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initMap" async defer></script> -->
     <!-- Defer BabylonJS as it's not critical for page load -->
-    <script src="https://cdn.babylonjs.com/babylon.js" defer></script>
+    <!-- <script src="https://cdn.babylonjs.com/babylon.js" defer></script> -->
 
     <noscript>
       <strong>We're sorry, but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
