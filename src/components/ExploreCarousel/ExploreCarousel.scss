@@ -213,6 +213,17 @@
     display: flex;
     flex-direction: row;
   }
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease; /* Smooth transition for entire slider */
+}
+
+.slide {
+  display: flex;
+  flex-direction: row;
+  width: 100%; /* Ensure each slide occupies 100% width */
+}
 }
 
 @keyframes scroll {

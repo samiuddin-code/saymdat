@@ -2,13 +2,13 @@ import { Options, Vue } from "vue-class-component";
 import Title from "@/components/Title/Title.vue";
 import ExploreCarousel from "@/components/ExploreCarousel/ExploreCarousel.vue";
 import TxtImg2 from "@/components/TxtImg2/TxtImg2.vue";
-import IntroSection from "@/components/IntroSection/IntroSection.vue";
+ import IntroSection from "@/components/IntroSection/IntroSection.vue";
 import BottomSection from "@/components/BottomSection/BottomSection.vue";
 
 @Options({
   name: "AboutDlc",
   components: {
-    Title,
+     Title,
     IntroSection,
     ExploreCarousel,
     TxtImg2,
@@ -85,22 +85,22 @@ import BottomSection from "@/components/BottomSection/BottomSection.vue";
         {
           pic: "p2.png",
           title: "Incomparable experiences",
-          location: `World-renowned golf courses, state-of-the-art fitness facilities, unique outdoor concierge programs – our communities deliver unmatched amenities and service.`,
+          // location: `World-renowned golf courses, state-of-the-art fitness facilities, unique outdoor concierge programs – our communities deliver unmatched amenities and service.`,
         },
         {
           pic: "p3.png",
           title: "Inspired by land",
-          location: `Each property respectfully integrates the local architecture, culture, and cuisine to create an authentic and immersive experience.`,
+          // location: `Each property respectfully integrates the local architecture, culture, and cuisine to create an authentic and immersive experience.`,
         },
         {
           pic: "p4.png",
           title: "Sustainable future",
-          location: `Through a focus on sustainable efforts, we create programs that ensure we are stewards of the land and a source of local economic growth and stability.`,
+          // location: `Through a focus on sustainable efforts, we create programs that ensure we are stewards of the land and a source of local economic growth and stability.`,
         },
         {
           pic: "p5.png",
           title: "Luxury bespoke homes",
-          location: `Through our in-house services, Discovery Builders and Discovery Design, we offer turn-key homes for families that embody modern aesthetics while staying true to classic principles.`,
+          // location: `Through our in-house services, Discovery Builders and Discovery Design, we offer turn-key homes for families that embody modern aesthetics while staying true to classic principles.`,
         },
       ],
       carouselH1: "The Discovery Story",

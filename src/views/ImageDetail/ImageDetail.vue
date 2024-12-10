@@ -45,27 +45,27 @@ export default class GalleryWithModal extends Vue {
       {
         title: "Golf",
         description: "Relaxing golf courses with lush green surroundings.",
-        gallery_images: ("https://d2rxnzr2197voo.cloudfront.net/assets/Gallery/gallery-2.png"),
+        gallery_images: require("@/assets/Gallery/gallery-2.png"),
       },
       {
         title: "Lifestyle",
         description: "A modern and luxurious lifestyle.",
-        gallery_images: ("https://d2rxnzr2197voo.cloudfront.net/assets/Gallery/gallery-3.png"),
+        gallery_images: require("@/assets/Gallery/gallery-3.png"),
       },
       {
         title: "Landscapes",
         description: "Beautiful landscapes to explore.",
-        gallery_images: ("https://d2rxnzr2197voo.cloudfront.net/assets/Gallery/gallery-4.png"),
+        gallery_images: require("@/assets/Gallery/gallery-4.png"),
       },
       {
         title: "Clubhouses",
         description: "Elegant clubhouses for recreation.",
-        gallery_images:("https://d2rxnzr2197voo.cloudfront.net/assets/Gallery/gallery-5.png"),
+        gallery_images: require("@/assets/Gallery/gallery-5.png"),
       },
       {
         title: "Wellness",
         description: "Spaces for relaxation and wellness.",
-        gallery_images: ("https://d2rxnzr2197voo.cloudfront.net/assets/Gallery/gallery-6.png"),
+        gallery_images: require("@/assets/Gallery/gallery-6.png"),
       },
     ];
   }

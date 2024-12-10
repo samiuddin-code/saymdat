@@ -35,6 +35,8 @@ export default class App extends Vue {
     // Trigger black screen transition on route changes
     router.beforeEach((to, from, next) => {
       this.showTransition();
+      // Reset scroll position on route change
+      this.resetScrollPosition();
       setTimeout(() => {
         next();
       }, 1000); // Match transition duration
@@ -51,13 +53,19 @@ export default class App extends Vue {
     }, 1000); // Match transition duration
   }
 
+  resetScrollPosition() {
+    // Ensure the scroll position is reset to the top
+    window.scrollTo(0, 0);
+    this.targetScroll = 0;
+    this.currentScroll = 0;
+  }
+
   initializeSmoothScroll() {
     window.addEventListener('wheel', this.handleWheelEvent, { passive: false });
     window.addEventListener('keydown', this.handleKeyDownEvent);
     
-    // Initialize the scroll position
-    this.targetScroll = window.scrollY;
-    this.currentScroll = window.scrollY;
+    // Initialize the scroll position to the top
+    this.resetScrollPosition();
   }
 
   handleWheelEvent = (event: WheelEvent) => {
@@ -93,35 +101,34 @@ export default class App extends Vue {
   }
 
   startSmoothScroll() {
-  if (this.isScrolling) return;
-  this.isScrolling = true;
+    if (this.isScrolling) return;
+    this.isScrolling = true;
 
-  // Start a new smooth scroll animation
-  const smoothScrollStep = () => {
-    const distance = this.targetScroll - this.currentScroll;
-    const step = distance * 0.15; // Adjust damping for smoothness
+    // Start a new smooth scroll animation
+    const smoothScrollStep = () => {
+      const distance = this.targetScroll - this.currentScroll;
+      const step = distance * 0.15; // Adjust damping for smoothness
 
-    if (Math.abs(distance) < 1) { // Adjusted stopping condition
-      this.isScrolling = false;
-      this.currentScroll = this.targetScroll;
-      window.scrollTo(0, Math.round(this.targetScroll));
-      return;
-    }
+      if (Math.abs(distance) < 1) { // Adjusted stopping condition
+        this.isScrolling = false;
+        this.currentScroll = this.targetScroll;
+        window.scrollTo(0, Math.round(this.targetScroll));
+        return;
+      }
 
-    this.currentScroll += step;
-    window.scrollTo(0, Math.round(this.currentScroll));
+      this.currentScroll += step;
+      window.scrollTo(0, Math.round(this.currentScroll));
 
-    // Cancel any previous scroll animation
-    if (this.scrollRequestId) {
-      cancelAnimationFrame(this.scrollRequestId);
-    }
+      // Cancel any previous scroll animation
+      if (this.scrollRequestId) {
+        cancelAnimationFrame(this.scrollRequestId);
+      }
+
+      this.scrollRequestId = requestAnimationFrame(smoothScrollStep);
+    };
 
     this.scrollRequestId = requestAnimationFrame(smoothScrollStep);
-  };
-
-  this.scrollRequestId = requestAnimationFrame(smoothScrollStep);
-}
-
+  }
 
   beforeDestroy() {
     window.removeEventListener('wheel', this.handleWheelEvent);

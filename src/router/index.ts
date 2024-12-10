@@ -8,6 +8,8 @@ import Gallery from "@/views/Gallery/Gallery.vue";
 
 import Details from "@/views/Details.vue";
 import ProjectDetail from "@/views/ProjectDetail.vue";
+import PrivacyPolicy from "@/components/PrivacyPolicy.vue";
+import TermsAndConditions from "@/components/TermsAndConditions.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -42,6 +44,16 @@ const routes: Array<RouteRecordRaw> = [
     path: "/farming",
     name: "Farming",
     component: FarmingView,
+  },
+  {
+    path: '/privacy-policy',
+    name: 'PrivacyPolicy',
+    component: PrivacyPolicy
+  },
+  {
+    path: '/terms-and-conditions',
+    name: 'TermsAndConditions',
+    component: TermsAndConditions
   },
   {
     path: "/gallery",

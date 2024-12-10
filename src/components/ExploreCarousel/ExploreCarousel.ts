@@ -1,4 +1,3 @@
-
 import { Options, Vue } from 'vue-class-component';
 
 interface CarouselItem {
@@ -34,51 +33,29 @@ export default class ExploreCarousel extends Vue {
   carouselH1!: string;
   carouselH2!: string;
 
-  currentIndex = 0;
-  autoSlideInterval: number | undefined = undefined;
+  currentIndex = 0; // Track the index of the current slide
 
   // Function to navigate to details page
   navigateToDetails(title: string) {
     this.$router.push({ path: `/details/${encodeURIComponent(title)}` });
   }
 
-  // Left button handler
+  // Left button handler (move one slide to the left)
   goLeft() {
     this.currentIndex =
-      (this.currentIndex - 1 + this.carousel.length) % this.carousel.length;
+      (this.currentIndex - 1 + this.carousel.length) % this.carousel.length; // Loop back to the last slide
   }
 
-  // Right button handler
+  // Right button handler (move one slide to the right)
   goRight() {
-    this.currentIndex = (this.currentIndex + 1) % this.carousel.length;
+    this.currentIndex = (this.currentIndex + 1) % this.carousel.length; // Loop back to the first slide
   }
 
-  // Get the slider track style to control the slide position dynamically
+  // Get the style for the slider track (moves the entire carousel)
   getSliderTrackStyle() {
     return {
-      transform: `translateX(-${this.currentIndex * 100}%)`,
-      transition: 'transform 0.5s ease',  // Smooth transition
+      transform: `translateX(-${this.currentIndex * 100}%)`, // Move the entire slider by the width of one slide
+      transition: 'transform 0.5s ease', // Smooth transition for the movement
     };
   }
-
-  // Start the automatic slider
-  startAutoSlide() {
-    if (this.autoSlideInterval) clearInterval(this.autoSlideInterval); // Clear previous interval if any
-    this.autoSlideInterval = setInterval(() => {
-      this.goRight(); // Move the carousel to the right automatically
-    }, 3000); // Change slide every 3 seconds
-  }
-
-  // Stop the automatic slider when the component is destroyed
-  beforeDestroy() {
-    if (this.autoSlideInterval) {
-      clearInterval(this.autoSlideInterval);
-    }
-  }
-
-  // Start the slider when the component is mounted
-  mounted() {
-    this.startAutoSlide();
-  }
 }
-

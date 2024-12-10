@@ -36,7 +36,7 @@ import ExperiencesArticle from "@/components/ExperiencesArticle/ExperiencesArtic
       lightText: "One Moment at a Time",
        video:("https://d2rxnzr2197voo.cloudfront.net/assets/discovery.mp4"),
       introParas: [
-        " At DAT Architecture, we design spaces to make any moment worth living to the fullest with your loved ones. Our designs are dedicated to merging innovation with functionality in every space, so as to leave a lasting memory  ",
+        " At DAT Architecture, we design spaces that inspire meaningful experiences, making every moment spent with loved ones unforgettable. Our approach blends cutting-edge innovation with timeless functionality, ensuring that each space is not only visually striking but also practical and comfortable. From residential homes to commercial spaces, we prioritize a deep understanding of our clients' needs, creating environments that foster connection, creativity, and well-being. Every project is a reflection of our commitment to craftsmanship, sustainability, and the belief that great design has the power to enrich lives and leave a lasting impression. ",
       
       ],
       
