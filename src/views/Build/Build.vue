@@ -7,7 +7,7 @@
       <div class="bakers-image-section">
       <img
         class="bakers-image"
-        :src="require('../../assets/AboutDlc/Restaurant.png')"
+        :src="require('../../assets/TxtImg2/AboutDlc/bbb.png')"
         alt="BakersImg"
       />
     </div>
@@ -20,7 +20,7 @@
       /> -->
       <TxtImg2 :header1="elements.headerMirror" :paragraph="elements.paragraphMirror" :imgRight="elements.imgRightMirror" :imgLeft="elements.imgLeftMirror" :mirror="true"/>
       <img
-        :src="require('../../assets/AboutDlc/safee.jpg') "
+        :src="require('../../assets/TxtImg2/AboutDlc/safe.png') "
         alt="Restaurant"
         loading="lazy"
         class="larger-image"
