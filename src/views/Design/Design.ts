@@ -1,8 +1,8 @@
 import { Options, Vue } from "vue-class-component";
-import Title from "@/components/Title/Title.vue";
+ import Title from "@/components/Title/Title.vue";
 
-import TxtImg2 from "@/components/TxtImg2/TxtImg2.vue";
-import IntroSection from "@/components/IntroSection/IntroSection.vue";
+ import TxtImg2 from "@/components/TxtImg2/TxtImg2.vue";
+ import IntroSection from "@/components/IntroSection/IntroSection.vue";
 import BottomSection from "@/components/BottomSection/BottomSection.vue";
 
 @Options({
@@ -11,7 +11,7 @@ import BottomSection from "@/components/BottomSection/BottomSection.vue";
     Title,
     IntroSection,
 
-    TxtImg2,
+  TxtImg2,
     BottomSection
   },
   data() {

@@ -1,173 +1,204 @@
 <template>
-    <div class="title-container">
-      <!-- Background Video -->
-      <video class="background-video" autoplay muted loop>
-        <source src="../assets/a.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="centered-title">
-        <h1 class="title-text">{{ projectData?.title || "Default Title" }}</h1>
-      </div>
-  
-      <!-- Scroll Down Button in Bottom-Right Corner -->
-      <button class="round-button" @click="scrollToNextSection">
-        <span class="material-icons arrow-down">arrow_downward</span>
-      </button>
+  <div class="title-container">
+    <!-- Background Video -->
+    <video class="background-video" autoplay muted loop>
+      <source src="../assets/a.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="centered-title">
+      <h1 class="title-text">{{ projectData?.title || "Default Title" }}</h1>
     </div>
-    
-    <div class="carousel-container" v-if="projectData">
-      <!-- Header Section -->
-      <div class="intro-para">
-        <p class="intro-para">{{ projectData.highlight }}</p>
-      </div>
-  
-      <div class="image-container">
-  <div :style="carouselStyle" class="carousel-images">
-    <img
-    v-for="(image, index) in images"
-  :key="index"
-  :src="getImageUrl(image.image)"
-  :alt="image.imageAlt"
-  v-show="currentSlide === index" 
-  class="carousel-image"
-    />
-  </div>
-</div>
 
-  
-      <div class="pagination">
-        <span
+    <!-- Scroll Down Button -->
+    <button class="round-button" @click="scrollToNextSection">
+      <span class="material-icons arrow-down">arrow_downward</span>
+    </button>
+  </div>
+
+  <!-- Project Content -->
+  <div class="carousel-container" v-if="projectData">
+    <!-- Highlight Section -->
+    <div class="intro-para">
+      <p>{{ projectData.highlight }}</p>
+    </div>
+
+    <!-- Image Carousel -->
+    <div class="image-container">
+      <div class="carousel-images">
+        <img
           v-for="(image, index) in images"
           :key="index"
-          :class="['dot', { active: currentSlide === index }]"
-          @click="goToSlide(index)"
-        ></span>
-      </div>
-  
-      <div class="carousel-buttons">
-        <button @click="prevSlide" class="prev-button">
-          <i class="fas fa-arrow-left"></i>
-        </button>
-        <button @click="nextSlide" class="next-button">
-          <i class="fas fa-arrow-right"></i>
-        </button>
-      </div>
-      
-      <!-- Description Section -->
-      <div class="description">
-        <p>{{ projectData.description }}</p>
+          :src="getImageUrl(image.image)"
+          :alt="image.imageAlt || 'Project Image'"
+          v-show="currentSlide === index"
+          class="carousel-image"
+        />
       </div>
     </div>
-  
-    <!-- Error State -->
-    <div v-else-if="errorMessage">
-      <p class="error">{{ errorMessage }}</p>
+
+    <!-- Pagination -->
+    <div class="pagination">
+      <span
+        v-for="(image, index) in images"
+        :key="index"
+        :class="['dot', { active: currentSlide === index }]"
+        @click="goToSlide(index)"
+      ></span>
     </div>
-  
-    <!-- Loading State -->
-    <div v-else>
-      <p>Loading project details...</p>
+
+    <!-- Navigation Buttons -->
+    <div class="carousel-buttons">
+      <button @click="prevSlide" class="prev-button">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+      <button @click="nextSlide" class="next-button">
+        <i class="fas fa-arrow-right"></i>
+      </button>
     </div>
-  
-    <BottomSection picture="AboutDlc.jpg" />
-  </template>
-  
-  <script lang="ts">
-  import { defineComponent, ref, onMounted } from 'vue';
-  import { useRoute } from 'vue-router';
-  import axios from 'axios';
-  import BottomSection from '@/components/DownSection/BottomSection.vue';
-  
-  interface ProjectImage {
-    id: number;
-    image: string;
-    imageAlt: string;
-  }
-  
-  interface ProjectData {
-    title: string;
-    highlight: string;
-    description: string;
-    ProjectImages: ProjectImage[]; // Use the ProjectImages array to store image data
-  }
-  
-  export default defineComponent({
-    name: 'ProjectDetail',
-    components: {
-      BottomSection, // Register the component here
-    },
-    setup() {
-      const route = useRoute();
-      const projectSlug = route.params.projectSlug as string;
-  
-      const projectData = ref<ProjectData | null>(null);
-      const errorMessage = ref<string | null>(null);
-      const currentSlide = ref(0);  // Track the current slide
-      const images = ref<ProjectImage[]>([]);  // Track the list of images for the carousel
-        onMounted(async () => {
-            console.log('Loading images:', images.value);  
-  if (!projectSlug) {
-    errorMessage.value = 'Project slug is missing or invalid.';
-    return;
-  }
 
-  try {
-    const response = await axios.get(
-      `https://www.datconsultancy.com/_next/data/eXx6uPVkXf67Rmx7ThjPc/projects/residential/${projectSlug}.json?category=residential&projectSlug=${projectSlug}`
-    );
+    <!-- Description Section -->
+    <div class="description">
+      <p>{{ projectData.description }}</p>
+    </div>
 
-    if (response.data?.pageProps?.response) {
-      projectData.value = response.data.pageProps.response[0].data;
-      images.value = projectData.value?.ProjectImages || []; // Get images from the API response
-      console.log('Loaded images:', images.value);  // Debug log
-    } else {
-      errorMessage.value = 'No project found with the given slug.';
-    }
-  } catch (error) {
-    console.error('Error fetching project data:', error);
-    errorMessage.value = 'Failed to fetch project data. Please try again later.';
-  }
-});
+    <!-- Project Metadata -->
+    <div class="project-details-container">
+      <div class="project-details">
+        <div
+          v-for="(meta, index) in projectMeta"
+          :key="index"
+          class="detail-card"
+        >
+          <p class="label">{{ meta.title }}</p>
+          <div v-html="meta.icon" class="icon"></div>
+          <p class="value">
+            <strong>{{ meta.value }}</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-      const getImageUrl = (image: string) => {
-        if (image.startsWith('http')) {
-          return image;
+  <!-- Error State -->
+  <div v-else-if="errorMessage">
+    <p class="error">{{ errorMessage }}</p>
+  </div>
+
+  <!-- Loading State -->
+  <div v-else>
+    <p>Loading project details...</p>
+  </div>
+
+  <!-- Bottom Section -->
+  <BottomSection picture="Experiences.png" />
+</template>
+
+<script lang="ts">
+import { defineComponent, ref, onMounted } from "vue";
+import { useRoute } from "vue-router";
+import axios from "axios";
+import BottomSection from "@/components/DownSection/BottomSection.vue";
+
+interface ProjectImage {
+  id: number;
+  image: string;
+  imageAlt?: string;
+}
+
+interface ProjectMeta {
+  id: number;
+  title: string;
+  value: string;
+  icon: string; // HTML string for the icon
+}
+
+interface ProjectData {
+  title: string;
+  highlight: string;
+  description: string;
+  ProjectImages: ProjectImage[];
+  ProjectMeta: ProjectMeta[];
+}
+
+export default defineComponent({
+  name: "ProjectDetail",
+  components: { BottomSection },
+  setup() {
+    const route = useRoute();
+    const projectSlug = route.params.projectSlug as string;
+
+    const projectData = ref<ProjectData | null>(null);
+    const projectMeta = ref<ProjectMeta[]>([]);
+    const images = ref<ProjectImage[]>([]);
+    const errorMessage = ref<string | null>(null);
+    const currentSlide = ref(0);
+
+    onMounted(async () => {
+      if (!projectSlug) {
+        errorMessage.value = "Project slug is missing or invalid.";
+        return;
+      }
+
+      try {
+        const response = await axios.get(
+          `https://www.datconsultancy.com/_next/data/eXx6uPVkXf67Rmx7ThjPc/projects/residential/${projectSlug}.json?category=residential&projectSlug=${projectSlug}`
+        );
+
+        if (response.data?.pageProps?.response) {
+          const project = response.data.pageProps.response[0].data;
+          projectData.value = {
+            title: project.title,
+            highlight: project.highlight,
+            description: project.description,
+            ProjectImages: project.ProjectImages || [],
+            ProjectMeta: project.ProjectMeta || [],
+          };
+          images.value = project.ProjectImages;
+          projectMeta.value = project.ProjectMeta;
+        } else {
+          errorMessage.value = "No project data found.";
         }
-        return `https://api.datconsultancy.com/uploads/${image}`;
-      };
-      const carouselStyle = () => ({
-        transform: `translateX(-${currentSlide.value * 100}%)`,
-  transition: 'transform 0.3s ease-in-out',
+      } catch (error) {
+        console.error("Error fetching project data:", error);
+        errorMessage.value = "Failed to fetch project data. Try again later.";
+      }
+    });
+
+    const getImageUrl = (image: string) => {
+      return image.startsWith("http")
+        ? image
+        : `https://api.datconsultancy.com/uploads/${image}`;
+    };
+
+    const nextSlide = () => {
+      currentSlide.value = (currentSlide.value + 1) % images.value.length;
+    };
+
+    const prevSlide = () => {
+      currentSlide.value =
+        (currentSlide.value - 1 + images.value.length) % images.value.length;
+    };
+
+    const goToSlide = (index: number) => {
+      currentSlide.value = index;
+    };
+
+    return {
+      projectData,
+      projectMeta,
+      images,
+      errorMessage,
+      getImageUrl,
+      nextSlide,
+      prevSlide,
+      goToSlide,
+      currentSlide,
+    };
+  },
 });
-  
-      const nextSlide = () => {
-  currentSlide.value = (currentSlide.value + 1) % images.value.length;
-  console.log('Next slide:', currentSlide.value);  // Debugging slide change
-};
-const prevSlide = () => {
-  currentSlide.value =
-    (currentSlide.value - 1 + images.value.length) % images.value.length;
-  console.log('Prev slide:', currentSlide.value);  // Debugging slide change
-};
-  
-      const goToSlide = (index: number) => {
-        currentSlide.value = index;
-      };
-  
-      return {
-        projectData,
-        errorMessage,
-        getImageUrl,
-        carouselStyle,
-        nextSlide,
-        prevSlide,
-        goToSlide,
-        images,
-        currentSlide,
-      };
-    },
-  });
-  </script>
+</script>
+
+
   
   <style scoped>
   body {
@@ -180,6 +211,70 @@ const prevSlide = () => {
     box-sizing: border-box;
     background-color: #f4f4f4; /* Optional background color */
   }
+  .carousel-buttons button {
+  background-color: transparent; /* Removes the default background */
+  border: none; /* Removes any default borders */
+  margin-top: -1rem; /* Adds padding to the button */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  font-size: 24px; /* Adjusts the size of the icon */
+}
+
+.carousel-buttons button i {
+  color: #000; /* Icon color */
+  font-size: 24px; /* Adjusts the icon size */
+}
+
+.carousel-buttons button:hover {
+  background-color: transparent; /* Keeps background transparent on hover */
+  color: #1976d2; /* Changes the color of the icon on hover (optional) */
+}
+
+.carousel-buttons button:focus {
+  outline: none; /* Removes the outline when the button is focused */
+}
+
+  .project-details-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 10vh; /* Take full height of the screen */
+  padding: 60px 00px;
+  box-sizing: border-box;
+}
+
+.project-details {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%; /* Takes 80% of the screen width */
+}
+
+.detail-card {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 0px;
+  text-align: center;
+  padding: 80px;
+  /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); */
+}
+
+.label {
+  font-size: 18px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.icon {
+  font-size: 34px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.value {
+  font-size: 28px;
+  color: #000;
+}
   .image-container {
   position: relative;
   display: flex;
