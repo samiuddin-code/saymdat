@@ -163,7 +163,9 @@ export default {
   max-width: 100%;
   /* border-radius: 12px; */
 }
-
+.top-section, .bottom-section {
+    padding: 30px; /* Add generous padding for a spacious feel */
+  }
 .bottom-section .text {
   flex: 1;
   padding-left: 20px;

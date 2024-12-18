@@ -27,6 +27,7 @@
 .animate-image {
   animation: fadeInImage 1s ease-out forwards;
 }
+
 .container {
   background-size: cover;
   background-repeat: no-repeat;
@@ -44,6 +45,14 @@
   column-gap: 6rem;
   row-gap: 3rem;
 
+  @media screen and (min-width: 2000px) {
+    padding: 2rem 15rem; /* Increase padding for larger screens */
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr;
+    column-gap:80px; /* Increase space between columns */
+    row-gap: 1rem; /* Increase space between rows */
+  }
+
   @media screen and (max-width: 1024px) {
     padding: 4rem 2rem;
     grid-template-columns: 1fr;
@@ -60,7 +69,12 @@
   flex-direction: column;
   row-gap: 3rem;
   text-align: left;
-   font-family: 'Nunito', sans-serif; 
+  font-family: 'Nunito', sans-serif;
+
+  @media screen and (min-width: 2000px) {
+    row-gap: 5rem; /* Increase gap for larger screens */
+    padding: 2rem;
+  }
 
   @media screen and (max-width: 1024px) {
     row-gap: 1.5rem;
@@ -77,6 +91,12 @@
       letter-spacing: 2px;
       top: 20px;
       position: relative;
+
+      @media screen and (min-width: 2000px) {
+        font-size: 3rem; /* Increase font size for large screens */
+       padding-top: 8px;
+        line-height: 4rem; /* Adjust line height for large screens */
+      }
 
       @media screen and (max-width: 768px) {
         font-size: 2.5rem;
@@ -103,6 +123,11 @@
     line-height: 1.6rem;
     padding-right: -2rem;
 
+    @media screen and (min-width: 2000px) {
+      font-size: 1rem; /* Increase font size for larger screens */
+      line-height: 1.8rem; /* Adjust line height */
+    }
+
     @media screen and (max-width: 1024px) {
       padding-right: 2rem;
     }
@@ -118,6 +143,10 @@
 .right {
   grid-row: span 2;
   padding: 1rem;
+
+  @media screen and (min-width: 2000px) {
+    padding: 2rem; /* Increase padding for large screens */
+  }
 
   @media screen and (max-width: 1024px) {
     padding: 1rem;
@@ -140,6 +169,10 @@
     margin-top: -1.2rem;
     padding-right: 2rem;
 
+    @media screen and (min-width: 2000px) {
+      max-width: 1000px; /* Adjust max width for larger screens */
+    }
+
     @media screen and (max-width: 500px) {
       margin-top: 2rem;
       max-width: 100%;
@@ -155,6 +188,10 @@
     height: auto;
     margin-top: 1.5rem;
     padding-right: 2rem;
+
+    @media screen and (min-width: 2000px) {
+      max-width: 1000px; /* Adjust max width for larger screens */
+    }
 
     @media screen and (max-width: 500px) {
       margin-top: 2rem;

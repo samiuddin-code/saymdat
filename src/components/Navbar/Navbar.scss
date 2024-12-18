@@ -1,82 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons'); 
-/* Root variables */
-:root {
-  --text-color: white;
-  --bg-color: transparent;
-  --hover-color: rgba(255, 255, 255, 0.8); /* Default hover color when text is white */
-  --luxury-gradient: linear-gradient(135deg, #FF5C8F, #FF9F43); /* Stunning gradient */
-  --luxury-glow: rgba(255, 255, 255, 0.7); /* Glow effect */
-  --luxury-bg: rgba(0, 0, 0, 0.8); /* Dark background for scrolled state */
-}
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+
 #nav-links a {
   color: #fff;
-  font-family: 'Nunito', sans-serif; 
+  font-family: 'Nunito', sans-serif;
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-transform: uppercase;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.1rem;
   // transition: color 0.3s, transform 0.3s, letter-spacing 0.3s, text-shadow 0.3s ease;
   position: relative;
 }
-@keyframes bounce {
-  0% {
-    transform: translateY(0);
-  }
-  25% {
-    transform: translateY(-5px);
-  }
-  50% {
-    transform: translateY(0);
-  }
-  75% {
-    transform: translateY(-3px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
 
-#header {
-  &.scrolled {
-    background-color: rgba(0, 0, 0, 0.8); /* Add background color for scrolled state */
-    transition: background-color 0.3s ease;
-  }
 
-  &.bounce {
-    animation: bounce 0.6s ease-out; /* Set duration for the bounce effect */
-  }
-}
-
-#nav-links {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: 'Arial', sans-serif;
-}
 
 .nav-item-with-submenu {
   position: relative;
 }
+
 #nav-links a::after {
   content: '';
   position: absolute;
-  bottom: -5px; /* Position the line just below the text */
+  bottom: -5px;
+  /* Position the line just below the text */
   left: 0;
-  width: 0; /* Initially hidden */
-  height: 2px; /* Thickness of the underline */
-  background-color: var(--text-color); /* Match the text color */
+  width: 0;
+  /* Initially hidden */
+  height: 2px;
+  /* Thickness of the underline */
+  background-color: var(--text-color);
+  /* Match the text color */
   // transition: width 0.3s ease-in-out; /* Smooth expand effect */
 }
 
 #nav-links a:hover::after {
-  width: 100%; /* Expand underline to full width on hover */
+  width: 100%;
+  /* Expand underline to full width on hover */
 }
 
 #nav-links a:hover {
-  color: var(--hover-color); /* Change text color on hover */
+  color: var(--hover-color);
+  /* Change text color on hover */
 }
 
 
@@ -88,20 +54,20 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   // padding: 10px 20px;
   // border-radius: 8px;
-  min-width: 260px;  // Submenu width
-  background: linear-gradient(135deg, #31333a, #131518);  // Gradient background
+  min-width: 260px; // Submenu width
+  background: linear-gradient(135deg, #31333a, #131518); // Gradient background
   border-radius: 12px;
   overflow: hidden;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-40px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);  // Soft shadow for depth
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); // Soft shadow for depth
   // transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.4s ease;
   z-index: 10;
 }
 
 .submenu-item {
-   border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
   display: flex;
   align-items: center;
   padding: 20px 30px;
@@ -115,7 +81,7 @@
 
 .submenu-item i {
   margin-right: 30px;
-  font-size: 20px;  // Larger icons
+  font-size: 20px; // Larger icons
   // transition: transform 0.3s ease;
 }
 
@@ -125,14 +91,14 @@
 }
 
 .submenu-item:hover {
- background-color:#137749;  // Darker hover color
-  transform: none;  // Removed the translation effect on hover
+  background-color: #137749; // Darker hover color
+  transform: none; // Removed the translation effect on hover
 }
 
 .nav-item-with-submenu:hover .submenu {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);  // Smooth submenu slide-in effect
+  transform: translateY(0); // Smooth submenu slide-in effect
 }
 
 .submenu-item a {
@@ -145,13 +111,20 @@
 
 .submenu-item a:hover {
   color: #d6d6d6;
-  text-decoration: underline;  // Underline effect for links on hover
+  text-decoration: underline; // Underline effect for links on hover
 }
-
 .arrow-down {
   margin-left: 10px;
   font-size: 12px;
-  // transition: transform 0.3s ease;
+  /* transition: transform 0.3s ease; */
+}
+
+/* Make the arrow more responsive for screens 1600px or larger */
+@media (min-width: 2000px) {
+  .arrow-down {
+    margin-left: 20px;  /* Increase margin if needed */
+    font-size: 24px;     /* Increase font size for larger screens */
+  }
 }
 
 
@@ -164,188 +137,46 @@
   top: 0;
   width: 100%;
   // background-color: #fff;  // White background for sticky nav
-  color: #333;  // Dark text color for readability
+  color: #333; // Dark text color for readability
   // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  // Soft shadow for the sticky navbar
   z-index: 1000;
   // transition: all 0.3s ease-in-out;
 }
-
-.sticky-nav.scrolled {
-  // background-color: #fff;  // White background on scroll
-  // box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);  // Deeper shadow when scrolled
-  // transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-
-#header {
-  background-color: transparent;
-  transition: background-color 0.3s ease;
-  transition: transform 0.3s ease-in-out;
-padding: 20px;
-
-  @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
-  }
-}
-
-.scrolled-bounce {
-  animation: bounce 0.6s ease-in-out;
-}
-
-}
-
 #nav {
   /* Ensure nav has a z-index for proper layering if needed */
   position: relative;
   z-index: 10;
 }
-
-@keyframes bounce {
-  0% {
-    transform: translateY(-10px);
-  }
-  50% {
-    transform: translateY(5px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-.sticky-nav.bounce {
-  animation: bounce 3s ease-out;
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
-  }
-}
-
-
 #header {
   background-color: transparent;
   // transition: background-color 0.3s ease;
 }
-
 #header.scrolled {
-  background-color: white; /* Or your desired color */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional for effect */
+  background-color: white;
+  /* Or your desired color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Optional for effect */
 }
-@media screen and (max-width: 1780px) {
-  #header {
-    position: relative;
-    z-index: 9999;
-    padding: 1.5rem 6rem;
-    // transition: all 0.5s ease-in-out;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    left: 2rem;
-    top: 0;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    // transition: background-color 0.3s, color 0.3s ease, padding 0.3s ease;
-    will-change: background-color, color, padding;
-    box-shadow: none; /* No shadow by default */
-  }
-  }
-  /* When the header is scrolled */
-  @media screen and (max-width: 1780px) {
-  #header.scrolled {
-    --text-color: black;
-    // transition: background-color 1.5s ease, padding 1.5s ease;
-    --bg-color: white;
-    --hover-color: rgba(0, 0, 0, 0.7); /* Hover color when text is black */
-    padding: 1.5rem 2.8rem;
-    // box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Luxurious box shadow when scrolled */
-  }
-  }
-
-// #nav-links a:hover {
-//   color: var(--luxury-gradient);
-//   transform: scale(1.1);
-//   letter-spacing: 0.3rem;
-//   text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-// }
-
-/* Change header on scroll */
 #header.scrolled #nav-links a {
-  color: #000; /* Change to black on scroll */
+  color: #000;
+  /* Change to black on scroll */
 
-}
-
-
-/* When the header is scrolled */
+}/* When the header is scrolled */
 #header.scrolled {
   --text-color: black;
   // transition: background-color 1.5s ease, padding 1.5s ease;
   --bg-color: white;
-  --hover-color: rgba(0, 0, 0, 0.7); /* Hover color when text is black */
+  --hover-color: rgba(0, 0, 0, 0.7);
+  /* Hover color when text is black */
   padding: 1.5rem 4.8rem;
   // box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Luxurious box shadow when scrolled */
 }
-
-#header {
-  transition: transform 0.3s ease-in-out;
-  @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-      transform: translateY(0);
-    }
-    40% {
-      transform: translateY(-10px);
-    }
-    60% {
-      transform: translateY(-5px);
-    }
-  }
-  
-  .scrolled-bounce {
-    animation: bounce 0.2s ease-in-out;
-  }
-  
-  &.bounce {
-    animation: bounce 0.3s ease-in-out;
-  }
-}
-
-@keyframes bounce {
-  0% {
-    transform: translateY(-10px);
-  }
-  50% {
-    transform: translateY(5px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-
-
 /* Responsive header adjustments */
 @media screen and (max-width: 900px) {
   #header {
     padding: -1rem;
   }
 }
-
-
 /* Navigation bar styling */
 #nav {
   width: 85.3%;
@@ -359,9 +190,6 @@ padding: 20px;
     align-items: flex-start;
   }
 }
-
-
-/* Logo adjustments */
 #nav-logo {
   .nav-toggler {
     display: none;
@@ -379,21 +207,23 @@ padding: 20px;
       left: 0;
       padding: 2rem;
     }
-@media (max-width: 768px) {
-  #nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 
-  #nav-logo {
-    justify-content: space-between;
-    width: 100%;
+    @media (max-width: 768px) {
+      #nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
 
-    .nav-toggler {
-      display: block;
+      #nav-logo {
+        justify-content: space-between;
+        width: 100%;
+
+        .nav-toggler {
+          display: block;
+        }
+      }
     }
-  }}
-  
+
     align-self: flex-start;
     padding: 1rem;
     width: 100%;
@@ -431,18 +261,24 @@ padding: 20px;
       opacity: 1;
     }
   }
+
   a {
-    color: var(--text-color); /* Default link color */
+    color: var(--text-color);
+    /* Default link color */
     text-decoration: none;
-    font-family: 'Nunito', sans-serif; 
-    font-weight: 600; /* Bold font */
-    font-size: 1.25rem; /* Increased font size */
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    /* Bold font */
+    font-size: 1.25rem;
+    /* Increased font size */
     // transition: color 0.3s, transform 0.3s ease-in-out;
     position: relative;
 
   }
+
   #nav-links a {
-    font-size: 2rem; /* Large text for ultra luxury */
+    font-size: 2rem;
+    /* Large text for ultra luxury */
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
@@ -450,13 +286,17 @@ padding: 20px;
     position: relative;
 
   }
-  
-  #nav-links a:hover {
-    color: var(--luxury-gradient); /* Gradient hover effect */
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Glowing hover effect */
 
-    letter-spacing: 0.2rem; /* Increased letter spacing */
+  #nav-links a:hover {
+    color: var(--luxury-gradient);
+    /* Gradient hover effect */
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    /* Glowing hover effect */
+
+    letter-spacing: 0.2rem;
+    /* Increased letter spacing */
   }
+
   @media screen and (max-width: 900px) {
     column-gap: 1rem;
   }
@@ -483,15 +323,73 @@ padding: 20px;
     }
 
     a {
-      font-size: 3.5rem; /* Adjust font size on mobile */
+      font-size: 3.5rem;
+      /* Adjust font size on mobile */
       color: var(--text-color);
     }
   }
 }
+
 .content {
-  margin-top: 80px; /* To make space for the fixed header */
-  height: 2000px; /* Example height to demonstrate scrolling */
+  margin-top: 80px;
+  /* To make space for the fixed header */
+  height: 2000px;
+  /* Example height to demonstrate scrolling */
   padding: 20px;
+}
+
+
+
+/* Adjustments for screens 900px and below */
+@media screen and (max-width: 900px) {
+  #header {
+    padding: 1rem;
+  }
+
+  #nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #nav-logo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav-toggler {
+    display: block;
+  }
+
+  #nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+  }
+
+  .submenu {
+    min-width: 200px;
+    /* Adjust submenu for small screens */
+  }
+}
+
+/* Responsive adjustments for mobile screens (500px and below) */
+@media screen and (max-width: 500px) {
+  #header {
+    padding: 0.5rem;
+  }
+
+  #nav-links {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .submenu {
+    min-width: 180px;
+  }
 }
 
 /* SVG icon position */
@@ -501,13 +399,10 @@ padding: 20px;
   right: 10px;
   z-index: 5;
 }
+
 .logo {
-  width: 10.1rem; /* Default width */
- 
-  // transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease; /* Smooth transition for scaling */
-
-  /* Hover effect: subtle rotation */
-
+  width: 10.1rem;
+  /* Default width */
 }
 
 
@@ -516,9 +411,12 @@ padding: 20px;
 #header.scrolled .logo {
   padding-top: 10px;
   padding-left: 4px;
-  transform: scale(2.5); /* Enlarge logo visually */
-  width: 4.5rem; /* Optional: increase width if needed */
-  height: 3.5rem; /* Increase height accordingly */
+  transform: scale(2.5);
+  /* Enlarge logo visually */
+  width: 4.5rem;
+  /* Optional: increase width if needed */
+  height: 3.5rem;
+  /* Increase height accordingly */
 }
 
 /* Keep header size fixed */
@@ -527,7 +425,7 @@ padding: 20px;
   z-index: 9999;
   padding: 1.5rem 3rem;
   background-color: transparent;
-   transition: none 0.5s ease-in-out;
+  transition: none 0.5s ease-in-out;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -540,19 +438,21 @@ padding: 20px;
   color: var(--text-color);
   //  transition: background-color 0.5s, color 0.5s ease, padding 0.5s ease;
   will-change: background-color, color, padding;
-  box-shadow: none; /* No shadow by default */
+  box-shadow: none;
+
+  /* No shadow by default */
   &.scrolled {
     // padding: 10px 20px;
     height: 100px;
 
-  .nav-toggler {
-    position: relative;
-    bottom: 30px;
-    width: 25px;
-    height: 25px;
-  }
+    .nav-toggler {
+      position: relative;
+      bottom: 30px;
+      width: 25px;
+      height: 25px;
+    }
 
-}
+  }
 }
 
 
@@ -567,27 +467,33 @@ padding: 20px;
 /* Optional: Adjustments for smaller screens */
 @media screen and (max-width: 500px) {
   .logo {
-    width: 8rem; /* Smaller size for mobile */
+    width: 8rem;
+    /* Smaller size for mobile */
     height: 6rem;
     position: relative;
     right: 7rem;
-    top:8px /* Adjust height */
+    top: 8px
+      /* Adjust height */
   }
 
   #header.scrolled .logo {
-    transform: scale(1.3); /* Slightly smaller scale on mobile */
-    width: 8rem; /* Adjust width */
-    height: 6rem; /* Adjust height */
+    transform: scale(1.3);
+    /* Slightly smaller scale on mobile */
+    width: 8rem;
+    /* Adjust width */
+    height: 6rem;
+    /* Adjust height */
   }
 }
-/* Hover underline animation */
+
+//* Default hover-underline-animation styles */
 .hover-underline-animation {
   display: inline-block;
   position: relative;
   color: #fff;
   transition: color 1.5s, transform 0.3s ease-in-out;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1rem; /* Default font size */
 }
 
 .hover-underline-animation:after {
@@ -603,9 +509,30 @@ padding: 20px;
   transition: transform 0.35s ease-out;
 }
 
-
+/* Hover effect */
 .hover-underline-animation:hover {
   color: var(--luxury-gradient); /* Gradient color on hover */
+}
+
+/* Responsive adjustments for screens larger than 1600px */
+@media screen and (min-width: 2000px) {
+  /* Increase font size */
+  .hover-underline-animation {
+    font-size: 1.5rem; /* Increase font size */
+  }
+
+  /* Increase underline thickness and adjust animation for larger screens */
+  .hover-underline-animation:after {
+    height: 2px; /* Make the underline thicker */
+    transform: scaleX(0);
+    transition: transform 0.45s ease-out; /* Slow down the transition for a smoother effect */
+  }
+
+  /* Optional: Modify the width of the underline to cover more space */
+  .hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left; /* Change the origin for a different effect */
+  }
 }
 
 /* Scroll effect on the hover animation */
@@ -634,14 +561,6 @@ a.router-link-exact-active p {
 }
 
 .scroll-text:hover {
-  transform: translateY(10px); /* Smooth downwards movement on hover */
+  transform: translateY(10px);
+  /* Smooth downwards movement on hover */
 }
-
-/* Add smooth transition effect to the overlay when scrolling */
-.main-bg::after {
-  transition: background 0.5s ease;
-}
-
-#header.scrolled .main-bg::after {
-  // background: rgba(0, 0, 0, 0.7); /* Darker overlay when scrolled */
-}  

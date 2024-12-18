@@ -100,13 +100,62 @@ export default {
   filter: brightness(0.6) blur(1px); /* Apply blur and reduce brightness */
   z-index: -1; /* Ensure the background stays behind the content */
 }
+/* For screens larger than 1600px */
+@media screen and (min-width: 2000px) {
+  .landing-page {
+    display: flex;
+   
+   flex-direction: column;
+   align-items: flex-start;
+   padding-left: 10rem;
+   padding-bottom: 14rem;
+   padding-top: 4.5rem;
+   /* padding: 2rem; */
+   width: 100%;
+   box-shadow: #333;
+   position: relative;
+   color: #fff;
+   font-family: 'Nunito', sans-serif;
+   height: 75vh;
+  }
+
+  .content {
+    max-width: 2000px; /* Increase the maximum width for content */
+    justify-content: space-between;
+  }
+
+  .text-container {
+    padding-right: 12rem; /* Add more spacing for larger screens */
+  }
+
+  .main-title {
+    font-size: 4.5rem;
+    line-height: 3.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .description {
+    font-size: 4rem;
+    line-height: 1.8rem;
+  }
+
+  .btn {
+    padding: 1.8rem 2.8rem; /* Larger padding for buttons */
+    font-size: 1.2rem;
+    width: 50%; /* Adjust button width */
+  }
+
+  .icon {
+    font-size: 1.5rem; /* Increase icon size */
+  }
+}
 
 /* Content Container (Text and buttons will remain sharp) */
 .content {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  max-width: 1600px;
+  max-width: 2200px;
   margin: 0 auto;
   height: 100%; /* Ensure full height layout */
 }

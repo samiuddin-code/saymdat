@@ -2,17 +2,19 @@
   position: relative;
   display: flex;
   flex-direction: column;
-   
+
+  /* Default styles for smaller screens */
   @media screen and (min-width: 500px) and (max-width: 1024px) {
     justify-content: center;
     padding: 0 8rem;
   }
-  
+
   @media screen and (max-width: 500px) {
     justify-content: center;
     padding: 0 1rem;
   }
 
+  /* Mirror Styles */
   &.mirror {
     direction: rtl;
 
@@ -90,64 +92,64 @@
     padding: 3rem;
 
     .title {
-        font-size: 3rem;
-        font-weight: normal;
-        font-family: 'Nunito', sans-serif;
+      font-size: 3rem;
+      font-weight: normal;
+      font-family: 'Nunito', sans-serif;
     }
 
     .paragraph {
-        color: #777;
-        line-height: 1.8rem;
-        font-size: 0.9rem;
+      color: #777;
+      line-height: 1.8rem;
+      font-size: 0.9rem;
     }
 
     /* Responsive Styles for max-width 1024px */
     @media screen and (max-width: 1024px) {
-        width: 90%;
-        margin: 0 auto;
+      width: 90%;
+      margin: 0 auto;
 
-        .title {
-            font-size: 1.5rem;
-        }
+      .title {
+        font-size: 1.5rem;
+      }
 
-        .paragraph {
-            font-size: 1rem;
-            line-height: 1.4rem;
-        }
+      .paragraph {
+        font-size: 1rem;
+        line-height: 1.4rem;
+      }
 
-        .explore-btn {
-            justify-content: center;
-        }
+      .explore-btn {
+        justify-content: center;
+      }
     }
 
     /* Responsive Styles for max-width 500px */
     @media screen and (max-width: 500px) {
       position: relative;
-    height: auto;
-    width: 100%;
-    background-color: #fff;
-    z-index: 3;
-    display: flex;
-    position: relative;
-    left: 0.3rem;
-    flex-direction: column;
-    gap: 1rem;
-    justify-content: space-around;
-    align-items: center;
-    padding: 2rem;
-    margin-bottom: 2rem;
+      height: auto;
+      width: 100%;
+      background-color: #fff;
+      z-index: 3;
+      display: flex;
+      position: relative;
+      left: 0.3rem;
+      flex-direction: column;
+      gap: 1rem;
+      justify-content: space-around;
+      align-items: center;
+      padding: 2rem;
+      margin-bottom: 2rem;
 
-        .title {
-            font-size: 1.2rem;
-        }
+      .title {
+        font-size: 1.2rem;
+      }
 
-        .paragraph {
-            font-size: 0.9rem;
-        }
+      .paragraph {
+        font-size: 0.9rem;
+      }
 
-        .explore-btn {
-            justify-content: center;
-        }
+      .explore-btn {
+        justify-content: center;
+      }
     }
 
     /* Explore Button */
@@ -155,19 +157,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-  
+
       @media screen and (max-width: 1024px) {
         justify-content: stretch;
       }
+
       .btn:hover {
-        background-color:#137749;  /* Updated hover color to green */
+        background-color: #137749;  /* Updated hover color to green */
       }
-      
-      
-     
- 
-    
-      
 
       .explore {
         cursor: pointer;
@@ -177,16 +174,50 @@
         transition: border 0.2s ease-in-out;
 
         &:hover {
-          background-color:#137749; 
+          background-color: #137749;
           color: #fff;
         }
       }
     }
+
     .btn:hover {
-      background-color:#137749;  /* Updated hover color to green */
+      background-color: #137749;  /* Updated hover color to green */
     }
-    
+  }
+
+  /* Responsive Styles for larger screens (1600px and above) */
+  @media screen and (min-width: 2000px) {
+    justify-content: center;
+    padding: 0 10rem; /* Add more space for larger screens */
+
+    .article-txt2-btn {
+      width: 680px;
+      left: calc((100% - 400px) / 1.2);
+      top: calc((100% - 800px) / 3);
+      padding: 2rem;
+      height: 50rem;
+
+      .title {
+        font-size: 2.5rem;
+        margin-bottom: -5rem;
+      }
+
+      .paragraph {
+        font-size: 1.1rem;
+        line-height: 1.6rem;
+        margin-bottom: 5rem;
+      }
+    }
+
+    .image img {
+      height: auto;
+      width: 80%;
+    }
+
+    .image::after {
+      width: calc(100% - 10rem);
+      left: 20rem;
+      bottom: 0;
+    }
   }
 }
-
-

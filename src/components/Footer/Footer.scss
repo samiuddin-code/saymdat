@@ -27,6 +27,69 @@
   .router-link-exact-active {
     color: inherit !important; /* Inherit the default color */
   }
+  @media (min-width: 2000px) {
+  .footer {
+    padding: 100px 30px; /* Increase padding for more spacious design */
+  }
+
+  .footer-container {
+    max-width: 2800px; /* Widen the container */
+    gap: 80px; /* Increase gap between columns */
+  }
+
+  .footer-logo-section {
+    .footer-logo {
+      width: 200px; /* Larger logo for higher resolutions */
+      bottom: 40px; /* Adjust position */
+    }
+
+    .footer-description {
+      font-size: 1rem; /* Slightly larger font for readability */
+      line-height: 2rem; /* Adjust line height */
+      top: -80px; /* Adjust vertical alignment */
+    }
+
+    .footer-contact {
+      font-size: 16px; /* Larger contact font size */
+      bottom: 100px; /* Adjust vertical alignment */
+    }
+  }
+
+  .footer-links-section {
+    gap: 80px; /* Increase gap between link sections */
+    .footer-column {
+      h3 {
+        font-size: 20px; /* Slightly larger heading font */
+      }
+
+      ul li {
+        font-size: 16px; /* Larger font for better readability */
+      }
+
+      .social-icons a {
+        font-size: 24px; /* Increase icon size */
+      }
+    }
+  }
+
+  .footer-bottom {
+    padding-top: 30px; /* Add extra padding for spacing */
+    p {
+      font-size: 12px; /* Slightly larger text for footer bottom */
+    }
+    .language-switcher .language-button {
+      font-size: 16px; /* Larger font for language switcher */
+    }
+  }
+
+  .newsletter-input {
+    input,
+    button {
+      font-size: 16px; /* Increase font size */
+    }
+  }
+}
+
   .footer-container {
     display: flex;
     flex-wrap: wrap;
@@ -36,6 +99,14 @@
     gap: 40px;
     margin: auto;
   }
+  @media (min-width: 2000px) {
+    .footer-container {
+      max-width: 1850px; /* Expand container width for very large screens */
+      gap: 50px; /* Increase spacing for a more balanced layout */
+      justify-content: space-evenly; /* Adjust content alignment for larger screens */
+    }
+  }
+
   .footer-contact-text {
     font-size: 0.85rem; /* Adjust this size as needed */
   }

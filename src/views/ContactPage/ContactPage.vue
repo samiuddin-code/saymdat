@@ -229,7 +229,7 @@ textarea {
   max-width: 1500px;
   margin: 0 auto;
   padding: 40px;
-  font-family: '', sans-serif;
+  font-family: 'Nunito', sans-serif; 
 
 }
 
@@ -270,7 +270,7 @@ textarea {
   border-bottom: 2px solid #ccc; /* Only a bottom border */
   font-size: 1rem;
   padding: 1rem;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Nunito', sans-serif; 
 }
 
 input:focus,
@@ -473,7 +473,7 @@ p {
 }
 
   .contact-page {
-    font-family: '', sans-serif;
+    font-family: 'Nunito', sans-serif; 
     background: $background-light;
     color: $text-color;
     // Added top padding for better separation
