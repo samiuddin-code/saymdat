@@ -24,6 +24,7 @@
     <Globe />
     <Panels />
     <ContactD />
+    <Submenu/>
   </div>
 </template>
 <script type="module" src="./Home.ts"></script>

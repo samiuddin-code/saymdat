@@ -229,7 +229,7 @@ textarea {
   max-width: 1500px;
   margin: 0 auto;
   padding: 40px;
-  font-family: 'Nunito', sans-serif; 
+  font-family: 'IBM Plex Sans', sans-serif;
 
 }
 

@@ -1,7 +1,13 @@
 <template>
-  <video class="main-bg" autoplay muted loop :style="{ backgroundImage: `url(${imageBg})` }">
-    <source :src="video" type="video/mp4" />
-  </video>
+ <video
+  class="main-bg"
+  autoplay
+  muted
+  loop
+  :style="{ backgroundImage: `url(${imageBg})`, filter: 'brightness(70%)' }"
+>
+  <source :src="video" type="video/mp4" />
+</video>
 
   <!-- Scroll Down Button in Bottom-Right Corner -->
   <button class="round-button" @click="scrollToNextSection">
@@ -57,38 +63,61 @@ video.main-bg {
 }
 
 /* Bold Text */
+/* Bold Text */
 .bold-text {
-  font-family: 'Nunito', sans-serif;
-  font-weight: 100;
-  font-size: clamp(1.5rem, 4vw, 4.5rem); /* Dynamic size */
-  line-height: clamp(2rem, 5vw, 4rem);
+  font-family: "Nunito", sans-serif;
+  font-style: normal; /* Normal style */
+  font-weight: 300; /* Moderate weight for a refined look */
+  font-size: clamp(2.5rem, 6vw, 8.5rem); /* Dynamic size */
+  line-height: clamp(3rem, 7vw, 6.5rem); /* Complementary line height */
   color: hsl(0, 0%, 100%);
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Light shadow */
-  margin-top: 1rem;
-  transition: transform 0.3s ease;
+  -webkit-background-clip: text; /* Clips gradient to the text */
+  text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+  margin-top: 1.5rem; /* Spacing from top */
+  transition: transform 0.5s ease, text-shadow 0.3s ease; /* Smooth effects */
+  letter-spacing: 0.03em; /* Slightly spaced letters for elegance */
+  text-transform: none; /* Keeps natural casing */
+  opacity: 0; /* Start hidden */
+  transform: translateY(20px); /* Start slightly below */
+  animation: swipeUp 1.2s ease-out forwards; /* Trigger animation */
 }
 
 .bold-text:hover {
-  transform: scale(1.05);
-  text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8);
+  transform: rotate(-2deg) scale(1.02); /* Tilted hover effect */
+  text-shadow: 4px 6px 16px rgba(0, 0, 0, 0.7); /* Enhanced shadow on hover */
 }
 
 /* Light Text */
 .light-text {
-  font-family: 'Nunito', sans-serif;
-  font-weight: 300;
-  font-size: clamp(1.5rem, 4vw, 4rem);
-  line-height: clamp(2rem, 5vw, 4rem);
-  color: hsla(0, 0%, 100%, 0.75);
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  font-family: "Nunito", sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 4vw, 4.5rem);
+  line-height: clamp(2rem, 5vw, 12.5rem);
+  color: hsl(0, 0%, 100%);
   margin-top: 1rem;
   transition: transform 0.3s ease;
+  opacity: 0; /* Start hidden */
+  transform: translateY(20px); /* Start slightly below */
+  animation: swipeUp 1.2s ease-out forwards 0.3s; /* Slight delay for staggered effect */
 }
 
 .light-text:hover {
   transform: scale(1.05);
   text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
 }
+
+/* Keyframes for swipe-up animation */
+@keyframes swipeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Start from below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Settle in place */
+  }
+}
+
 
 /* Scroll Down Button in Bottom-Right Corner */
 .round-button {

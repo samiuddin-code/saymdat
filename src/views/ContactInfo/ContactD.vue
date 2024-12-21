@@ -72,7 +72,7 @@ export default {
 /* Styles for the Landing Page */
 .landing-page {
   display: flex;
-   
+
   flex-direction: column;
   align-items: flex-start;
   padding-left: 9rem;
@@ -83,12 +83,16 @@ export default {
   box-shadow: #333;
   position: relative;
   color: #fff;
-  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+    line-height: 1.6rem;
+    padding-right: -2rem;
+    font-family: 'Nunito', sans-serif;
   height: 75vh; /* Full screen height */
 }
 
 /* Background Container */
 .landing-page::before {
+  
   content: '';
   position: absolute;
   top: 0;
@@ -115,7 +119,10 @@ export default {
    box-shadow: #333;
    position: relative;
    color: #fff;
-   font-family: 'Nunito', sans-serif;
+   font-size: 0.8rem;
+    line-height: 1.6rem;
+    padding-right: -2rem;
+    font-family: 'Nunito', sans-serif;
    height: 75vh;
   }
 
@@ -137,11 +144,18 @@ export default {
   .description {
     font-size: 4rem;
     line-height: 1.8rem;
+    font-size: 0.8rem;
+    line-height: 1.6rem;
+    padding-right: 30rem;
+    font-family: 'Nunito', sans-serif;
   }
 
   .btn {
     padding: 1.8rem 2.8rem; /* Larger padding for buttons */
-    font-size: 1.2rem;
+    font-size: 0.8rem;
+    line-height: 1.6rem;
+    padding-right: -2rem;
+    font-family: 'Nunito', sans-serif;
     width: 50%; /* Adjust button width */
   }
 
@@ -152,6 +166,7 @@ export default {
 
 /* Content Container (Text and buttons will remain sharp) */
 .content {
+  
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -219,7 +234,7 @@ export default {
 .btn {
   background-color: transparent;
   color: #fff;
-  border: 1px solid #fff;
+  border: 1.5px solid #fff;
   padding: 1.5rem 2.5rem; /* Adjust padding for better alignment */
   font-size: 1rem;
   text-align: left;
@@ -232,7 +247,8 @@ export default {
 }
 
 .btn:hover {
-  background-color:#137749;  /* Updated hover color to green */
+  background-color:#fff; 
+  color: black; /* Updated hover color to green */
 }
 
 .icon {
@@ -360,6 +376,10 @@ export default {
 
   .description {
     font-size: 0.9rem;
+    font-size: 0.8rem;
+    line-height: 1.6rem;
+    padding-right: -2rem;
+    font-family: 'Nunito', sans-serif;
   }
 
   .buttons-container {
@@ -407,6 +427,10 @@ export default {
     font-size: 0.8rem;
     line-height: 1.3;
     margin-bottom: 1rem;
+    font-size: 0.8rem;
+    line-height: 1.6rem;
+    padding-right: -2rem;
+    font-family: 'Nunito', sans-serif;
   }
 
   .buttons-container {

@@ -16,6 +16,7 @@ import { Options, Vue } from "vue-class-component";
       type: Boolean,
       default: false,
     },
+
   },
 })
 export default class ExperiencesArticle extends Vue {}

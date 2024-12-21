@@ -4,6 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
   name: "Navbar",
   data() {
     return {
+      showMenu: false,
       isToggled: false,
       isScrolled: false,
     };

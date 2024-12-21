@@ -32,6 +32,7 @@
           <div class="img-description" @click="navigateToDetails(item.title)">
             <span class="img-title" v-text="item.title"></span>
             <span class="img-location" v-text="item.location"></span>
+            <!-- <span class = "img-location" v-text="item.slug"></span> -->
           </div>
         </div>
       </div>

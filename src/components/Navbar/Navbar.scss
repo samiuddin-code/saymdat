@@ -1,11 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
+
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+// Add this import at the top of your SCSS file
+@import url('https://fonts.googleapis.com/css2?family=Cormant+Garamond:wght@400;700&display=swap');
+
 
 
 #nav-links a {
   color: #fff;
-  font-family: 'Nunito', sans-serif;
+
   font-weight: 700;
   font-size: 2.5rem;
   text-transform: uppercase;
@@ -13,11 +15,406 @@
   // transition: color 0.3s, transform 0.3s, letter-spacing 0.3s, text-shadow 0.3s ease;
   position: relative;
 }
+@media screen and (max-width: 768px) {
+  .menu-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-left {
+    align-items: center;
+  }
+
+  .menu-links a {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .menu-video {
+    max-width: 100%;
+  }
+
+  .logoo {
+    max-width: 150px;
+  }
+
+  .bottom-text {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 1600px) and (max-width: 2000px) {
+  .menu-links a {
+    font-size: 2rem;
+  }
+
+  .menu-video {
+    max-width: 800px;
+    height: auto;
+  }
+
+  .logoo {
+    max-width: 300px;
+  }
+
+  .bottom-text {
+    font-size: 2rem;
+  }
+}
+body {
+  margin: 0;
+  padding: 0;
 
 
+}
 
-.nav-item-with-submenu {
+/* Toggle Button */
+.toggle-menu-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1100;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+
+.menu-button {
+  font-size: 1.5rem;
+  background: none;
+  border: 1px solid rgb(255, 255, 255); /* White border by default */
+  border-radius: 7px;
+  padding: 0.7rem 1.2rem;
+  color: rgb(255, 255, 255); /* White icon color by default */
+  cursor: pointer;
+  text-align: center;
+  line-height: 1.2;
+  display: inline-block;
+  transition: border-color 0.3s ease, color 0.3s ease; /* Smooth transition for border and color */
+}
+
+/* When the header is sticky, change icon color to black and add a black slim border */
+.menu-button.scrolled {
+  border: 2px solid black; /* Black slim border when sticky */
+}
+
+.menu-button.scrolled i {
+  color: black; /* Icon color turns black when header is sticky */
+}
+
+/* Font Awesome Icon Styling */
+.menu-button i {
+  font-size: 2rem; /* Icon size */
+}
+
+/* Hover effect for Menu Button */
+.menu-button:hover {
+  border-color: rgb(255, 255, 255);
+  background-color: rgba(233, 229, 229, 0.1);
+}
+
+/* Bounce animation for the button when scrolling */
+.menu-button.bouncing {
+  animation: bounce 0.6s ease-out;
+}
+
+
+/* Mobile-specific styling */
+@media screen and (max-width: 768px) {
+  .menu-button {
+    display: none; /* Hide the button on mobile */
+  }
+}
+
+/* Close Button */
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 2rem;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.close-button:hover .close-icon {
+  color: #f0eded;
+}
+
+.close-icon {
+  font-size: 5rem;
+  line-height: 1;
+}
+
+/* Fullscreen Menu */
+.fullscreen-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+/* Menu Content */
+.menu-content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative; /* Prevents text from going behind video */
+}
+
+/* Left Section */
+.menu-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  color: white;
+  align-items: flex-start;
+  width: 50%;
+  z-index: 2; /* Ensures menu links are above video */
+}
+
+.menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Reduced gap between links for mobile */
+}
+
+.menu-links a {
+  color: white;
+  font-weight: 300;
+  padding: 1.5rem;
+  font-size: 2rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
   position: relative;
+  z-index: 2; /* Keeps links above video */
+}
+
+.menu-links a:hover {
+  color: #f0eded;
+}
+
+/* Right Section */
+.menu-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 50%;
+  padding: 2rem;
+  z-index: 1; /* Ensures video stays behind links */
+}
+
+.menu-video {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border: none;
+  z-index: 0; /* Keeps video behind content */
+}
+
+.menu-image {
+  position: relative;
+  max-width: 80%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Logo */
+.logoo {
+  width: 15rem;
+  position: absolute;
+  left: 2rem;
+  top: 2rem;
+  z-index: 3; /* Ensures logo stays above all other content */
+}
+
+/* Bottom Text */
+.bottom-text {
+  font-weight: 200;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  position: absolute;
+  bottom: 5rem;
+  right: 2rem;
+  color: white;
+  font-size: 3rem;
+  z-index: 2; /* Ensures text stays above the video */
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .menu-content {
+    flex-direction: column;
+  }
+
+  .menu-left, .menu-right {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .menu-links {
+    gap: 0.8rem; /* Reduced gap for mobile */
+  }
+
+  .menu-links a {
+    font-size: 1.5rem;
+    padding:0px;
+   position: relative;
+   top: 2rem;
+    margin-top: 0; /* Removes excessive margin pushing links up */
+  }
+
+  .logoo {
+    width: 4rem;
+  }
+
+  .bottom-text {
+    font-size: 2vw; /* This scales the font size based on viewport width */
+    bottom: 50rem;
+    right: 1rem;
+    color: white;
+  }
+  .bottom-text {
+    display: none; /* Hide on mobile devices */
+  }
+  
+  @media (max-width: 768px) {
+    .bottom-text {
+      display: none; /* Hide on mobile devices */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .bottom-text {
+      .bottom-text {
+        display: none; /* Hide on mobile devices */
+      }
+    }
+  }
+  
+  .close-button {
+    right: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .close-icon {
+    font-size: 2rem;
+  }
+
+  /* Preventing the video from overlapping text */
+  .menu-right {
+    z-index: 1;
+  }
+
+  .menu-video {
+    z-index: 0;
+  }
+
+  .menu-left {
+    z-index: 2;
+  }
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+  .menu-links a {
+    font-size: 2rem;
+  }
+
+  .logoo {
+    width: 12rem;
+  }
+
+  .bottom-text {
+    font-size: 2.5rem;
+  }
+}
+
+.header-toggle-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+.header-toggle-button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+}
+.header-toggle-button:hover {
+  background-color: #0056b3;
+}
+
+.header-section {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+.design-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.design-button {
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+.design-button:hover {
+  background-color: #444;
+}
+/* Sticky Header */
+.header {
+  position: sticky;
+  top: 0;
+  background-color: black; /* Default black background for the header */
+  z-index: 1000;
+  padding: 1rem;
+  transition: background-color 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* When the header becomes sticky (after scroll), change background color */
+.header.sticky {
+  background-color: white; /* White background when sticky */
+}
+
+/* Menu Button Styles */
+
+
+
+
+/* Mobile-specific styling (for screens 768px or smaller) */
+@media screen and (max-width: 768px) {
+  .menu-button {
+    display: none; /* Hide the button on mobile */
+  }
 }
 
 #nav-links a::after {
@@ -44,86 +441,78 @@
   color: var(--hover-color);
   /* Change text color on hover */
 }
-
+.nav-item-with-submenu {
+  position: relative;
+}
 
 .submenu {
+  display: none;
   position: absolute;
-  top: 100%;
+  top: 100%; /* Position at the bottom of the parent item */
   left: 0;
-
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  // padding: 10px 20px;
-  // border-radius: 8px;
-  min-width: 260px; // Submenu width
-  background: linear-gradient(135deg, #31333a, #131518); // Gradient background
-  border-radius: 12px;
-  overflow: hidden;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  min-width: 350px;
+  padding: 20px;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-40px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); // Soft shadow for depth
-  // transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.4s ease;
-  z-index: 10;
-}
-
-.submenu-item {
-  border-bottom: 1px solid #e0e0e0;
-  display: flex;
-  align-items: center;
-  padding: 20px 30px;
-  color: #fff;
-  cursor: pointer;
-  // transition: background-color 0.3s ease, transform 0.3s ease;
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: 1px;
-}
-
-.submenu-item i {
-  margin-right: 30px;
-  font-size: 20px; // Larger icons
-  // transition: transform 0.3s ease;
-}
-
-.submenu-item-text {
-  text-transform: capitalize;
-  color: #fff;
-}
-
-.submenu-item:hover {
-  background-color: #137749; // Darker hover color
-  transform: none; // Removed the translation effect on hover
+  transform: translateY(-60px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.4s ease, box-shadow 0.2s ease;
 }
 
 .nav-item-with-submenu:hover .submenu {
+  display: block;
   opacity: 1;
   visibility: visible;
-  transform: translateY(0); // Smooth submenu slide-in effect
+  transform: translateY(0);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
-.submenu-item a {
-  color: inherit;
-  text-decoration: none;
+.submenu-sticky {
+  top: 120%; /* Move submenu down when header is sticky */
+}
+
+.submenu-item {
+  padding: 20px;
   display: flex;
   align-items: center;
-  width: 100%;
+  transition: background-color 0.4s ease, transform 0.3s ease;
+  font-size:0.8rem;
+  font-weight: 300;
+  color: #333;
+  border-radius: 5px;
 }
 
-.submenu-item a:hover {
-  color: #d6d6d6;
-  text-decoration: underline; // Underline effect for links on hover
+.submenu-item:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  transform: translateX(5px);
 }
-.arrow-down {
-  margin-left: 10px;
-  font-size: 12px;
-  /* transition: transform 0.3s ease; */
+
+.submenu-item i {
+  margin-right: 25px;
+  font-size: 1.7rem;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
+
+.submenu-item:hover i {
+  transform: scale(1.25);
+  color: #000;
+}
+
+.submenu-item-text {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
 
 /* Make the arrow more responsive for screens 1600px or larger */
 @media (min-width: 2000px) {
   .arrow-down {
     margin-left: 20px;  /* Increase margin if needed */
-    font-size: 24px;     /* Increase font size for larger screens */
+    font-size: 20px;     /* Increase font size for larger screens */
   }
 }
 
@@ -172,11 +561,11 @@
   // box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Luxurious box shadow when scrolled */
 }
 /* Responsive header adjustments */
-@media screen and (max-width: 900px) {
-  #header {
-    padding: -1rem;
-  }
-}
+// @media screen and (max-width: 900px) {
+//   #header {
+//     padding: -1rem;
+//   }
+// }
 /* Navigation bar styling */
 #nav {
   width: 85.3%;
@@ -266,7 +655,8 @@
     color: var(--text-color);
     /* Default link color */
     text-decoration: none;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Cormant Garamond', serif; 
+
     font-weight: 600;
     /* Bold font */
     font-size: 1.25rem;
@@ -338,43 +728,6 @@
   padding: 20px;
 }
 
-
-
-/* Adjustments for screens 900px and below */
-@media screen and (max-width: 900px) {
-  #header {
-    padding: 1rem;
-  }
-
-  #nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  #nav-logo {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .nav-toggler {
-    display: block;
-  }
-
-  #nav-links {
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: white;
-  }
-
-  .submenu {
-    min-width: 200px;
-    /* Adjust submenu for small screens */
-  }
-}
 
 /* Responsive adjustments for mobile screens (500px and below) */
 @media screen and (max-width: 500px) {
@@ -485,8 +838,7 @@
     /* Adjust height */
   }
 }
-
-//* Default hover-underline-animation styles */
+/* Default hover-underline-animation styles */
 .hover-underline-animation {
   display: inline-block;
   position: relative;
@@ -500,44 +852,64 @@
   content: "";
   position: absolute;
   width: 100%;
-  transform: scaleX(0);
-  height: 1px;
+  transform: scaleX(0); /* Initially hidden */
+  height: 1px; /* Default thickness of the underline */
   bottom: 0;
   left: 0;
   background-color: #fff;
   transform-origin: bottom right;
-  transition: transform 0.35s ease-out;
+  transition: transform 0.35s ease-out; /* Transition for the underline reveal */
 }
 
 /* Hover effect */
 .hover-underline-animation:hover {
-  color: var(--luxury-gradient); /* Gradient color on hover */
+  color:#ffff /* Gradient color on hover */
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1); /* Reveal the underline on hover */
 }
 
 /* Responsive adjustments for screens larger than 1600px */
 @media screen and (min-width: 2000px) {
-  /* Increase font size */
+  /* Luxurious font style for hover text */
   .hover-underline-animation {
-    font-size: 1.5rem; /* Increase font size */
+    font-family: 'Cormant Garamond', serif; 
+
+    font-size: 22px; /* Larger font size for elegance */
+    font-weight: 400; /* Bold yet refined */
+    font-style: normal; /* Keep it clean and modern */
+    text-transform: uppercase; /* Add a modern luxury feel */
+    letter-spacing: 1.5px; /* Slightly spaced letters for readability */
+    position: relative; /* Required for pseudo-element positioning */
+    transition: color 0.3s ease-in-out; /* Smooth color change on hover */
   }
 
-  /* Increase underline thickness and adjust animation for larger screens */
   .hover-underline-animation:after {
-    height: 2px; /* Make the underline thicker */
-    transform: scaleX(0);
-    transition: transform 0.45s ease-out; /* Slow down the transition for a smoother effect */
+    content: ''; /* Empty content for the underline */
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Position below the text */
+    width: 100%;
+    height: 3px; /* Thicker underline for boldness */
+    background: linear-gradient(90deg, #ffffff, #ffffff); /* Gradient for luxury */
+    transform: scaleX(0); /* Initially hidden */
+    transform-origin: bottom left; /* Animation starts from the left */
+    transition: transform 0.5s ease-out; /* Smooth transition */
   }
 
-  /* Optional: Modify the width of the underline to cover more space */
+  .hover-underline-animation:hover {
+    color: #ffff; /* Change text color on hover for emphasis */
+  }
+
   .hover-underline-animation:hover:after {
-    transform: scaleX(1);
-    transform-origin: bottom left; /* Change the origin for a different effect */
+    transform: scaleX(1); /* Reveal the underline on hover */
   }
 }
 
 /* Scroll effect on the hover animation */
 .scrolled .hover-underline-animation {
-  color: black;
+  color: black; /* Text color when scrolled */
 }
 
 /* Router link active state */
@@ -547,9 +919,6 @@ a.router-link-exact-active p {
   text-decoration-thickness: 1px;
 }
 
-.hover-underline-animation:after {
-  height: 0;
-}
 
 /* Scroll down indicator styling */
 .scroll-text {

@@ -67,7 +67,7 @@ interface Elements {
           location: "PEARL JUMEIRAH",
         },
         {
-          pic: "AA.jpg",
+          pic: "AA.png",
           title: "ELYSIUM OPULENCE VILLA",
           location: "PEARL JUMEIRAH",
         },
@@ -96,16 +96,16 @@ interface Elements {
           title: "ELYSIUM OPULENCE VILLA",
           location: " PEARL JUMEIRAH",
         },
-        {
-          pic: "ms2.png",
-          title: " OPULENT OASIS",
-          location: "PEARL JUMEIRAH",
-        },
-        {
-          pic: "nor.png",
-          title: "MAGNIFICENT MANSION",
-          location: "NADD AL SHEBA-2",
-        },
+        // {
+        //   pic: "ms2.png",
+        //   title: " OPULENT OASIS",
+        //   location: "PEARL JUMEIRAH",
+        // },
+        // {
+        //   pic: "nor.png",
+        //   title: "MAGNIFICENT MANSION",
+        //   location: "NADD AL SHEBA-2",
+        // },
       ],
       carouselH1: "Explore",
       carouselH2: "Our Projects",

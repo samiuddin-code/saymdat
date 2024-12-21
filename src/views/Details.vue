@@ -75,14 +75,7 @@ export default defineComponent({
 
 /* Title Text */
 .title-text {
-  font-family: 'Nunito', sans-serif;
-  font-weight: 100;
-  font-size: clamp(1.5rem, 4vw, 4.5rem);
-  line-height: clamp(2rem, 5vw, 4rem);
-  color: hsl(0, 0%, 100%);
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-  margin-top: 1rem;
-  transition: transform 0.3s ease;
+
 }
 
 /* Hover effect for title */

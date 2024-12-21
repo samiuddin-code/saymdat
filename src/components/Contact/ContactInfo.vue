@@ -26,7 +26,7 @@
     padding: 2rem;
     background: linear-gradient(to right, #000, #0a0a0a);
     color: #fff;
-    font-family: 'Nunito', sans-serif;
+    /* font-family: 'Cormant Garamond', serif; */
   }
   
   .header {
@@ -64,7 +64,7 @@
   .btn {
     background-color: transparent;
     color: #fff;
-    border: 1px solid #fff;
+    border: 2.5px solid #fff;
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
     text-align: left;

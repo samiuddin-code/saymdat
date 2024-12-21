@@ -135,12 +135,11 @@ export default class App extends Vue {
 
 <style lang="scss">
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormant+Garamond:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 #app {
- font-family: 'Nunito', sans-serif; 
+  font-family: "Nunito", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
@@ -153,16 +152,15 @@ export default class App extends Vue {
   padding: 0;
   box-sizing: border-box;
   font-size: 20px;
-  font-family: 'Nunito', sans-serif; 
+  font-family: "Nunito", sans-serif;
 }
-
 body,
 html {
   min-height: 100vh;
   font-size: 16px;
   line-height: 1.5;
   
-  overflow: auto; /* Allow scrolling */
+  overflow-x: hidden!important; /* Allow scrolling */
 }
 
 
@@ -176,17 +174,14 @@ html {
   scroll-behavior: auto; /* Disable built-in smooth scroll */
 }
 
-/* Specific font styles */
-h1, h2, h3 {
-  font-family: 'Nunito', sans-serif; /* For headings */
-}
+
 
 p, li, span, a {
-  font-family: 'Nunito', sans-serif; /* For general text */
+  font-family: "Nunito", sans-serif;/* For general text */
 }
 
 button, .navbar, .footer {
-  font-family: 'Nunito', sans-serif; /* For UI elements */
+  font-family: "Nunito", sans-serif; /* For UI elements */
 }
 
 h1, h2 {
@@ -198,7 +193,7 @@ p, li {
 }
 
 footer {
-  font-family: 'Nunito', sans-serif; /* For footer */
+  font-family: "Nunito", sans-serif;/* For footer */
 }
 
 /* Material Icons */
@@ -229,7 +224,7 @@ footer {
 
 /* Neon glow effect */
 .neon-text {
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   font-weight: 700;
   font-size: 32px;
   color: #fff;
@@ -274,7 +269,7 @@ footer {
 .parallax-content {
   z-index: 10;
   color: #fff;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   text-align: center;
 }
 
