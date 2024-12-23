@@ -273,6 +273,7 @@ body {
   width: 50%;
   z-index: 2; /* Ensures menu links are above video */
 }
+
 .menu-links router-link {
   text-decoration: none;
   position: relative;
@@ -399,6 +400,20 @@ body {
 .menu-links a:hover {
   color: #f0eded;
 }
+.bottom-text {
+  font-weight: 300;
+  font-family: "Nunito", sans-serif;
+  display: block; /* Ensure it behaves like a block element */
+  position: absolute; /* Position relative to the parent */
+  bottom: 2rem; /* Space from the bottom */
+  right: 2rem; /* Space from the right */
+  color: white; /* Text color */
+  font-size: 2.5rem; /* Font size */
+  z-index: 2; /* Keep text above other elements */
+  text-align: right; /* Align text to the right */
+  margin-right: -4rem; 
+}
+
 @media screen and (min-width: 1950px) {
   .menu-left {
     padding: 3rem; /* Increase padding for larger screens */
@@ -464,19 +479,7 @@ body {
   }
 }
 /* Bottom Text */
-.bottom-text {
-  font-weight: 300;
-  font-family: "Nunito", sans-serif;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  position: absolute;
-  bottom: 2.54rem;
-  // right: 2rem;
-  color: white;
-  font-size: 4.5rem;
-  z-index: 2; /* Ensures text stays above the video */
-}
+
 @media screen and (min-width: 1850px) {
 
   .menu-right {
@@ -764,7 +767,24 @@ body {
   font-size: 1.4rem;
   font-weight: 600;
 }
+.arrow-down i {
+  margin-left: 5px; /* Add some spacing */
+  font-size: 16px; /* Adjust size */
+  // color: #333; /* Set color */
+}
 
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  display: none;
+  list-style: none;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
 
 /* Make the arrow more responsive for screens 1600px or larger */
 @media (min-width: 2000px) {

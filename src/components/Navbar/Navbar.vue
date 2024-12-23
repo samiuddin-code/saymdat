@@ -28,7 +28,7 @@
           <router-link @click="isToggled = false" to="/experiences">
             <p class="hover-underline-animation">
               Our Expertise
-              <span class="arrow-down">&#x25BC;</span>
+              <span class="arrow-down"><i class="fas fa-chevron-down"></i></span>
             </p>
           </router-link>
 
