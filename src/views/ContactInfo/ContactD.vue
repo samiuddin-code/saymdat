@@ -72,7 +72,8 @@ export default {
 /* Styles for the Landing Page */
 .landing-page {
   display: flex;
-
+  overflow-y: auto; /* Allow scroll */
+  scroll-behavior: smooth; 
   flex-direction: column;
   align-items: flex-start;
   padding-left: 9rem;
@@ -83,6 +84,7 @@ export default {
   box-shadow: #333;
   position: relative;
   color: #fff;
+  overflow: hidden; 
   font-size: 0.8rem;
     line-height: 1.6rem;
     padding-right: -2rem;
@@ -103,6 +105,7 @@ export default {
   background-size: cover;
   filter: brightness(0.6) blur(1px); /* Apply blur and reduce brightness */
   z-index: -1; /* Ensure the background stays behind the content */
+  background-attachment: fixed; 
 }
 /* For screens larger than 1600px */
 @media screen and (min-width: 2000px) {

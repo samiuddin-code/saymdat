@@ -1,5 +1,6 @@
 import { Options, Vue } from "vue-class-component";
 import MenuIcon from '@mui/icons-material/Menu';
+
 @Options({
   name: "Navbar",
   data() {

@@ -35,19 +35,19 @@
           <!-- Submenu with larger and more dynamic animations -->
           <div v-if="isSubmenuOpen" :class="{'submenu-sticky': isScrolled}" class="submenu">
             <div class="submenu-item">
-              <i class="fas fa-cogs"></i> <!-- Advanced gear icon for concept -->
+              <i class="fas fa-lightbulb"></i> 
               <router-link @click="isToggled = false" to="/concept">
                 <p class="submenu-item-text">Concept</p>
               </router-link>
             </div>
             <div class="submenu-item">
-              <i class="fas fa-ruler-combined"></i> <!-- Ruler icon for design -->
+              <i class="fas fa-palette"></i> <!-- Palette icon for design -->
               <router-link @click="isToggled = false" to="/design">
                 <p class="submenu-item-text">Design</p>
               </router-link>
             </div>
             <div class="submenu-item">
-              <i class="fas fa-hammer"></i> <!-- Hammer icon for build -->
+              <i class="fas fa-cogs"></i> <!-- Gear icon for build -->
               <router-link @click="isToggled = false" to="/build">
                 <p class="submenu-item-text">Build</p>
               </router-link>
@@ -87,40 +87,47 @@
     <!-- Toggle Menu Button -->
   
     <!-- Fullscreen Menu -->
-    <div v-if="isMenuOpen" class="fullscreen-menu">
-  <div class="menu-content">
-    <!-- Close Button -->
-
-    <button class="close-button" @click="closeMenu">
-      <span class="close-icon">&times;</span>
-    </button>
-    <div class="menu-left">
-      <router-link to="/" class="logo-link">
-        <img class="logoo" src="../../assets/logob.png" alt="DAT" />
-      </router-link>
-      <div class="menu-links">
-        <router-link to="/about-dlc" @click="closeMenu">About Us</router-link>
-        <router-link to="/experiences" @click="closeMenu">Our Expertise</router-link>
-        <router-link to="/our-worlds" @click="closeMenu">Our Projects</router-link>
-        <router-link to="/gallery" @click="closeMenu">Gallery</router-link>
-        <router-link to="/press" @click="closeMenu">Press</router-link>
-        <router-link to="/ContactPage" @click="closeMenu">Contact Us</router-link>
+  <div v-if="isMenuOpen" class="fullscreen-menu">
+    <div class="menu-content">
+      <!-- Close Button -->
+      <button class="close-button" @click="closeMenu">
+        <span class="close-icon">&times;</span>
+      </button>
+      <div class="menu-left">
+        <router-link to="/" class="logo-link">
+          <img class="logoo" src="../../assets/logob.png" alt="DAT" />
+        </router-link>
+        <div class="menu-links">
+          <router-link to="/about-dlc" @click="closeMenu">About Us</router-link>
+          <router-link to="/experiences" @click="closeMenu">Our Expertise</router-link>
+          <router-link to="/our-worlds" @click="closeMenu">Our Projects</router-link>
+          <router-link to="/gallery" @click="closeMenu">Gallery</router-link>
+          <router-link to="/press" @click="closeMenu">Press</router-link>
+          <router-link to="/ContactPage" @click="closeMenu">Contact Us</router-link>
+        </div>
+        <p class="bottom-text">Architecture that inspires</p>
       </div>
-      <p class="bottom-text">ARCHITECTURE THAT INSPIRES</p>
-    </div>
-    <div class="menu-right">
-      <!-- Video Element -->
-      <video class="menu-video" autoplay muted loop>
-        <source src="../../assets/discovery.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      <div class="menu-right">
+        <!-- Video Element -->
+        <video class="menu-video" autoplay muted loop>
+          <source src="../../assets/discovery.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </div>
   </div>
-</div>
 
+
+
+
+
+
+
+
+
+  
   </div>
 </template>
-
 <script>
 export default {
   data() {
@@ -166,7 +173,6 @@ export default {
   },
 };
 </script>
-
 
 
 <style lang="scss" scoped>

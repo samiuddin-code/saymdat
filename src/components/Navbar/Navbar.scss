@@ -57,14 +57,80 @@
   }
 
   .bottom-text {
-    font-size: 2rem;
+    display: block;
   }
 }
 body {
   margin: 0;
   padding: 0;
 
+.menu-button.bouncing {
+  animation: bounce 0.6s ease forwards;
+}
 
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+}
+/* Bouncing Effect */
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-4px);
+  }
+  40% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(-2px);
+  }
+  80% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.bouncing {
+  animation: bounce 0.6s ease;
+}
+
+/* Menu Item Styling */
+#nav-links p {
+  transition: border-bottom 0.3s ease-in-out;
+}
+
+// #nav-links p:hover {
+//   border-bottom: 2px solid white; /* Add white underline */
+// }
+
+#nav-links p.bouncing:hover {
+  animation: bounce 0.6s ease; /* Trigger bounce effect on hover */
+}
+
+/* Adjust hover effect for the submenu items */
+.submenu-item p {
+  transition: border-bottom 0.3s ease-in-out;
+}
+
+// .submenu-item p:hover {
+//   border-bottom: 2px solid white;
+// }
+
+/* Add other menu styles if necessary */
+#nav-links p {
+  cursor: pointer;
 }
 
 /* Toggle Button */
@@ -149,6 +215,16 @@ body {
   font-size: 5rem;
   line-height: 1;
 }
+@keyframes parallaxEffect {
+  0% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
 /* Fullscreen Menu */
 .fullscreen-menu {
@@ -157,23 +233,34 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
+  animation: parallaxEffect 1s ease-out forwards;
   background-color: black;
   display: flex;
   flex-direction: row;
   z-index: 1000;
   overflow: hidden;
+  transition: all 0.3s ease;
 }
 
+/* Menu Content */
 /* Menu Content */
 .menu-content {
   display: flex;
   width: 100%;
   height: 100%;
   flex-wrap: wrap;
+  animation: fadeIn 1s ease-out;
   justify-content: center;
   position: relative; /* Prevents text from going behind video */
 }
-
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /* Left Section */
 .menu-left {
   flex: 1;
@@ -186,28 +273,142 @@ body {
   width: 50%;
   z-index: 2; /* Ensures menu links are above video */
 }
+.menu-links router-link {
+  text-decoration: none;
+  position: relative;
+  display: block;
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+.menu-links router-link span {
+  display: inline-block;
+  opacity: 0; /* Text starts invisible */
+  animation: typing 2s steps(20) forwards, blink 0.75s step-end infinite;
+}
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.menu-links router-link:hover span {
+  animation: typing 1s steps(20) forwards, blink 0.75s step-end infinite;
+}
 
+@keyframes blink {
+  0%,
+  100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
+// .menu-links router-link:hover {
+//   color: #fff;
+// }
+
+.menu-links router-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.menu-links router-link:hover::after {
+  width: 100%;
+}
 .menu-links {
   display: flex;
   flex-direction: column;
   gap: 1rem; /* Reduced gap between links for mobile */
 }
+.menu-links a:hover::after {
+  content: attr(data-text);
+  display: inline-block;
+  white-space: nowrap;
+  animation: typing 2s steps(20) 1s forwards, blink 0.75s step-end infinite;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+.menu-links a.bounce {
+  animation: bounce 0.6s ease-in-out;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 
 .menu-links a {
   color: white;
   font-weight: 300;
-  padding: 1.5rem;
-  font-size: 2rem;
+  font-size: 2rem; /* Increased font size */
+  padding: 0.5rem;
+  // padding-bottom: 2.2rem; /* Reduced padding at the bottom to move the links up */
   text-decoration: none;
   display: flex;
   align-items: center;
   transition: all 0.3s ease;
   position: relative;
+  bottom: 12rem;
+  position: relative;
+  transition: all 0.3s ease;
   z-index: 2; /* Keeps links above video */
 }
+.bouncing {
+  animation: bounce 0.6s ease infinite;
+}
 
+/* Bounce animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
 .menu-links a:hover {
   color: #f0eded;
+}
+@media screen and (min-width: 1950px) {
+  .menu-left {
+    padding: 3rem; /* Increase padding for larger screens */
+  }
+
+  .menu-links a {
+    font-size: 3rem; /* Increase font size on larger screens */
+    position: relative;
+    bottom: 20rem; /* Reduce bottom padding to give more space */
+  }
 }
 
 /* Right Section */
@@ -218,8 +419,9 @@ body {
   justify-content: center;
   position: relative;
   width: 50%;
-  padding: 2rem;
-  z-index: 1; /* Ensures video stays behind links */
+  padding: 6rem;
+  z-index: 1;
+  transform: translateZ(0);
 }
 
 .menu-video {
@@ -227,9 +429,10 @@ body {
   max-height: 100%;
   object-fit: contain;
   border: none;
-  z-index: 0; /* Keeps video behind content */
+  z-index: 0;
+  position: relative;
+  transition: transform 0.1s ease-out;
 }
-
 .menu-image {
   position: relative;
   max-width: 80%;
@@ -239,25 +442,67 @@ body {
 
 /* Logo */
 .logoo {
-  width: 15rem;
+  width: 11rem;
   position: absolute;
-  left: 2rem;
-  top: 2rem;
+  left: 1rem;
+  top: -1.5rem;
   z-index: 3; /* Ensures logo stays above all other content */
 }
+@media screen and (max-width: 1950px) {
+  .bottom-text {
+    font-size: 2.5rem; /* Smaller font size for better readability */
+    bottom: 6rem; /* Adjust bottom position */
+    padding-right: 5rem; /* Adjust padding for better alignment */
+  }
+}
 
+/* Optional: Adjust further for very small screens */
+@media screen and (max-width: 1200px) {
+  .bottom-text {
+    font-size: 3rem; /* Further reduce font size for very small screens */
+    padding-right: 3rem; /* Further reduce padding */
+  }
+}
 /* Bottom Text */
 .bottom-text {
-  font-weight: 200;
+  font-weight: 300;
+  font-family: "Nunito", sans-serif;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
   position: absolute;
-  bottom: 5rem;
-  right: 2rem;
+  bottom: 2.54rem;
+  // right: 2rem;
   color: white;
-  font-size: 3rem;
+  font-size: 4.5rem;
   z-index: 2; /* Ensures text stays above the video */
+}
+@media screen and (min-width: 1850px) {
+
+  .menu-right {
+    width: 40%; /* Adjust width for larger screens */
+    padding: 8rem; /* Increase padding for better spacing */
+  }
+
+  .menu-video {
+    max-width: 90%; /* Adjust max width to make video fit better */
+  }
+
+  .menu-image {
+    max-width: 75%; /* Adjust image size */
+  }
+
+  .logoo {
+    width: 14rem; /* Increase logo size for larger screens */
+    left: 2rem; /* Adjust position of the logo */
+    top: -rem; /* Adjust position */
+  }
+
+  .bottom-text {
+    font-size: 6rem; /* Increase font size for larger screens */
+    bottom: 3rem; /* Adjust position of the text */
+    right: 10rem; /* Adjust position */
+  }
 }
 
 /* Mobile Responsive */
@@ -279,18 +524,18 @@ body {
     font-size: 1.5rem;
     padding:0px;
    position: relative;
-   top: 2rem;
+   top: 4rem;
     margin-top: 0; /* Removes excessive margin pushing links up */
   }
 
   .logoo {
-    width: 4rem;
+    width: 2rem;
   }
 
   .bottom-text {
     font-size: 2vw; /* This scales the font size based on viewport width */
     bottom: 50rem;
-    right: 1rem;
+    right: 20rem;
     color: white;
   }
   .bottom-text {
@@ -310,11 +555,18 @@ body {
       }
     }
   }
-  
-  .close-button {
-    right: 1rem;
+.close-button {
+    right: 10%;
+    transform: translateX(60%);
+    transform: translateY(80%); /* Center the button horizontally */
+    padding: 0.5rem 1.5rem; /* Adjust padding for better spacing */
+    box-sizing: border-box;
+    border-width: 1px; /* Reduced border width */
+    border: 1px solid #fff; /* Lighter border */
     font-size: 1.5rem;
-  }
+    padding-top: 0.5rem; /* Adjust padding top */
+}
+
 
   .close-icon {
     font-size: 2rem;
@@ -342,6 +594,12 @@ body {
 
   .logoo {
     width: 12rem;
+    // padding-right: 2rem;
+    position: relative;
+  //  padding-right: 2rem !important;
+  position: relative;
+  left: -2rem;
+  top: 0.5rem;
   }
 
   .bottom-text {
