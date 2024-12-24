@@ -2,17 +2,19 @@ $main-image: "../../assets/Gallery";
 section.main {
   .gallery {
     .main-image {
-     background: url(#{$main-image}/gallery-main-1.jpg);
+      background: url(#{$main-image}/gallery-main-1.jpg);
       height: 65vh;
       background-size: cover;
       background-position: center;
       max-width: 100%;
       display: flex;
-      align-items: center;
-      padding-left: 8rem;
+      justify-content: center; /* Horizontally center the text */
+      align-items: center;    /* Vertically center the text */
       font-size: 4rem;
       color: #fff;
-   
+      text-align: center;     /* Optional: Ensures text is centered if it wraps */
+      padding-left: 0;        /* Removed padding-left to avoid offset */
+
       @media screen and (max-width: 500px) {
         padding: 1rem;
         font-size: 2rem;
@@ -25,7 +27,7 @@ section.main {
       display: grid;
       border-radius: 5px; // Optional: Adds rounded corners
       overflow: hidden; 
-      border: 1px solid #ddd;
+      // border: 1px solid #ddd;
       grid-template-columns: repeat(3, 1fr);
       @media screen and (max-width: 576px) {
         grid-template-columns: 1fr;

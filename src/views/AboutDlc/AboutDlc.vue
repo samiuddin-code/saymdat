@@ -27,7 +27,7 @@
       />
     </div>
       <TxtImg2 :header1="elements.header1" :paragraph="elements.paragraph" :imgRight="elements.imgRight" :imgLeft="elements.imgLeft" :mirror="false"/>
-      <BottomSection picture="AboutDlc.jpg"/>
+      <BottomSection picture="AboutDlc.png"/>
   </div>
 </template>
 

@@ -305,7 +305,7 @@ export default defineComponent({
 }
 
   title-text {
-    font-family: 'IBM Plex Sans', sans-serif;
+   
   font-weight: 100;
   font-size: clamp(1.5rem, 4vw, 4.5rem);
   line-height: clamp(2rem, 5vw, 4rem);
@@ -348,7 +348,7 @@ padding: 2rem;
     position: relative;
     font-size: 1.3rem;
     text-align: center;
-    font-family: 'IBM Plex Sans', sans-serif;
+   
     @media screen and (max-width: 1024px) {
       text-align: left;
       font-size: 1.5rem;
@@ -409,7 +409,7 @@ padding: 2rem;
 
 /* Title Text */
 .title-text {
-  font-family: 'IBM Plex Sans', sans-serif;
+ 
   font-weight: 100;
   font-size: clamp(1.5rem, 4vw, 4.5rem);
   line-height: clamp(2rem, 5vw, 4rem);

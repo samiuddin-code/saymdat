@@ -162,9 +162,6 @@
         justify-content: stretch;
       }
 
-      .btn:hover {
-        background-color: #137749;  /* Updated hover color to green */
-      }
 
       .explore {
         cursor: pointer;
@@ -174,16 +171,95 @@
         transition: border 0.2s ease-in-out;
 
         &:hover {
-          background-color: #137749;
-          color: #fff;
+          background-color: #000000;
+          color: black;
         }
       }
     }
 
-    .btn:hover {
-      background-color: #137749;  /* Updated hover color to green */
-    }
+
   }
+
+  .btn {
+    position: relative;
+    margin: 1%;
+    padding: 1.5rem 3.5rem;
+    text-align: center;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    background: transparent;
+    color: #000000;
+    border: 0.08rem solid #000000;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    @media screen and (max-width: 750px) {
+        font-size: 0.8rem;
+        padding: 1rem 2.5rem;
+    }
+}
+
+.btn.btn-border-1::after,
+.btn.btn-border-1::before {
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 0%;
+    visibility: hidden;
+}
+
+.btn.btn-border-1::after {
+    bottom: -2px;
+    right: -2px;
+    border-left: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+    transition: width .1s ease .1s, height .1s ease, visibility 0s .2s;
+}
+
+.btn.btn-border-1::before {
+    top: -2px;
+    left: -2px;
+    border-top: 2px solid #f3f3f3;
+    border-right: 2px solid #f3f3f3;
+    transition: width .1s ease .3s, height .1s ease .2s, visibility 0s .4s;
+}
+
+  
+
+.btn.btn-border-1:hover {
+    animation: pulse 1s ease-out .4s;
+    color: #000000;
+}
+
+.btn.btn-border-1:hover::after,
+.btn.btn-border-1:hover::before {
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    visibility: visible;
+    transition: width .1s ease .2s, height .1s ease .3s, visibility 0s .2s;
+}
+
+.btn.btn-border-1:hover::after {
+    transition: width .1s ease .2s, height .1s ease .3s, visibility 0s .2s;
+}
+
+.btn.btn-border-1:hover::before {
+    transition: width .1s ease, height .1s ease .1s;
+}
+
+@media screen and (max-width: 900px) {
+height: 50vh;
+}
+@media screen and (max-width: 500px) {
+height: 40vh;
+}
+
+
+
+
+
+
+
+
 
   /* Responsive Styles for larger screens (1600px and above) */
   @media screen and (min-width: 2000px) {
@@ -220,4 +296,5 @@
       bottom: 0;
     }
   }
+  
 }

@@ -16,7 +16,7 @@
  
   </div>
   <CarouselComponent />
-  <BottomSection picture="AboutDlc.jpg"/>
+  <BottomSection picture="AboutDlc.png"/>
 </template>
 
 <script type="module">

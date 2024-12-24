@@ -7,9 +7,7 @@
         <h1 class="title" v-html="title"></h1>
         <p class="paragraph" v-html="paragraph"></p>
         <div class="explore-btn">
-        <button class="explore">
-          Explore
-        </button>
+          <button class="btn btn-border-1">Explore</button>
       </div>
     </div>
   </article>

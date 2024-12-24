@@ -34,7 +34,7 @@ export default class OurWorlds extends Vue {
   async fetchImages() {
   try {
     const response = await axios.get<ApiResponse>(
-      'https://www.datconsultancy.com/_next/data/eXx6uPVkXf67Rmx7ThjPc/projects/residential.json?category=residential'
+      'https://www.datconsultancy.com/_next/data/N_ZdEUENL-4he4wQLVNM_/projects/residential.json?category=residential'
     );
 
     const projectsArray = response.data?.pageProps?.response;
