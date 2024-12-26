@@ -579,8 +579,9 @@ p {
   }
 }
     .background-section {
-    background-image: url('../../assets/experiences.png'); // Random placeholder
+    background-image: url('../../assets/experiences.jpg'); // Random placeholder
     background-size: cover;
+    filter: brightness(70%);
     background-position: center;
     height: 900px; // Full-screen height
     display: flex;

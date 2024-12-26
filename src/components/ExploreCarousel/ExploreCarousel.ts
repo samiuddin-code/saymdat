@@ -1,4 +1,8 @@
-import { Options, Vue } from 'vue-class-component';
+import { Options, Vue } from "vue-class-component";
+import $ from "jquery"; // Slick requires jQuery
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel";
 
 interface CarouselItem {
   title: string;
@@ -7,10 +11,10 @@ interface CarouselItem {
 }
 
 @Options({
-  name: 'ExploreCarousel',
+  name: "ExploreCarousel",
   props: {
     carousel: {
-      type: Array,
+      type: Array as () => CarouselItem[],
       required: true,
     },
     worldPath: {
@@ -28,34 +32,61 @@ interface CarouselItem {
   },
 })
 export default class ExploreCarousel extends Vue {
+  // Props
   carousel!: CarouselItem[];
   worldPath!: string;
   carouselH1!: string;
   carouselH2!: string;
 
-  currentIndex = 0; // Track the index of the current slide
-
-  // Function to navigate to details page
+  // Methods
   navigateToDetails(title: string) {
     this.$router.push({ path: `/details/${encodeURIComponent(title)}` });
   }
 
-  // Left button handler (move one slide to the left)
   goLeft() {
-    this.currentIndex =
-      (this.currentIndex - 1 + this.carousel.length) % this.carousel.length; // Loop back to the last slide
+    $(".slider").slick("slickPrev"); // Move to previous slide
   }
 
-  // Right button handler (move one slide to the right)
   goRight() {
-    this.currentIndex = (this.currentIndex + 1) % this.carousel.length; // Loop back to the first slide
+    $(".slider").slick("slickNext"); // Move to next slide
   }
-
-  // Get the style for the slider track (moves the entire carousel)
-  getSliderTrackStyle() {
-    return {
-      transform: `translateX(-${this.currentIndex * 100}%)`, // Move the entire slider by the width of one slide
-      transition: 'transform 0.5s ease', // Smooth transition for the movement
-    };
+  mounted() {
+    $(".slider").slick({
+      infinite: true,
+      slidesToShow: 3, // Show 4 slides by default
+      slidesToScroll: 1, // Scroll 1 slide at a time
+      dots: true, // Optional: Show navigation dots
+      arrows: true, // Optional: Show navigation arrows
+      responsive: [
+        {
+          breakpoint: 1200, // Large screens (desktops)
+          settings: {
+            slidesToShow: 4, // Show 4 slides
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 1024, // Medium screens (tablets)
+          settings: {
+            slidesToShow: 3, // Show 3 slides
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 768, // Small screens (portrait tablets, small laptops)
+          settings: {
+            slidesToShow: 2, // Show 2 slides
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 480, // Extra small screens (mobile devices)
+          settings: {
+            slidesToShow: 1, // Show 1 slide
+            slidesToScroll: 1,
+          },
+        },
+      ],
+    });
   }
 }

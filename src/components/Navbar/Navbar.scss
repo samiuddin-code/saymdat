@@ -367,6 +367,92 @@ body {
     transform: translateY(0);
   }
 }
+.submenu-container {
+  position: relative;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+}
+
+.submenu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.submenu-item {
+  position: relative;
+  padding: 10px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.submenu-item:hover {
+  background-color: #f9f9f9;
+}
+
+.submenu-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-wrapper {
+  width: 40px;
+  height: 40px;
+  background-color: #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 18px;
+  color: #444;
+}
+
+.text-wrapper {
+  flex-grow: 1;
+}
+
+.submenu-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.submenu-desc {
+  font-size: 12px;
+  color: #888;
+  margin: 0;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  display: none;
+  flex-direction: column;
+  padding: 10px;
+  z-index: 10;
+}
+
+.submenu-item:hover .dropdown {
+  display: flex;
+}
+
+.dropdown a {
+  text-decoration: none;
+  color: #444;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+
 
 .menu-links a {
   color: white;
@@ -709,8 +795,8 @@ body {
 .submenu {
   display: none;
   position: absolute;
-  top: 100%; /* Position at the bottom of the parent item */
-  left: 0;
+  top: 120%; /* Position at the bottom of the parent item */
+  left: -3.5rem;
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(20px);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
@@ -736,7 +822,7 @@ body {
 }
 
 .submenu-item {
-  padding: 20px;
+  padding: 30px 20px;
   display: flex;
   align-items: center;
   transition: background-color 0.4s ease, transform 0.3s ease;
@@ -783,7 +869,21 @@ body {
   position: absolute;
   background-color: #fff;
   border: 1px solid #ccc;
-  padding: 10px;
+  // padding: 10px;
+}
+.submenu-item-description {
+  font-size: 14px; /* Adjust the font size */
+  color: #777; /* A soft grey color for the description text */
+  margin-top: 5px; /* Adds some space between the item and description */
+  padding-left: 0px; /* Adds some indentation for alignment */
+  line-height: 1.5; /* Adjust line height for readability */
+  font-weight: 400; /* Regular weight */
+  font-style: italic; /* Optional: gives the description an italicized effect */
+}
+
+/* Optional: Add hover effect for description */
+.submenu-item:hover .submenu-item-description {
+  color: #555; /* Darker grey when the submenu item is hovered */
 }
 
 /* Make the arrow more responsive for screens 1600px or larger */

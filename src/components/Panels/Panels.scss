@@ -33,6 +33,8 @@
     align-items: center; /* Center content horizontally */
     justify-content: center; /* Center content vertically */
     overflow: hidden;
+    z-index: 999;
+  
     background-size: cover;
     background-repeat: no-repeat;
     height: 100% !important; /* Ensure it takes up the full height of its parent */
@@ -47,11 +49,18 @@
   .panels-image1, .panels-image2, .panels-image3 {
     background-position: center;
     position: relative;
-    opacity: 1;
+    
+    transition: opacity 0.5s ease-in-out; 
+  filter: brightness(85%);
     background-size: cover;
     height: 100%; /* Ensures images don't stretch beyond the container */
   }
-
+  .panels-image1:hover, 
+  .panels-image2:hover, 
+  .panels-image3:hover {
+   transform: scale(1.01);
+  transition: ease-in-out, transform 0.5s ease-in-out; 
+  }
   /* Adjusting background images for responsiveness */
   .panels-image1 {
     background-image: url("@/assets/Panels/p1.jpg");
@@ -88,10 +97,13 @@
 
 
   h4 {
+
     font-size: 2rem; /* Default size for larger screens */
     // font-family: 'Nunito', sans-serif;
     font-weight: 400;
     margin: 0;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.8), 
+    2px 2px 20px rgba(0, 0, 0, 0.5); 
     color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 4px;
@@ -99,7 +111,8 @@
 
     @media screen and (max-width: 750px) {
       font-size: 1.5rem; /* Smaller text size for mobile */
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+      text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6), 
+      1px 1px 6px rgba(0, 0, 0, 0.3);
       text-align: center; /* Center text on mobile */
     }
   }
@@ -107,6 +120,8 @@
   button {
     margin: 0 auto;
     padding-top: 4px;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.6); /* Brighten shadow */
+    transition: transform 0.2s, box-shadow 0.3s;
     height: 3rem; /* Smaller button height */
     width: 3rem; /* Smaller button width */
     font-size: 1.5rem; /* Smaller font size inside the button */
@@ -121,12 +136,14 @@
     transition: transform 0.2s, box-shadow 0.3s;
 
     &:hover {
-      background-color: #ffffff;;
-      color: #000000;
+      background-color: #ffffff;
+      color: #333333;
       transform: scale(1.05);
     }
 
     @media screen and (max-width: 750px) {
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.6); /* Brighten shadow */
+      transition: transform 0.2s, box-shadow 0.3s;
       height: 2.5rem; /* Smaller button height for mobile */
       width: 2.5rem; /* Smaller button width for mobile */
       font-size: 1.2rem; /* Smaller font size for mobile */
@@ -137,7 +154,7 @@
   .panels-image1, .panels-image2, .panels-image3 {
     background-position: center 25%;
     position: relative;
-    opacity: 1;
+
   }
 
   .panels-image1 {

@@ -15,7 +15,8 @@
     "forceConsistentCasingInFileNames": false,
     "types": [
       "webpack-env",
-      "three"  // Ensure TypeScript knows to use the three.js types
+      "three",
+      "jquery"  // Add jquery here
     ],
     "paths": {
       "@/*": [

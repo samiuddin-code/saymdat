@@ -28,31 +28,42 @@
           <router-link @click="isToggled = false" to="/experiences">
             <p class="hover-underline-animation">
               Our Expertise
-              <span class="arrow-down"><i class="fas fa-chevron-down"></i></span>
+              <span class="arrow-down">&#x25BC;</span>
             </p>
           </router-link>
 
           <!-- Submenu with larger and more dynamic animations -->
           <div v-if="isSubmenuOpen" :class="{'submenu-sticky': isScrolled}" class="submenu">
-            <div class="submenu-item">
-              <i class="fas fa-lightbulb"></i> 
-              <router-link @click="isToggled = false" to="/concept">
-                <p class="submenu-item-text">Concept</p>
-              </router-link>
-            </div>
-            <div class="submenu-item">
-              <i class="fas fa-palette"></i> <!-- Palette icon for design -->
-              <router-link @click="isToggled = false" to="/design">
-                <p class="submenu-item-text">Design</p>
-              </router-link>
-            </div>
-            <div class="submenu-item">
-              <i class="fas fa-cogs"></i> <!-- Gear icon for build -->
-              <router-link @click="isToggled = false" to="/build">
-                <p class="submenu-item-text">Build</p>
-              </router-link>
-            </div>
-          </div>
+  <div class="submenu-item">
+    <i class="fas fa-lightbulb"></i>
+    <div class="submenu-item-content">
+      <router-link @click="isToggled = false" to="/concept">
+        <p class="submenu-item-text">Concept</p>
+      </router-link>
+      <p class="submenu-item-description">Explore the foundational ideas and concepts behind the project.</p>
+    </div>
+  </div>
+  <div class="submenu-item">
+    <i class="fas fa-palette"></i> <!-- Palette icon for design -->
+    <div class="submenu-item-content">
+      <router-link @click="isToggled = false" to="/design">
+        <p class="submenu-item-text">Design</p>
+      </router-link>
+      <p class="submenu-item-description">Dive into the visual and aesthetic elements of the project.</p>
+    </div>
+  </div>
+  <div class="submenu-item">
+    <i class="fas fa-cogs"></i> <!-- Gear icon for build -->
+    <div class="submenu-item-content">
+      <router-link @click="isToggled = false" to="/build">
+        <p class="submenu-item-text">Build</p>
+      </router-link>
+      <p class="submenu-item-description">Understand the technical process and development of the project.</p>
+    </div>
+  </div>
+</div>
+
+
         </div>
 
         <!-- Other Links -->
@@ -105,7 +116,7 @@
           <router-link to="/press" @click="closeMenu">Press</router-link>
           <router-link to="/ContactPage" @click="closeMenu">Contact Us</router-link>
         </div>
-        <p class="bottom-text">Architecture that inspires</p>
+        <p class="bottom-text">Architecture that Inspires</p>
       </div>
       <div class="menu-right">
         <!-- Video Element -->

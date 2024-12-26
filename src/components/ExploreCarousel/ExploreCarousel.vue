@@ -16,11 +16,11 @@
     </div>
     <div class="slider">
       <div
-        class="slider-track"
-        v-for="(item, index) in carousel"
-        :key="item.title"
-        :class="{ active: index === currentIndex }"
-      >
+  class="slider-track"
+  v-for="item in carousel"
+  :key="item.title"
+  :class="{ active: item === carousel[currentIndex] }"
+>
         <div class="slide">
           <div class="image-holder" @click="navigateToDetails(item.title)">
             <img
@@ -32,7 +32,6 @@
           <div class="img-description" @click="navigateToDetails(item.title)">
             <span class="img-title" v-text="item.title"></span>
             <span class="img-location" v-text="item.location"></span>
-            <!-- <span class = "img-location" v-text="item.slug"></span> -->
           </div>
         </div>
       </div>

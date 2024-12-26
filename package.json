@@ -32,6 +32,9 @@
     "font-awesome": "^4.7.0",
     "globe.gl": "^2.33.1",
     "gsap": "^3.12.5",
+    "jquery": "^3.7.1",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^11.1.15",
     "three": "^0.170.0",
     "vue": "^3.5.13",
     "vue-class-component": "^8.0.0-0",
@@ -42,6 +45,8 @@
     "vue3-google-map": "^0.21.0"
   },
   "devDependencies": {
+    "@types/jquery": "^3.5.32",
+    "@types/slick-carousel": "^1.6.40",
     "@types/three": "^0.169.0",
     "@typescript-eslint/eslint-plugin": "^8.15.0",
     "@typescript-eslint/parser": "^8.15.0",
