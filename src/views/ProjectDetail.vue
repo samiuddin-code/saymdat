@@ -141,9 +141,9 @@ export default defineComponent({
 
       try {
         const response = await axios.get(
-          `https://www.datconsultancy.com/_next/data/eXx6uPVkXf67Rmx7ThjPc/projects/residential/${projectSlug}.json?category=residential&projectSlug=${projectSlug}`
+          `https://www.datconsultancy.com/_next/data/N_ZdEUENL-4he4wQLVNM_/projects/residential/${projectSlug}.json?category=residential&projectSlug=${projectSlug}`
         );
-
+    
         if (response.data?.pageProps?.response) {
           const project = response.data.pageProps.response[0].data;
           projectData.value = {

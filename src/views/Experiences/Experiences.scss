@@ -6,38 +6,47 @@
   .experiences-title {
     line-height: 2.5rem;
     font-weight: 100;
-   
     letter-spacing: 2px;
-
     position: relative;
     font-size: 1.3rem;
     text-align: center;
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Nunito', sans-serif;
   }
 
   .experiences-article {
     background-color: #f3f3f3;
     padding: 4rem 7rem;
-    
     display: flex;
     flex-direction: column;
     gap: 2rem;
     z-index: 0;
-    // border-radius: 10px;
-    // box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     min-height: 800px; /* Ensures enough space for content */
 
-    /* Responsive styling */
+    /* PC styles remain as is */
+
     @media (max-width: 768px) {
-      padding: 3rem 1rem;
-      min-height: 500px;
-      gap: 2rem;
+      display: grid;
+      grid-template-columns: 1fr; /* Single column layout */
+      grid-gap: 2rem;
+      padding: 2rem;
     }
 
     @media (max-width: 480px) {
-      padding: 2rem 1rem;
-      min-height: 400px;
-      gap: 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr; /* Single column layout */
+      grid-gap: 1.5rem;
+      padding: 1.5rem;
+      
+      /* Adjusting images to fit mobile layout */
+      img {
+        width: 100%;
+        height: auto;
+      }
+      
+      p, h1, h2, h3, h4 {
+        font-size: 0.9rem; /* Smaller text size for mobile */
+        line-height: 1.4;
+      }
     }
   }
 }
