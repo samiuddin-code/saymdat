@@ -35,6 +35,10 @@ export default class App extends Vue {
     // Trigger black screen transition on route changes
     router.beforeEach((to, from, next) => {
       this.showTransition();
+      
+      // Reset scroll position
+      this.resetScroll();
+
       setTimeout(() => {
         next();
       }, 1000); // Match transition duration
@@ -49,6 +53,12 @@ export default class App extends Vue {
     setTimeout(() => {
       this.isTransitionVisible = false;
     }, 1000); // Match transition duration
+  }
+
+  resetScroll() {
+    this.targetScroll = 0;
+    this.currentScroll = 0;
+    window.scrollTo(0, 0); // Instantly set the scroll position to the top
   }
 
   initializeSmoothScroll() {
@@ -93,35 +103,32 @@ export default class App extends Vue {
   }
 
   startSmoothScroll() {
-  if (this.isScrolling) return;
-  this.isScrolling = true;
+    if (this.isScrolling) return;
+    this.isScrolling = true;
 
-  // Start a new smooth scroll animation
-  const smoothScrollStep = () => {
-    const distance = this.targetScroll - this.currentScroll;
-    const step = distance * 0.15; // Adjust damping for smoothness
+    const smoothScrollStep = () => {
+      const distance = this.targetScroll - this.currentScroll;
+      const step = distance * 0.15; // Adjust damping for smoothness
 
-    if (Math.abs(distance) < 1) { // Adjusted stopping condition
-      this.isScrolling = false;
-      this.currentScroll = this.targetScroll;
-      window.scrollTo(0, Math.round(this.targetScroll));
-      return;
-    }
+      if (Math.abs(distance) < 1) { // Adjusted stopping condition
+        this.isScrolling = false;
+        this.currentScroll = this.targetScroll;
+        window.scrollTo(0, Math.round(this.targetScroll));
+        return;
+      }
 
-    this.currentScroll += step;
-    window.scrollTo(0, Math.round(this.currentScroll));
+      this.currentScroll += step;
+      window.scrollTo(0, Math.round(this.currentScroll));
 
-    // Cancel any previous scroll animation
-    if (this.scrollRequestId) {
-      cancelAnimationFrame(this.scrollRequestId);
-    }
+      if (this.scrollRequestId) {
+        cancelAnimationFrame(this.scrollRequestId);
+      }
+
+      this.scrollRequestId = requestAnimationFrame(smoothScrollStep);
+    };
 
     this.scrollRequestId = requestAnimationFrame(smoothScrollStep);
-  };
-
-  this.scrollRequestId = requestAnimationFrame(smoothScrollStep);
-}
-
+  }
 
   beforeDestroy() {
     window.removeEventListener('wheel', this.handleWheelEvent);
@@ -131,6 +138,7 @@ export default class App extends Vue {
     }
   }
 }
+
 </script>
 
 <style lang="scss">
